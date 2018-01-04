@@ -63,15 +63,7 @@
   float: left;
 }
 
-.mobile ul li a,.mobile ul li a{
-  text-decoration: none;
-  color: white;
-}
 
-.mobile ul li,.mobile ul li{
-  float: block;
-  padding: 16px;
-}
 
 .App-title {
   font-size: 1.5em;
@@ -79,6 +71,7 @@
 
 section{
   background-color: white;
+  display: flex;
 }
 
 .App-intro {
@@ -86,14 +79,15 @@ section{
 }
 .App-header.desktop li a, .App-header-at-top.desktop li a{
   padding: 10px 15px;
-  opacity: 0.8;
-  color: gray;
   text-decoration: none;
   font-size: 13;
   transition: 0.3s ease-in-out;
 }
-.App-header a:hover, .App-header-at-top a:hover{
-  opacity: 1
+.App-header.desktop li a{
+  color: gray;
+}
+.App-header-at-top.desktop li a{
+  color: gray;
 }
 .App-header.desktop  .is-current a{
   color: white;
@@ -101,14 +95,18 @@ section{
 .App-header-at-top.desktop  .is-current a{
   color: black;
 }
-
-
+.App-header.desktop a:hover{
+  color: white;
+}
+.App-header-at-top.desktop a:hover{
+  color: black;
+}
 
 .desktop .navbar-brand {
   position: fixed;
   left: 70px;
   text-decoration: none;
-  font-size: 13;
+  font-size: 13px;
   transition: 0.3s ease-in-out;
   display: flex;
 }
@@ -133,8 +131,11 @@ section{
   color: white;
 }
 
-.mobile .navbar-brand .text{
-  color: white;
+
+
+.mobile ul li,.mobile ul li{
+  float: block;
+  padding: 16px;
 }
 
 .mobile {
@@ -142,9 +143,33 @@ section{
   padding: 0px;
   position: fixed;;
   right:0;
-  background-color: black;
+  background: #fff;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.25);
   width: 100%;
 }
+.mobile ul li a{
+  text-decoration: none;
+  color: gray;
+}
+.mobile ul li.is-current a{
+  color: white;
+}
+.mobile ul li a:hover{
+  color: white;
+}
+.spy {
+  margin-top:50px;
+  text-align:left;
+  box-shadow: 2px 1 4px #000;
+  transition: 0.65s ease-in-out;
+}
+.spy.close {
+  display: none;
+}
+.spy a{
+  display: block;
+}
+
 .mobile .navbar-brand {
   position: fixed;
   left: 10px;
@@ -152,6 +177,7 @@ section{
   font-size: 12;
   transition: 0.3s ease-in-out;
   display: flex;
+  color: black;
 }
 .mobile .navbar-brand .text {
   font-size: 95%;
@@ -166,7 +192,7 @@ section{
 }
 
 .desktop.navbar-brand .text{
-  color: white;
+
 }
 
 
@@ -200,4 +226,69 @@ section{
     left: 0;
     width: 100%;
     height: 100%;
+}
+
+.about-wrapper {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    max-width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 80px 0px;
+    display: flex;
+}
+.left, .right{
+  flex-grow: 1;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+.img-mobile{
+  width: auto;
+  height: 32vh;
+}
+
+#form1 {
+    flex-direction: column;
+    display: flex;
+}
+
+#form1 label{
+  text-align: left;
+  margin: 10px 10px 10px 0;
+  font-size: 11px;
+}
+#form1 input, #form1 button{
+  border: none;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+#form1 button{
+  color: white;
+  background-color: #f57d00;
+}
+.footer h3{
+  color: white;
+}
+.footer ul{
+  margin: 0;
+  list-style-type:none;
+}
+.footer ul li{
+  color: gray;
+  cursor: pointer;
+}
+
+.footer ul li:hover{
+  color: white;
 }
