@@ -1,0 +1,30 @@
+.page-cover {
+    width: 100%;
+    position: fixed;
+    height: 120%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    overflow: hidden;
+}
+.page-cover .cover-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+.page-cover .cover-bg-mask {
+    background-image: url("../../img/bg-layer.png");
+    //background-image: url("../../img/cover.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}

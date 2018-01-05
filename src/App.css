@@ -1,162 +1,26 @@
-.App {
-  text-align: center;
-  position: relative;
-}
-
-.desktop{
-  height: 65px;
-  padding: 20px;
-  position: fixed;;
-  right:0;
-  transition: 0.3s ease-in-out;
-}
-
-.App-header.desktop {
-  top: 35px;
-}
-
-.App-header-at-top.desktop {
-  top: 0px;
-}
-
-.App-header.desktop::before{
-  content: "";
-  position: fixed;
-  left: 0;
-  height: 0;
-  width: 100%;
-  transition: 0.3s ease-in-out;
-  top: 0;
-  z-index: -1;
-}
-
-.App-header-at-top.desktop::before{
-  content: "";
-  position: fixed;
-  left: 0;
-  height: 65px;
-  width: 100%;
-  transition: 0.3s ease-in-out;
-  z-index: -1;
-  background: #fff;
-  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.25);
-  top: 0;
-}
-
-.App-header ul, .App-header-at-top ul{
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-}
-
-.mobile ul{
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: black;
-  width: 100%;
-}
-
-.App-header.desktop ul li,.App-header-at-top.desktop ul li{
-  float: left;
-}
-
-
-
-.App-title {
-  font-size: 1.5em;
-}
-
 section{
   background-color: white;
   display: flex;
 }
 
+section._desktop::before {
+    content: "";
+    height: 65px;
+    width: 100%;
+}
+section._mobile::before {
+    content: "";
+    height: 50px;
+    width: 100%;
+}
+#section-5::before {
+    background: white;
+}
+
 .App-intro {
   font-size: large;
 }
-.App-header.desktop li a, .App-header-at-top.desktop li a{
-  padding: 10px 15px;
-  text-decoration: none;
-  font-size: 13;
-  transition: 0.3s ease-in-out;
-}
-.App-header.desktop li a{
-  color: gray;
-}
-.App-header-at-top.desktop li a{
-  color: gray;
-}
-.App-header.desktop  .is-current a{
-  color: white;
-}
-.App-header-at-top.desktop  .is-current a{
-  color: black;
-}
-.App-header.desktop a:hover{
-  color: white;
-}
-.App-header-at-top.desktop a:hover{
-  color: black;
-}
 
-.desktop .navbar-brand {
-  position: fixed;
-  left: 70px;
-  text-decoration: none;
-  font-size: 13px;
-  transition: 0.3s ease-in-out;
-  display: flex;
-}
-.desktop .navbar-brand .text {
-  font-size: 120%;
-  display:flex;
-  transition: 0.3s ease-in-out;
-}
-.desktop .navbar-brand img {
-  height: 50px;
-}
-.App-header-at-top.desktop .navbar-brand{
-  top:5px;
-}
-.App-header.desktop .navbar-brand{
-  top:35px;
-}
-.App-header-at-top.desktop .navbar-brand .text{
-  color: black;
-}
-.App-header.desktop .navbar-brand .text{
-  color: white;
-}
-
-
-
-.mobile ul li,.mobile ul li{
-  float: block;
-  padding: 16px;
-}
-
-.mobile {
-  height: 50px;
-  padding: 0px;
-  position: fixed;;
-  right:0;
-  background: #fff;
-  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.25);
-  width: 100%;
-}
-.mobile ul li a{
-  text-decoration: none;
-  color: gray;
-}
-.mobile ul li.is-current a{
-  color: white;
-}
-.mobile ul li a:hover{
-  color: white;
-}
 .spy {
   margin-top:50px;
   text-align:left;
@@ -168,64 +32,6 @@ section{
 }
 .spy a{
   display: block;
-}
-
-.mobile .navbar-brand {
-  position: fixed;
-  left: 10px;
-  text-decoration: none;
-  font-size: 12;
-  transition: 0.3s ease-in-out;
-  display: flex;
-  color: black;
-}
-.mobile .navbar-brand .text {
-  font-size: 95%;
-  display:flex;
-  transition: 0.3s ease-in-out;
-}
-.mobile .navbar-brand img {
-  height: 35px;
-}
-.mobile .navbar-brand{
-  top:5px;
-}
-
-.desktop.navbar-brand .text{
-
-}
-
-
-
-.page-cover {
-    width: 100%;
-    position: fixed;
-    height: 120%;
-    height: 100vh;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    overflow: hidden;
-}
-.page-cover .cover-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-}
-.page-cover .cover-bg-mask {
-    background-image: url("./img/bg-layer.png");
-    //background-image: url("./img/cover.jpg");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
 }
 
 .about-wrapper {
