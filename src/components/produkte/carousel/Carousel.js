@@ -5,7 +5,7 @@ import CarouselCss from './Carousel.css';
 
 import car1 from '../../../img/car1.png';
 import car2 from '../../../img/car2.png';
-import car6 from '../../../img/car6.png';
+import car6 from '../../../img/car6.jpg';
 
 
 class Carousel extends React.Component {
