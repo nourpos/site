@@ -54,10 +54,12 @@ section._mobile::before {
   padding-left: 15px;
   padding-right: 15px;
 }
-
 .row {
     display: flex;
     flex-direction: row;
+}
+.about-wrapper-mobile .row{
+  flex-direction: column;
 }
 .img-mobile{
   width: 90%;

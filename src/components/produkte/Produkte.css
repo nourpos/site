@@ -38,7 +38,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 375px;
+  min-height: 200px;
 }
 
 .is-visible + span {

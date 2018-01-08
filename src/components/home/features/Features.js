@@ -8,6 +8,11 @@ var FontAwesome = require('react-fontawesome')
 var einfachIcon = (<FontAwesome className="fa-thumbs-o-up" size="4x"/>)
 var zuverlaessigIcon = (<FontAwesome className="fa-check" size="4x"/>)
 var geringeKostenIcon = (<FontAwesome className="fa-pie-chart" size="4x"/>)
+
+var einfachIconMobile = (<FontAwesome className="fa-thumbs-o-up" size="2x"/>)
+var zuverlaessigIconMobile = (<FontAwesome className="fa-check" size="2x"/>)
+var geringeKostenIconMobile = (<FontAwesome className="fa-pie-chart" size="2x"/>)
+
 const Desktop = props => <Responsive {...props} minWidth={992}/>;
 const Tablet = props => <Responsive {...props} minWidth={768} maxWidth={991}/>;
 const Mobile = props => <Responsive {...props} maxWidth={767}/>;
@@ -36,7 +41,7 @@ class Features extends Component {
               alignItems: 'center',
               flexDirection: 'column'
             }}>
-            <h2>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor</h2>
+            <h2>Ein elektronisches Kassensystem für Android Geräte, das alle Funktionen herkömmlicher Kassensysteme bietet, nur einen Bruchteil kostet und weniger Platz auf dem Tresen wegnimmt.</h2>
             <div style={{
                 display: 'flex'
               }}>
@@ -120,7 +125,7 @@ class Features extends Component {
               alignItems: 'center',
               flexDirection: 'column'
             }}>
-            <h2>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor</h2>
+            <h2>Ein elektronisches Kassensystem für Android Geräte, das alle Funktionen herkömmlicher Kassensysteme bietet, nur einen Bruchteil kostet und weniger Platz auf dem Tresen wegnimmt.</h2>
             <div style={{
                 display: 'flex'
               }}>
@@ -203,7 +208,7 @@ class Features extends Component {
               alignItems: 'center',
               flexDirection: 'column'
             }}>
-            <h2>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor</h2>
+            <h2>Ein elektronisches Kassensystem für Android Geräte, das alle Funktionen herkömmlicher Kassensysteme bietet, nur einen Bruchteil kostet und weniger Platz auf dem Tresen wegnimmt.</h2>
             <div style={{
                 display: 'flex',flexDirection:'column'
               }}>
@@ -214,15 +219,15 @@ class Features extends Component {
                   flexDirection: 'column'
                 }}>
                 <div style={{
-                    width: '80px',
-                    height: '80px',
+                    width: '45px',
+                    height: '45px',
                     backgroundColor: 'white',
                     justifyContent: 'center',
                     alignItems: 'center',
-                    borderRadius: '40px',
+                    borderRadius: '45px',
                     display: 'flex'
                   }}>
-                  {geringeKostenIcon}
+                  {geringeKostenIconMobile}
                 </div>
                 <p>Geringe Kosten</p>
                 <p>Sparen Sie Geld und kaufen Sie sich Eis dafür :)</p>
@@ -234,15 +239,15 @@ class Features extends Component {
                   flexDirection: 'column'
                 }}>
                 <div style={{
-                    width: '80px',
-                    height: '80px',
+                    width: '45px',
+                    height: '45px',
                     backgroundColor: 'white',
                     justifyContent: 'center',
                     alignItems: 'center',
-                    borderRadius: '40px',
+                    borderRadius: '45px',
                     display: 'flex'
                   }}>
-                  {einfachIcon}
+                  {einfachIconMobile}
                 </div>
                 <p>Einfach</p>
                 <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor</p>
@@ -254,15 +259,15 @@ class Features extends Component {
                   flexDirection: 'column'
                 }}>
                 <div style={{
-                    width: '80px',
-                    height: '80px',
+                    width: '45px',
+                    height: '45px',
                     backgroundColor: 'white',
                     justifyContent: 'center',
                     alignItems: 'center',
-                    borderRadius: '40px',
+                    borderRadius: '45px',
                     display: 'flex'
                   }}>
-                  {zuverlaessigIcon}
+                  {zuverlaessigIconMobile}
                 </div>
                 <p>Zuverlässig</p>
                 <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor</p>

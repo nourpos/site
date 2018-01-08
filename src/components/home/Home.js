@@ -40,10 +40,10 @@ class Home extends React.Component {
                 <h1 style={{
                     color: 'white',
                     fontSize: 30
-                  }}>Keine monatliche Gebühr, keine Verträge.</h1>
+                  }}>NourPos Kassensysteme</h1>
                 <h3 style={{
                     color: 'white'
-                  }}>Ein elektronisches Kassensystem für iPads, das alle Funktionen herkömmlicher Kassensysteme bietet, nur einen Bruchteil kostet und weniger Platz auf dem Tresen wegnimmt.</h3>
+                  }}>Keine monatliche Gebühr, keine Verträge.</h3>
               </div>
             </div>
             <div className="col right" style={{}}>
@@ -78,10 +78,10 @@ class Home extends React.Component {
                 <h1 style={{
                     color: 'white',
                     fontSize: 30
-                  }}>Keine monatliche Gebühr, keine Verträge.</h1>
+                  }}>NourPos Kassensysteme</h1>
                 <h3 style={{
                     color: 'white'
-                  }}>Ein elektronisches Kassensystem für iPads, das alle Funktionen herkömmlicher Kassensysteme bietet, nur einen Bruchteil kostet und weniger Platz auf dem Tresen wegnimmt.</h3>
+                  }}>Keine monatliche Gebühr, keine Verträge.</h3>
               </div>
             </div>
             <div className="col right" style={{}}>
@@ -105,7 +105,7 @@ class Home extends React.Component {
         flex:1,
         minHeight: this.props.minHeight,
         }}>
-        <div className="about-wrapper">
+        <div className="about-wrapper about-wrapper-mobile">
           <div className="row">
             <div className="col left" style={{
                 flexDirection: 'column'
@@ -116,11 +116,14 @@ class Home extends React.Component {
                 <h1 style={{
                     color: 'white',
                     fontSize: 30
-                  }}>Keine monatliche Gebühr, keine Verträge.</h1>
+                  }}>NourPos Kassensysteme</h1>
                 <h3 style={{
                     color: 'white'
-                  }}>Ein elektronisches Kassensystem für iPads, das alle Funktionen herkömmlicher Kassensysteme bietet, nur einen Bruchteil kostet und weniger Platz auf dem Tresen wegnimmt.</h3>
+                  }}>Keine monatliche Gebühr, keine Verträge.</h3>
               </div>
+            </div>
+            <div className="col right" style={{}}>
+              <img className="img-mobile" src={mobileBasisRaspi} alt="mobileLogo"></img>
             </div>
           </div>
         </div>

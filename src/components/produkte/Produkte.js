@@ -243,13 +243,13 @@ class Produkte extends Component {
           </div>
           <div className="produkte_col produkte_col_mobile">
             <div className="produkte_col_row">
+            <h2>Lorem ipsum dolor sit amet consetetur sadipscing.</h2>
               <LazyLoad   offset={200} placeholder={"hallo"}>
                 <img src={raspi_left}/>
               </LazyLoad>
               {loader}
             </div>
             <div className="produkte_col_row">
-              <h2>Lorem ipsum dolor sit amet consetetur sadipscing.</h2>
               <p>
                 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor consetetur sadipscing elitr, sed diam nonumy eirmod tempor dolor sit amet, sadipscing dolor sit amet, consetetur sed diam nonumy eirmod tempor consetetur amet eirmod amet consetetur sadipscing elitr, sed diam nonumy eirmod tempor dolor sit amet, eirmod sit consetetur sadipscing elitr, sed diam nonumy eirmod tempor dolor sit amet, consetetur
               </p>
@@ -257,13 +257,13 @@ class Produkte extends Component {
           </div>
           <div className="produkte_col produkte_col_mobile">
             <div className="produkte_col_row">
+            <h2>Lorem ipsum dolor sit amet consetetur sadipscing.</h2>
             <LazyLoad  offset={200}>
             <img className="rfid_reader_right" src={rfid_reader_right}/>
             </LazyLoad>
             {loader}
             </div>
             <div className="produkte_col_row">
-              <h2>Lorem ipsum dolor sit amet consetetur sadipscing.</h2>
               <p>
                 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor consetetur sadipscing elitr, sed diam nonumy eirmod tempor dolor sit amet, sadipscing dolor sit amet, consetetur sed diam nonumy eirmod tempor consetetur amet eirmod amet consetetur sadipscing elitr, sed diam nonumy eirmod tempor dolor sit amet, eirmod sit consetetur sadipscing elitr, sed diam nonumy eirmod tempor dolor sit amet, consetetur
               </p>
@@ -271,13 +271,13 @@ class Produkte extends Component {
           </div>
           <div className="produkte_col produkte_col_mobile">
           <div className="produkte_col_row">
+          <h2>Lorem ipsum dolor sit amet consetetur sadipscing.</h2>
           <LazyLoad   offset={200} >
           <img src={basis}/>
           </LazyLoad>
           {loader}
           </div>
             <div className="produkte_col_row">
-              <h2>Lorem ipsum dolor sit amet consetetur sadipscing.</h2>
               <p>
                 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor consetetur sadipscing elitr, sed diam nonumy eirmod tempor dolor sit amet, sadipscing dolor sit amet, consetetur sed diam nonumy eirmod tempor consetetur amet eirmod amet consetetur sadipscing elitr, sed diam nonumy eirmod tempor dolor sit amet, eirmod sit consetetur sadipscing elitr, sed diam nonumy eirmod tempor dolor sit amet, consetetur
               </p>
@@ -286,13 +286,13 @@ class Produkte extends Component {
           <div className="produkte_col produkte_col_mobile">
 
             <div className="produkte_col_row">
+            <h2>Lorem ipsum dolor sit amet consetetur sadipscing.</h2>
             <LazyLoad  offset={200}>
             <img src={mobile2}/>
             </LazyLoad>
             {loader}
             </div>
             <div className="produkte_col_row">
-              <h2>Lorem ipsum dolor sit amet consetetur sadipscing.</h2>
               <p>
                 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor consetetur sadipscing elitr, sed diam nonumy eirmod tempor dolor sit amet, sadipscing dolor sit amet, consetetur sed diam nonumy eirmod tempor consetetur amet eirmod amet consetetur sadipscing elitr, sed diam nonumy eirmod tempor dolor sit amet, eirmod sit consetetur sadipscing elitr, sed diam nonumy eirmod tempor dolor sit amet, consetetur
               </p>
@@ -300,13 +300,13 @@ class Produkte extends Component {
           </div>
           <div className="produkte_col produkte_col_mobile">
             <div className="produkte_col_row">
+              <h2>Lorem ipsum dolor sit amet consetetur sadipscing.</h2>
               <LazyLoad  offset={200}>
                 <img src={epson_right}/>
               </LazyLoad>
               {loader}
             </div>
             <div className="produkte_col_row">
-              <h2>Lorem ipsum dolor sit amet consetetur sadipscing.</h2>
               <p>
                 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor consetetur sadipscing elitr, sed diam nonumy eirmod tempor dolor sit amet, sadipscing dolor sit amet, consetetur sed diam nonumy eirmod tempor consetetur amet eirmod amet consetetur sadipscing elitr, sed diam nonumy eirmod tempor dolor sit amet, eirmod sit consetetur sadipscing elitr, sed diam nonumy eirmod tempor dolor sit amet, consetetur
               </p>

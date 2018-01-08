@@ -25,21 +25,24 @@ class Footer extends Component {
             justifyContent: 'center',
             display: 'flex'
           }}>
-          <div className="md_width">
+          <div className="md_width" style={{width:'100%'}}>
             <div style={{
                 margin: 20,
                 flexDirection: 'row',
                 justifyContent: 'center',
-                alignItems: 'center'
+                alignItems: 'center',
+                alignSelf: 'self-end'
               }}>
-              <h3>NourPos</h3>
-              <ul>
-                <li>Über uns</li>
-                <li>AGB</li>
-                <li>Datenschutz</li>
-                <li>Impressum</li>
-              </ul>
-              <p>Copyrights 2018</p>
+                <div>
+                  <h3>NourPos</h3>
+                  <ul>
+                    <li>Über uns</li>
+                    <li>AGB</li>
+                    <li>Datenschutz</li>
+                    <li>Impressum</li>
+                  </ul>
+                  <p>Copyrights 2018</p>
+                </div>
             </div>
           </div>
         </section>

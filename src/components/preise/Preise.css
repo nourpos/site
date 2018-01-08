@@ -54,5 +54,6 @@
 }
 
 .angebot-mbile-row-mbile.angebot-row-basis,.angebot-mbile-row-mbile.angebot-row-pro,.angebot-mbile-row-mbile.angebot-row-pro-x{
-  padding: 6px;
+  padding: 16px;
+  border-radius: 7px;
 }
