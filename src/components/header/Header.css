@@ -166,3 +166,16 @@ header {
 .mobile .navbar-brand{
   top:5px;
 }
+
+
+a[href^="tel:"] {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+a[href^="tel:"]:before {
+    content: "\260E";
+    margin-right: 0.09em;
+    font-size: 18px;
+}

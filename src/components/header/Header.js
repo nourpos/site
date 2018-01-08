@@ -125,6 +125,22 @@ class Header extends Component {
       </a>
       <span style={{
           position: 'absolute',
+          right: 55,
+          top: 8,
+          margin: 0,
+          alignItems: 'center',
+          justifyContent: 'center',
+          cursor: 'pointer',
+          display:'flex',
+          width:34,
+          height:34,
+          backgroundColor:'tomato',
+          borderRadius:17
+        }}>
+          <a href="tel:1-562-867-5309"></a>
+      </span>
+      <span style={{
+          position: 'absolute',
           right: 10,
           top: 10,
           margin: 0,

@@ -218,59 +218,59 @@ class Preise extends React.Component {
                 <div style={{color:'white',flex:1}}><p></p></div>
               </div>
           </div>
-          <div style={{display:'flex',justifyContent:'flex-end',alignItems:'center',height:'95px',width:'100%',marginTop:'20px'}}>
-              <div className="angebot-mbile-row-mbile angebot-row-basis" style={{display:'flex',flexDirection:'column',height:'50px',flex:1,backgroundColor:'#f3f3f5',justifyContent: 'center',alignItems:'left'}}>
+          <div style={{display:'flex',justifyContent:'flex-end',alignItems:'center',height:'95px',width:'100%',marginTop:'25px',borderRadius:'7px',backgroundColor:'#f3f3f5'}}>
+              <div className="angebot-mbile-row-mbile angebot-row-basis" style={{display:'flex',flexDirection:'column',height:'50px',flex:1,justifyContent: 'center',alignItems:'left'}}>
                 Server + RFID Reader
               </div>
-              <div className="angebot-mbile-row-mbile angebot-row-basis" style={{color:"gray",display:'flex',flexDirection:'column',height:'50px',width:'60px',backgroundColor:'#f3f3f5',justifyContent:'center',alignItems:'center'}}>
+              <div className="angebot-mbile-row-mbile angebot-row-basis" style={{color:"gray",display:'flex',flexDirection:'column',height:'50px',width:'60px',justifyContent:'center',alignItems:'center'}}>
                 {checkIcon}
               </div>
-              <div className="angebot-mbile-row-mbile angebot-row-basis" style={{color:"#1159bc",display:'flex',flexDirection:'column',height:'50px',width:'60px',backgroundColor:'#f3f3f5',justifyContent:'center',alignItems:'center'}}>
+              <div className="angebot-mbile-row-mbile angebot-row-basis" style={{color:"#1159bc",display:'flex',flexDirection:'column',height:'50px',width:'60px',justifyContent:'center',alignItems:'center'}}>
                 {checkIcon}
               </div>
-              <div className="angebot-mbile-row-mbile angebot-row-basis" style={{color:"rgb(29, 29, 29)",display:'flex',flexDirection:'column',height:'50px',width:'60px',backgroundColor:'#f3f3f5',justifyContent:'center',alignItems:'center'}}>
+              <div className="angebot-mbile-row-mbile angebot-row-basis" style={{color:"rgb(29, 29, 29)",display:'flex',flexDirection:'column',height:'50px',width:'60px',justifyContent:'center',alignItems:'center'}}>
                 {checkIcon}
               </div>
           </div>
-          <div style={{display:'flex',justifyContent:'flex-end',alignItems:'center',height:'95px',width:'100%',marginTop:'20px'}}>
-              <div className="angebot-mbile-row-mbile angebot-row-basis" style={{display:'flex',flexDirection:'column',height:'50px',flex:1,backgroundColor:'#f3f3f5',justifyContent: 'center',alignItems:'left'}}>
+          <div style={{display:'flex',justifyContent:'flex-end',alignItems:'center',minHeight:'95px',width:'100%',marginTop:'20px',borderRadius:'7px',backgroundColor:'#f3f3f5'}}>
+              <div className="angebot-mbile-row-mbile angebot-row-basis" style={{display:'flex',flexDirection:'column',height:'50px',flex:1,justifyContent: 'center',alignItems:'left'}}>
                 Basis Tablet
               </div>
-              <div className="angebot-mbile-row-mbile angebot-row-basis" style={{color:"gray",display:'flex',flexDirection:'column',height:'50px',width:'60px',backgroundColor:'#f3f3f5',justifyContent:'center',alignItems:'center'}}>
+              <div className="angebot-mbile-row-mbile angebot-row-basis" style={{color:"gray",display:'flex',flexDirection:'column',height:'50px',width:'60px',justifyContent:'center',alignItems:'center'}}>
                 {checkIcon}
               </div>
-              <div className="angebot-mbile-row-mbile angebot-row-basis" style={{color:"#1159bc",display:'flex',flexDirection:'column',height:'50px',width:'60px',backgroundColor:'#f3f3f5',justifyContent:'center',alignItems:'center'}}>
+              <div className="angebot-mbile-row-mbile angebot-row-basis" style={{color:"#1159bc",display:'flex',flexDirection:'column',height:'50px',width:'60px',justifyContent:'center',alignItems:'center'}}>
                 {checkIcon}
               </div>
-              <div className="angebot-mbile-row-mbile angebot-row-basis" style={{color:"rgb(29, 29, 29)",display:'flex',flexDirection:'column',height:'50px',width:'60px',backgroundColor:'#f3f3f5',justifyContent:'center',alignItems:'center'}}>
+              <div className="angebot-mbile-row-mbile angebot-row-basis" style={{color:"rgb(29, 29, 29)",display:'flex',flexDirection:'column',height:'50px',width:'60px',justifyContent:'center',alignItems:'center'}}>
                 {checkIcon}
               </div>
           </div>
-          <div style={{display:'flex',justifyContent:'flex-end',alignItems:'center',height:'95px',width:'100%',marginTop:'20px'}}>
-              <div className="angebot-mbile-row-mbile angebot-row-basis" style={{display:'flex',flexDirection:'column',height:'50px',flex:1,backgroundColor:'#f3f3f5',justifyContent: 'center',alignItems:'left'}}>
+          <div style={{display:'flex',justifyContent:'flex-end',alignItems:'center',minHeight:'95px',width:'100%',marginTop:'20px',borderRadius:'7px',backgroundColor:'#f3f3f5'}}>
+              <div className="angebot-mbile-row-mbile angebot-row-basis" style={{display:'flex',flexDirection:'column',height:'50px',flex:1,justifyContent: 'center',alignItems:'left'}}>
                 Epson Drucker
               </div>
-              <div className="angebot-mbile-row-mbile angebot-row-basis" style={{color:"gray",display:'flex',flexDirection:'column',height:'50px',width:'60px',backgroundColor:'#f3f3f5',justifyContent:'center',alignItems:'center'}}>
+              <div className="angebot-mbile-row-mbile angebot-row-basis" style={{color:"gray",display:'flex',flexDirection:'column',height:'50px',width:'60px',justifyContent:'center',alignItems:'center'}}>
                 {checkIcon}
               </div>
-              <div className="angebot-mbile-row-mbile angebot-row-basis" style={{color:"#1159bc",display:'flex',flexDirection:'column',height:'50px',width:'60px',backgroundColor:'#f3f3f5',justifyContent:'center',alignItems:'center'}}>
+              <div className="angebot-mbile-row-mbile angebot-row-basis" style={{color:"#1159bc",display:'flex',flexDirection:'column',height:'50px',width:'60px',justifyContent:'center',alignItems:'center'}}>
                 {checkIcon}
               </div>
-              <div className="angebot-mbile-row-mbile angebot-row-basis" style={{color:"rgb(29, 29, 29)",display:'flex',flexDirection:'column',height:'50px',width:'60px',backgroundColor:'#f3f3f5',justifyContent:'center',alignItems:'center'}}>
+              <div className="angebot-mbile-row-mbile angebot-row-basis" style={{color:"rgb(29, 29, 29)",display:'flex',flexDirection:'column',height:'50px',width:'60px',justifyContent:'center',alignItems:'center'}}>
                 {checkIcon}
               </div>
           </div>
-          <div style={{display:'flex',justifyContent:'flex-end',alignItems:'center',height:'95px',width:'100%',marginTop:'20px'}}>
-              <div className="angebot-mbile-row-mbile angebot-row-basis" style={{display:'flex',flexDirection:'column',height:'50px',flex:1,backgroundColor:'#f3f3f5',justifyContent: 'center',alignItems:'left'}}>
+          <div style={{display:'flex',justifyContent:'flex-end',alignItems:'center',minHeight:'95px',width:'100%',marginTop:'20px',borderRadius:'7px',backgroundColor:'#f3f3f5'}}>
+              <div className="angebot-mbile-row-mbile angebot-row-basis" style={{display:'flex',flexDirection:'column',height:'50px',flex:1,justifyContent: 'center',alignItems:'left'}}>
                 Smartphones fürs Funk-Bonieren
               </div>
-              <div className="angebot-mbile-row-mbile angebot-row-basis" style={{color:"gray",display:'flex',flexDirection:'column',height:'50px',width:'60px',backgroundColor:'#f3f3f5',justifyContent:'center',alignItems:'center'}}>
+              <div className="angebot-mbile-row-mbile angebot-row-basis" style={{color:"gray",display:'flex',flexDirection:'column',height:'50px',width:'60px',justifyContent:'center',alignItems:'center'}}>
                 1
               </div>
-              <div className="angebot-mbile-row-mbile angebot-row-basis" style={{color:"#1159bc",display:'flex',flexDirection:'column',height:'50px',width:'60px',backgroundColor:'#f3f3f5',justifyContent:'center',alignItems:'center'}}>
+              <div className="angebot-mbile-row-mbile angebot-row-basis" style={{color:"#1159bc",display:'flex',flexDirection:'column',height:'50px',width:'60px',justifyContent:'center',alignItems:'center'}}>
                 4
               </div>
-              <div className="angebot-mbile-row-mbile angebot-row-basis" style={{color:"rgb(29, 29, 29)",display:'flex',flexDirection:'column',height:'50px',width:'60px',backgroundColor:'#f3f3f5',justifyContent:'center',alignItems:'center'}}>
+              <div className="angebot-mbile-row-mbile angebot-row-basis" style={{color:"rgb(29, 29, 29)",display:'flex',flexDirection:'column',height:'50px',width:'60px',justifyContent:'center',alignItems:'center'}}>
                 Unbeschr.
               </div>
           </div>
