@@ -1,9 +1,17 @@
 {
-  "main.css": "static/css/main.4d7e19d3.css",
-  "main.css.map": "static/css/main.4d7e19d3.css.map",
-  "main.js": "static/js/main.67528645.js",
-  "main.js.map": "static/js/main.67528645.js.map",
+  "main.css": "static/css/main.fe8ad81f.css",
+  "main.css.map": "static/css/main.fe8ad81f.css.map",
+  "main.js": "static/js/main.487ac766.js",
+  "main.js.map": "static/js/main.487ac766.js.map",
+  "static/media/basis.png": "static/media/basis.9d240722.png",
   "static/media/bg-layer.png": "static/media/bg-layer.b15f9339.png",
-  "static/media/cover.jpg": "static/media/cover.865d9541.jpg",
-  "static/media/mobileBasis.png": "static/media/mobileBasis.c23d92e2.png"
+  "static/media/car1.png": "static/media/car1.375ea23b.png",
+  "static/media/car2.png": "static/media/car2.4acb15a3.png",
+  "static/media/car6.png": "static/media/car6.591fd2e0.png",
+  "static/media/epson_right.png": "static/media/epson_right.833760d2.png",
+  "static/media/mobile2.png": "static/media/mobile2.6374e0ba.png",
+  "static/media/mobileBasis.png": "static/media/mobileBasis.c23d92e2.png",
+  "static/media/produkte.png": "static/media/produkte.1daa7dca.png",
+  "static/media/raspi_left.png": "static/media/raspi_left.0987f2ce.png",
+  "static/media/rfid_reader_right.png": "static/media/rfid_reader_right.77a8e804.png"
 }
