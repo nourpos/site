@@ -51,7 +51,7 @@
     justify-content: center;
 }
 .carousel {
-    max-height: 300px;
+    max-height: 475px;
     position: relative;
     background-color: #fff;
     flex: 1;
