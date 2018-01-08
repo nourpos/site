@@ -18,7 +18,6 @@
 }
 .page-cover .cover-bg-mask {
     background-image: url("../../img/bg-layer.png");
-    //background-image: url("../../img/cover.jpg");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;

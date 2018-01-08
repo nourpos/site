@@ -1,0 +1,87 @@
+.md_width {
+    max-width: 1170px;
+    display: flex;
+    margin-left: 15px;
+    margin-right: 15px;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.produkte_col {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  flex: 1;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.produkte_col.produkte_col_mobile{
+  flex-direction: column;
+}
+.produkte_col img{
+  max-height: 300px;
+}
+.produkte_col.produkte_col_mobile img{
+  max-height: 175px;
+}
+.produkte_col.produkte_col_mobile{
+  padding: 0;
+  margin: 0;
+}
+
+.produkte_col_row {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 375px;
+}
+
+.is-visible + span {
+    display: none;
+}
+
+
+.LazyLoad {
+    display: flex;
+    justify-content: center;
+}
+.carousel {
+    max-height: 300px;
+    position: relative;
+    background-color: #fff;
+    flex: 1;
+    margin-top:45px;
+    overflow: hidden;
+}
+
+.carousel::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 48%;
+  bottom: 0;
+  background: -webkit-linear-gradient(transparent, #1d1d1d) left repeat;
+}
+
+@-webkit-keyframes rotating /* Safari and Chrome */ {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.rotating {
+  animation: rotating 0.5s linear infinite;
+}
+
+.rfid_reader_right{
+  width: 85%;
+}

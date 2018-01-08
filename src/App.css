@@ -16,7 +16,9 @@ section._mobile::before {
 #section-5::before {
     background: white;
 }
-
+#preise::before {
+    background: white;
+}
 .App-intro {
   font-size: large;
 }
@@ -38,63 +40,25 @@ section._mobile::before {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    max-width: 70%;
+    max-width: 1170px;
     margin-left: auto;
     margin-right: auto;
     padding: 80px 0px;
     display: flex;
 }
 .left, .right{
-  flex-grow: 1;
-  max-width: 100%;
+  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
   padding-left: 15px;
   padding-right: 15px;
 }
+
 .row {
-  display: flex;
-  flex-wrap: wrap;
-  margin-right: -15px;
-  margin-left: -15px;
+    display: flex;
+    flex-direction: row;
 }
 .img-mobile{
-  width: auto;
-  height: 32vh;
-}
-
-#form1 {
-    flex-direction: column;
-    display: flex;
-}
-
-#form1 label{
-  text-align: left;
-  margin: 10px 10px 10px 0;
-  font-size: 11px;
-}
-#form1 input, #form1 button{
-  border: none;
-  padding: 10px;
-  margin-bottom: 10px;
-}
-#form1 button{
-  color: white;
-  background-color: #f57d00;
-}
-.footer h3{
-  color: white;
-}
-.footer ul{
-  margin: 0;
-  list-style-type:none;
-}
-.footer ul li{
-  color: gray;
-  cursor: pointer;
-}
-
-.footer ul li:hover{
-  color: white;
+  width: 90%;
 }

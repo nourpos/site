@@ -1,1 +1,20 @@
 
+#form1 {
+    flex-direction: column;
+    display: flex;
+}
+
+#form1 label{
+  text-align: left;
+  margin: 10px 10px 10px 0;
+  font-size: 11px;
+}
+#form1 input, #form1 button{
+  border: none;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+#form1 button{
+  color: white;
+  background-color: #f57d00;
+}

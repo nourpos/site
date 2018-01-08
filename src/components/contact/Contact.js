@@ -122,6 +122,49 @@ class Contact extends Component {
     super(props);
     this.state = {};
   }
+
+  mobileForm() {
+    return (<Form validateError={errorValidator} onSubmit={submittedValues => {
+        this.setState({submittedValues});
+        console.log(submittedValues)
+      }}>
+      {
+        formApi => (<form onSubmit={formApi.submitForm} id="form1" className="mb-4">
+          <label htmlFor="Betrieb">Name des Betriebs</label>
+          <Text field="Betrieb" id="Betrieb"/>
+          <div style={{
+              display: 'flex',
+              flexDirection: 'column'
+            }}>
+            <div style={{
+                flex: 1,
+                flexDirection: 'column',
+                display: 'flex'
+              }}>
+              <label htmlFor="plz">Postleitzahl</label>
+              <Text field="plz" id="plz"/>
+            </div>
+            <div style={{
+                flex: .1
+              }}></div>
+            <div style={{
+                flex: 1,
+                flexDirection: 'column',
+                display: 'flex'
+              }}>
+              <label htmlFor="stadt">Stadt</label>
+              <Text field="stadt" id="stadt"/>
+            </div>
+          </div>
+          <label htmlFor="Betrieb">E-Mail Adresse</label>
+          <Text field="email" id="email"/>
+          <label htmlFor="tel">Telefon</label>
+          <Text field="tel" id="tel"/>
+          <button type="submit" className="btn btn-primary">Jetz Kontaktieren!</button>
+        </form>)
+      }
+    </Form>);
+  }
   desktopForm() {
     return (<Form validateError={errorValidator} onSubmit={submittedValues => {
         this.setState({submittedValues});
@@ -165,51 +208,44 @@ class Contact extends Component {
     </Form>);
   }
 
-  renderForm() {
-    return this.desktopForm()
-  }
-  renderText(){
-    return(
-      <div>
+  renderText() {
+    return (<div>
       <h1 style={{
           textAlign: 'center',
-          color:'#fff'
+          color: '#fff'
         }}>Passt NourPos zu Ihrem Geschäft?</h1>
-        <p style={{
-            textAlign: 'left',
-            color:'#fff',
-            fontSize:'1.2em'
-          }}>
-            Unsere Kundenberater sind selbst gestandene Gastronomen
-            und wissen, worauf es ankommt. Einfach jetzt in unser Kontaktformular
-            eintragen, anrufen unter 0800 6733724 oder eine E-Mail an hello@orderbird.com senden.
-        </p>
-      </div>
-    )
+      <p style={{
+          textAlign: 'left',
+          color: '#fff',
+          fontSize: '1.2em'
+        }}>
+        Unsere Kundenberater sind selbst gestandene Gastronomen und wissen, worauf es ankommt. Einfach jetzt in unser Kontaktformular eintragen, anrufen unter 0800 12345678 oder eine E-Mail an hello@nourpos.com senden.
+      </p>
+    </div>)
   }
 
-  render() { 
+  render() {
     return (<div>
       <Desktop>
         <section style={{
             flexDirection: 'column',
             minHeight: this.props.minHeight,
             backgroundColor: '#1ab7ea'
-          }} id="section-5" className="_desktop">
+          }} id="kontakt" className="_desktop">
 
           <div style={{
               marginLeft: 'auto',
               marginRight: 'auto',
               maxWidth: '42%',
               display: 'flex',
-              flexDirection: 'column',
+              flexDirection: 'column'
             }}>
             <div>
               {this.renderText()}
             </div>
 
             <div>
-                {this.renderForm()}
+              {this.desktopForm()}
             </div>
           </div>
         </section>
@@ -219,26 +255,21 @@ class Contact extends Component {
             flexDirection: 'column',
             minHeight: this.props.minHeight,
             backgroundColor: '#1ab7ea'
-          }} id="section-5" className="_tablet">
+          }} id="kontakt" className="_mobile">
+
           <div style={{
               marginLeft: 'auto',
               marginRight: 'auto',
-              maxWidth: '70%',
-              display: 'flex'
+              maxWidth: '95%',
+              display: 'flex',
+              flexDirection: 'column'
             }}>
-            <div style={{
-                flex: 1
-              }}>
-              <h3>JETZT KOSTENLOSE DEMO ANFORDERN!</h3>
-              <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
+            <div>
+              {this.renderText()}
             </div>
-            <div style={{
-                flex: 2,
-                marginLeft: 20
-              }}>
-              <div>
-                {this.renderForm()}
-              </div>
+
+            <div>
+              {this.mobileForm()}
             </div>
           </div>
         </section>
@@ -248,26 +279,21 @@ class Contact extends Component {
             flexDirection: 'column',
             minHeight: this.props.minHeight,
             backgroundColor: '#1ab7ea'
-          }} id="section-5" className="_mobile">
+          }} id="kontakt" className="_mobile">
+
           <div style={{
               marginLeft: 'auto',
               marginRight: 'auto',
-              maxWidth: '70%',
-              display: 'flex'
+              maxWidth: '95%',
+              display: 'flex',
+              flexDirection: 'column'
             }}>
-            <div style={{
-                flex: 1
-              }}>
-              <h3>JETZT KOSTENLOSE DEMO ANFORDERN!</h3>
-              <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
+            <div>
+              {this.renderText()}
             </div>
-            <div style={{
-                flex: 2,
-                marginLeft: 20
-              }}>
-              <div>
-                {this.renderForm()}
-              </div>
+
+            <div>
+              {this.mobileForm()}
             </div>
           </div>
         </section>

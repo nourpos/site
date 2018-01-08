@@ -1,0 +1,68 @@
+
+.carousel-list-item {
+  display: flex;
+  flex: 1;
+  position: relative;
+}
+.blueTextBox{
+  color: #fdfdfd;
+  background: #6bbef8;
+  top: 110px;
+  transition: 1.2s  0.4s;
+  width: 28%;
+}
+.whiteTextBox{
+  color: #70828f;
+  background-color:#ffffff;
+  top: 180px;
+  transition: 1.5s  0.4s;
+  width: 26%;
+}
+.orangeTextBox {
+  color: #fdfdfd;
+  background: #f6a258;
+  top: 260px;
+  transition: 2s  0.4s;
+  width: 24%;
+}
+
+.TextBox {
+  position: absolute;
+  left: -300px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Roboto";
+  padding: 10px 15px;
+  z-index: 0;
+  min-width: 250px;
+  display: flex;
+  text-align: left;
+}
+.slick-active .TextBox {
+  transform: translateX(100%);
+  z-index: 7;
+}
+
+.slick-dots li button::before {
+    font-size: 15px;
+}
+
+.slick-prev {
+    left: 30px;
+    z-index: 4;
+}
+
+.slick-next {
+    right: 30px;
+    z-index: 4;
+}
+
+.slick-dots {
+    bottom: 30px;
+    z-index: 4;
+}
+.slick-slide img {
+    z-index: 5;
+}

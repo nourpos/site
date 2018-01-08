@@ -1,0 +1,30 @@
+.md4 {
+    width: 33.33%;
+    box-shadow: 1px 0px 3px 2px #BDBDBD;
+    margin: 25px;
+    padding: 15px;
+    cursor: pointer;
+    border-radius:5px;
+}
+.md4:hover {
+    box-shadow: 1px 0px 10px 2px #BDBDBD;
+    transition: 2s easing-out;
+}
+.md1 {
+  max-width: 1170px;
+}
+.md0 {
+  width: 100%;
+}
+.features {
+  background-color: #fff;
+  color: #131418;
+}
+.features .fa {
+  color: #e4405f;
+}
+
+.features h2 {
+    margin: 35px 4px;
+    color: #e4405f;
+}

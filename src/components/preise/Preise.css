@@ -1,0 +1,58 @@
+.angebot-basis::after {
+    border: 12px solid hsla(240,9%,96%,0);
+    border-top: 12px solid #f3f3f5;
+    content: "";
+    height: 0;
+    left: 50%;
+    margin-left: -12px;
+    pointer-events: none;
+    position: absolute;
+    top: 100%;
+    width: 0;
+}
+.angebot-pro::after {
+    border: 12px solid hsla(240,9%,96%,0);
+    border-top: 12px solid #1159bc;
+    content: "";
+    height: 0;
+    left: 50%;
+    margin-left: -12px;
+    pointer-events: none;
+    position: absolute;
+    top: 100%;
+    width: 0;
+}
+.angebot-pro-x::after {
+    border: 12px solid hsla(240,9%,96%,0);
+    border-top: 12px solid rgb(29, 29, 29);
+    content: "";
+    height: 0;
+    left: 50%;
+    margin-left: -12px;
+    pointer-events: none;
+    position: absolute;
+    top: 100%;
+    width: 0;
+}
+.angebot{
+  position: relative;
+  margin: 0 5px;
+  padding: 25px;
+  font-size: 25px;
+}
+.angebot-row{
+  position: relative;
+  padding: 30px;
+  font-size: 25px;
+}
+.angebot-row-mobile,.angebot-mobile{
+  font-size: 16px;
+}
+.angebot-mbile.angebot-basis,.angebot-mbile.angebot-pro,.angebot-mbile.angebot-pro-x {
+  margin: 6px;
+  position: relative;
+}
+
+.angebot-mbile-row-mbile.angebot-row-basis,.angebot-mbile-row-mbile.angebot-row-pro,.angebot-mbile-row-mbile.angebot-row-pro-x{
+  padding: 6px;
+}

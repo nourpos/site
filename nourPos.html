@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html class="wf-titilliumweb-n3-active wf-titilliumweb-n4-active wf-titilliumweb-n7-active wf-sansserif-n4-inactive wf-active" lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <!--
+      manifest.json provides metadata used when your web app is added to the
+      homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
+    -->
+    <link rel="manifest" href="http://localhost:3000/manifest.json">
+    <link rel="shortcut icon" href="http://localhost:3000/favicon.ico">
+    <link href="nourPos_files/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="nourPos_files/slick.css">
+    <link rel="stylesheet" type="text/css" href="nourPos_files/slick-theme.css">
+    <!--
+      Notice the use of  in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>nourPos</title>
+  <style></style><style type="text/css">body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Titillium Web', sans-serif
+}
+</style><style type="text/css">section{
+  background-color: white;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+section._desktop::before {
+    content: "";
+    height: 65px;
+    width: 100%;
+}
+section._mobile::before {
+    content: "";
+    height: 50px;
+    width: 100%;
+}
+#section-5::before {
+    background: white;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.spy {
+  margin-top:50px;
+  text-align:left;
+  -webkit-box-shadow: 2px 1 4px #000;
+          box-shadow: 2px 1 4px #000;
+  -webkit-transition: 0.65s ease-in-out;
+  -o-transition: 0.65s ease-in-out;
+  transition: 0.65s ease-in-out;
+}
+.spy.close {
+  display: none;
+}
+.spy a{
+  display: block;
+}
+
+.about-wrapper {
+    -ms-flex-direction: row;
+        flex-direction: row;
+    -ms-flex-pack: center;
+        justify-content: center;
+    -ms-flex-align: center;
+        align-items: center;
+    max-width: 1170px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 80px 0px;
+    display: -ms-flexbox;
+    display: flex;
+}
+.left, .right{
+  -ms-flex: 1 1;
+      flex: 1 1;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    margin-right: -15px;
+    margin-left: -15px;
+    -ms-flex-direction: row;
+        flex-direction: row;
+}
+.img-mobile{
+  width: auto;
+  height: 45vh;
+}
+</style><style type="text/css">header {
+  z-index: 9;
+}
+.desktop{
+  height: 65px;
+  padding: 20px;
+  position: fixed;;
+  right:0;
+  -webkit-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+
+.App-header.desktop {
+  top: 35px;
+}
+
+.App-header-at-top.desktop {
+  top: 0px;
+}
+
+.App-header.desktop::before{
+  content: "";
+  position: fixed;
+  left: 0;
+  height: 0;
+  width: 100%;
+  -webkit-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  top: 0;
+  z-index: -1;
+}
+
+.App-header-at-top.desktop::before{
+  content: "";
+  position: fixed;
+  left: 0;
+  height: 65px;
+  width: 100%;
+  -webkit-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  z-index: -1;
+  background: #fff;
+  -webkit-box-shadow: 2px 0 8px rgba(0, 0, 0, 0.25);
+          box-shadow: 2px 0 8px rgba(0, 0, 0, 0.25);
+  top: 0;
+}
+
+.App-header ul, .App-header-at-top ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.mobile ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: black;
+  width: 100%;
+}
+
+.App-header.desktop ul li,.App-header-at-top.desktop ul li{
+  float: left;
+}
+
+.App-header.desktop li a, .App-header-at-top.desktop li a{
+  padding: 10px 15px;
+  text-decoration: none;
+  font-size: 13;
+  -webkit-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+.App-header.desktop li a{
+  color: gray;
+}
+.App-header-at-top.desktop li a{
+  color: gray;
+}
+.App-header.desktop  .is-current a{
+  color: white;
+}
+.App-header-at-top.desktop  .is-current a{
+  color: black;
+}
+.App-header.desktop a:hover{
+  color: white;
+}
+.App-header-at-top.desktop a:hover{
+  color: black;
+}
+
+.desktop .navbar-brand {
+  position: fixed;
+  left: 70px;
+  text-decoration: none;
+  font-size: 13px;
+  -webkit-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  display: -ms-flexbox;
+  display: flex;
+}
+.desktop .navbar-brand .text {
+  font-size: 120%;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+.desktop .navbar-brand img {
+  height: 50px;
+}
+.App-header-at-top.desktop .navbar-brand{
+  top:5px;
+}
+.App-header.desktop .navbar-brand{
+  top:35px;
+}
+.App-header-at-top.desktop .navbar-brand .text{
+  color: black;
+}
+.App-header.desktop .navbar-brand .text{
+  color: white;
+}
+
+
+
+.mobile ul li,.mobile ul li{
+  float: block;
+  padding: 16px;
+}
+
+.mobile {
+  height: 50px;
+  padding: 0px;
+  position: fixed;;
+  right:0;
+  background: #fff;
+  -webkit-box-shadow: 2px 0 8px rgba(0, 0, 0, 0.25);
+          box-shadow: 2px 0 8px rgba(0, 0, 0, 0.25);
+  width: 100%;
+}
+.mobile ul li a{
+  text-decoration: none;
+  color: gray;
+}
+.mobile ul li.is-current a{
+  color: white;
+}
+.mobile ul li a:hover{
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.mobile .navbar-brand {
+  position: fixed;
+  left: 10px;
+  text-decoration: none;
+  font-size: 12;
+  -webkit-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  display: -ms-flexbox;
+  display: flex;
+  color: black;
+}
+.mobile .navbar-brand .text {
+  font-size: 95%;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+.mobile .navbar-brand img {
+  height: 35px;
+}
+.mobile .navbar-brand{
+  top:5px;
+}
+</style><style type="text/css">.page-cover {
+    width: 100%;
+    position: fixed;
+    height: 120%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    overflow: hidden;
+}
+.page-cover .cover-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+.page-cover .cover-bg-mask {
+    background-image: url(/static/media/bg-layer.b15f9339.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+</style><style type="text/css">.md4 {
+    width: 33.33%;
+    -webkit-box-shadow: 1px 0px 3px 2px #BDBDBD;
+            box-shadow: 1px 0px 3px 2px #BDBDBD;
+    margin: 25px;
+    padding: 15px;
+    cursor: pointer;
+    border-radius:5px;
+}
+.md4:hover {
+    -webkit-box-shadow: 1px 0px 10px 2px #BDBDBD;
+            box-shadow: 1px 0px 10px 2px #BDBDBD;
+    -webkit-transition: 2s easing-out;
+    -o-transition: 2s easing-out;
+    transition: 2s easing-out;
+}
+.md1 {
+  width: 100%;
+}
+
+.features {
+  background-color: #fff;
+  color: #131418;
+}
+.features .fa {
+  color: #e4405f;
+}
+
+.features h2 {
+    margin: 35px 4px;
+    color: #e4405f;
+}
+</style><style type="text/css">.md_width {
+    max-width: 1170px;
+    display: -ms-flexbox;
+    display: flex;
+    margin-left: 15px;
+    margin-right: 15px;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    -ms-flex-pack: center;
+        justify-content: center;
+    -ms-flex-align: center;
+        align-items: center;
+}
+
+.produkte_col {
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 15px;
+  margin-right: 15px;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  width: 100%;
+  -ms-flex: 1 1;
+      flex: 1 1;
+  padding: 20px;
+}
+
+.produkte_col_row {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex: 1 1;
+      flex: 1 1;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  min-height: 375px;
+}
+
+.produkte_col_row img {
+  max-width: 100%;
+  -webkit-transition: all 2s ease-in-out;
+  -o-transition: all 2s ease-in-out;
+  transition: all 2s ease-in-out;
+}
+
+.mobile2 {
+  width: 35%;
+}
+.LazyLoad {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+        justify-content: center;
+}
+.carousel {
+    min-height: 300px;
+    position: relative;
+    background-color: #34465d;
+    padding: 35px;
+    -ms-flex: 1 1;
+        flex: 1 1;
+}
+.carousel::before,.carousel::after {
+  width: 100%;
+  height: 20px;
+  content: "";
+  position: absolute;
+  left: 0;
+}
+.carousel::before{
+  top: 0;
+}
+.carousel::after {
+  bottom: 0;
+}
+</style><style type="text/css">
+.carousel-list-item {
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex: 1 1;
+      flex: 1 1;
+}
+</style><style type="text/css">._SitThW {
+    color: #283664;
+    position: relative;
+    padding-right: 62px;
+}
+._SitThW ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.checkIcon {
+    display: -ms-flexbox;
+    display: flex;
+    margin-left: 25px;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: #25D366;
+    -ms-flex-pack: center;
+        justify-content: center;
+    -ms-flex-align: center;
+        align-items: center;
+    color: white;
+    position: absolute;
+    right: 0;
+}
+
+.functionen-text{
+  text-align: left;
+}
+</style><style type="text/css">
+#form1 {
+    -ms-flex-direction: column;
+        flex-direction: column;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+#form1 label{
+  text-align: left;
+  margin: 10px 10px 10px 0;
+  font-size: 11px;
+}
+#form1 input, #form1 button{
+  border: none;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+#form1 button{
+  color: white;
+  background-color: #f57d00;
+}
+</style><link rel="stylesheet" href="nourPos_files/css.css" media="all"><style type="text/css">.footer h3, .footer p {
+    color: white;
+    padding-left: 40px;
+}
+.footer ul{
+  margin: 0;
+  list-style-type:none;
+}
+.footer ul li{
+  color: gray;
+  cursor: pointer;
+}
+
+.footer ul li:hover{
+  color: white;
+}
+</style></head>
+  <body style="background-color:#1d1d1d">
+    <noscript>
+      You need to enable JavaScript to run this app.
+    </noscript>
+    <div id="root"><div class="App"><div><header class="App-header desktop"><a class="navbar-brand" href="#" style="flex-direction: row; justify-content: center; align-items: center;"><span class="logo"><img class="img-logo" src="data:image/png;base64,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" alt="Logo"></span><span class="text">NourPos</span></a><div><ul class=""><li class="is-current"><a href="#home">ÜBER UNS</a></li><li class=""><a href="#produkte">PRODUKTE</a></li><li class=""><a href="#functionen">FUNCTIONEN</a></li><li class=""><a href="#preise">PREISE</a></li><li class=""><a href="#kontakt">KONTAKT</a></li></ul></div></header></div><div class="page-cover"><div class="cover-bg"></div><div class="cover-bg-mask"></div></div><div><section style="height: auto; background-color: transparent; display: flex; flex-direction: column;" id="home"><div class="about" style="flex: 1 1 0%; display: flex; min-height: 943px;"><div class="about-wrapper"><div class="row"><div class="col left" style="flex-direction: column;"><div style="text-align: left;"><h1 style="color: white; font-size: 30px;">Keine monatliche Gebühr, keine Verträge.</h1><h3 style="color: white;">Ein
+ elektronisches Kassensystem für iPads, das alle Funktionen 
+herkömmlicher Kassensysteme bietet, nur einen Bruchteil kostet und 
+weniger Platz auf dem Tresen wegnimmt.</h3></div></div><div class="col right"><img class="img-mobile" src="nourPos_files/mobileBasis.png" alt="mobileLogo"></div></div></div></div><div><div class="features" style="min-height: 350px; justify-content: center; display: flex;"><div style="display: flex; width: 1170px; margin-left: auto; margin-right: auto; justify-content: center; align-items: center; flex-direction: column;"><h2>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor</h2><div style="display: flex;"><div class="md4" style="display: flex; justify-content: center; align-items: center; flex-direction: column; border-width: 1px;"><div style="width: 80px; height: 80px; background-color: white; justify-content: center; align-items: center; border-radius: 40px; display: flex;"><span aria-hidden="true" class="fa fa-undefined fa-4x fa-pie-chart"></span></div><p>Geringe Kosten</p><p>Sparen Sie Geld und kaufen Sie sich Eis dafür :)</p></div><div class="md4" style="display: flex; justify-content: center; align-items: center; flex-direction: column;"><div style="width: 80px; height: 80px; background-color: white; justify-content: center; align-items: center; border-radius: 40px; display: flex;"><span aria-hidden="true" class="fa fa-undefined fa-4x fa-thumbs-o-up"></span></div><p>Einfache Bedienung</p><p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor</p></div><div class="md4" style="display: flex; justify-content: center; align-items: center; flex-direction: column;"><div style="width: 80px; height: 80px; background-color: white; justify-content: center; align-items: center; border-radius: 40px; display: flex;"><span aria-hidden="true" class="fa fa-undefined fa-4x fa-check"></span></div><p>Zuverlässig</p><p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor</p></div></div></div></div></div></section></div><div><section style="min-height: 943px; flex-direction: column;" id="produkte" class="_desktop"><div class="md_width"><h1>NourPos Hardware-Box</h1><h3 style="color: gray;">Eine Box, alles drin – Starten Sie direkt mit dem Bonieren</h3><div class="produkte_col"><div class="produkte_col_row"><div class="produkte_col_row"><div class="LazyLoad is-visible"><img src="nourPos_files/produkte.png"></div></div></div></div><div class="produkte_col"><div class="produkte_col_row"><div class="LazyLoad is-visible"><img src="nourPos_files/raspi_left.png"></div></div><div class="produkte_col_row"><h2>Lorem ipsum dolor sit amet consetetur sadipscing.</h2><p>Lorem
+ ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy 
+eirmod tempor consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+ dolor sit amet, sadipscing dolor sit amet, consetetur sed diam nonumy 
+eirmod tempor consetetur amet eirmod amet consetetur sadipscing elitr, 
+sed diam nonumy eirmod tempor dolor sit amet, eirmod sit consetetur 
+sadipscing elitr, sed diam nonumy eirmod tempor dolor sit amet, 
+consetetur</p></div></div><div class="produkte_col"><div class="produkte_col_row"><h2>Lorem ipsum dolor sit amet consetetur sadipscing.</h2><p>Lorem
+ ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy 
+eirmod tempor consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+ dolor sit amet, sadipscing dolor sit amet, consetetur sed diam nonumy 
+eirmod tempor consetetur amet eirmod amet consetetur sadipscing elitr, 
+sed diam nonumy eirmod tempor dolor sit amet, eirmod sit consetetur 
+sadipscing elitr, sed diam nonumy eirmod tempor dolor sit amet, 
+consetetur</p></div><div class="produkte_col_row"><div class="LazyLoad is-visible"><img src="nourPos_files/basis.png"></div></div></div><div class="produkte_col"><div class="produkte_col_row"><div class="LazyLoad is-visible"><img class="mobile2" src="nourPos_files/mobile2.png"></div></div><div class="produkte_col_row"><h2>Lorem ipsum dolor sit amet consetetur sadipscing.</h2><p>Lorem
+ ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy 
+eirmod tempor consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+ dolor sit amet, sadipscing dolor sit amet, consetetur sed diam nonumy 
+eirmod tempor consetetur amet eirmod amet consetetur sadipscing elitr, 
+sed diam nonumy eirmod tempor dolor sit amet, eirmod sit consetetur 
+sadipscing elitr, sed diam nonumy eirmod tempor dolor sit amet, 
+consetetur</p></div></div><div class="produkte_col"><div class="produkte_col_row"><h2>Lorem ipsum dolor sit amet consetetur sadipscing.</h2><p>Lorem
+ ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy 
+eirmod tempor consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+ dolor sit amet, sadipscing dolor sit amet, consetetur sed diam nonumy 
+eirmod tempor consetetur amet eirmod amet consetetur sadipscing elitr, 
+sed diam nonumy eirmod tempor dolor sit amet, eirmod sit consetetur 
+sadipscing elitr, sed diam nonumy eirmod tempor dolor sit amet, 
+consetetur</p></div><div class="produkte_col_row"><div class="LazyLoad is-visible"><img src="nourPos_files/epson_right.png"></div></div></div></div><div class="carousel"><div class="slick-initialized slick-slider"><button type="button" data-role="none" class="slick-arrow slick-prev" style="display: block;"> Previous</button><div class="slick-list"><div class="slick-track" style="opacity: 1; transform: translate3d(-1837px, 0px, 0px); width: 16533px;"><div data-index="-1" class="slick-slide slick-cloned" style="width: 1837px;"><div class="carousel-list-item"><h3>7</h3></div></div><div data-index="0" class="slick-slide slick-active" tabindex="-1" style="outline: medium none; width: 1837px;"><div class="carousel-list-item"><div><img src="nourPos_files/basis.png"></div></div></div><div data-index="1" class="slick-slide" tabindex="-1" style="outline: medium none; width: 1837px;"><div class="carousel-list-item"><div><img src="nourPos_files/basis.png"></div></div></div><div data-index="2" class="slick-slide" tabindex="-1" style="outline: medium none; width: 1837px;"><div class="carousel-list-item"><h3>3</h3></div></div><div data-index="3" class="slick-slide" tabindex="-1" style="outline: medium none; width: 1837px;"><div class="carousel-list-item"><h3>4</h3></div></div><div data-index="4" class="slick-slide" tabindex="-1" style="outline: medium none; width: 1837px;"><div class="carousel-list-item"><h3>5</h3></div></div><div data-index="5" class="slick-slide" tabindex="-1" style="outline: medium none; width: 1837px;"><div class="carousel-list-item"><h3>6</h3></div></div><div data-index="6" class="slick-slide" tabindex="-1" style="outline: medium none; width: 1837px;"><div class="carousel-list-item"><h3>7</h3></div></div><div data-index="7" class="slick-slide slick-cloned" style="width: 1837px;"><div class="carousel-list-item"><div><img src="nourPos_files/basis.png"></div></div></div></div></div><button type="button" data-role="none" class="slick-arrow slick-next" style="display: block;"> Next</button><ul class="slick-dots" style="display: block;"><li class="slick-active"><button>1</button></li><li class=""><button>2</button></li><li class=""><button>3</button></li><li class=""><button>4</button></li><li class=""><button>5</button></li><li class=""><button>6</button></li><li class=""><button>7</button></li></ul></div></div></section></div><section style="flex-direction: column; min-height: 943px; background-color: rgb(255, 255, 255);" id="functionen" class="_desktop"><div class="md_width"><h3>Vorteile und Funktionen</h3><div class="_SitThW"><ul><li><div style="display: flex; flex-direction: row; justify-content: left; align-items: center;"><div><p class="functionen-text">Verkaufsübersichten und tägliche Umsatzberichte für bessere geschäftliche Entscheidungen</p></div><span class="checkIcon"><span aria-hidden="true" class="fa fa-check fa-1x check"></span></span></div></li><li><div style="display: flex; flex-direction: row; justify-content: left; align-items: center;"><div><p class="functionen-text">Lager- und Bestandsmanagement zur effizienten Planung von Lieferantenbestellungen</p></div><span class="checkIcon"><span aria-hidden="true" class="fa fa-check fa-1x check"></span></span></div></li><li><div style="display: flex; flex-direction: row; justify-content: left; align-items: center;"><div><p class="functionen-text">Zahlungen in bar, per Karte oder NFC annehmen und digitale Quittungen senden</p></div><span class="checkIcon"><span aria-hidden="true" class="fa fa-check fa-1x check"></span></span></div></li><li><div style="display: flex; flex-direction: row; justify-content: left; align-items: center;"><div><p class="functionen-text">Verschiedene Funktionen für die Gastronomie wie offene und geteilte Rechnungen sowie Tischmanagement</p></div><span class="checkIcon"><span aria-hidden="true" class="fa fa-check fa-1x check"></span></span></div></li><li><div style="display: flex; flex-direction: row; justify-content: left; align-items: center;"><div><p class="functionen-text">Verkaufsübersichten und tägliche Umsatzberichte für bessere geschäftliche Entscheidungen</p></div><span class="checkIcon"><span aria-hidden="true" class="fa fa-check fa-1x check"></span></span></div></li><li><div style="display: flex; flex-direction: row; justify-content: left; align-items: center;"><div><p class="functionen-text">Lager- und Bestandsmanagement zur effizienten Planung von Lieferantenbestellungen</p></div><span class="checkIcon"><span aria-hidden="true" class="fa fa-check fa-1x check"></span></span></div></li><li><div style="display: flex; flex-direction: row; justify-content: left; align-items: center;"><div><p class="functionen-text">Annahme von Bestellungen am Tisch auch ohne Internetverbindung für komplette Mobilität</p></div><span class="checkIcon"><span aria-hidden="true" class="fa fa-check fa-1x check"></span></span></div></li><li><div style="display: flex; flex-direction: row; justify-content: left; align-items: center;"><div><p class="functionen-text">Verkaufsübersichten und tägliche Umsatzberichte für bessere geschäftliche Entscheidungen</p></div><span class="checkIcon"><span aria-hidden="true" class="fa fa-check fa-1x check"></span></span></div></li><li><div style="display: flex; flex-direction: row; justify-content: left; align-items: center;"><div><p class="functionen-text">Lager- und Bestandsmanagement zur effizienten Planung von Lieferantenbestellungen</p></div><span class="checkIcon"><span aria-hidden="true" class="fa fa-check fa-1x check"></span></span></div></li><li><div style="display: flex; flex-direction: row; justify-content: left; align-items: center;"><div><p class="functionen-text">Annahme von Bestellungen am Tisch auch ohne Internetverbindung für komplette Mobilität</p></div><span class="checkIcon"><span aria-hidden="true" class="fa fa-check fa-1x check"></span></span></div></li><li><div style="display: flex; flex-direction: row; justify-content: left; align-items: center;"><div><p class="functionen-text">Verkaufsübersichten und tägliche Umsatzberichte für bessere geschäftliche Entscheidungen</p></div><span class="checkIcon"><span aria-hidden="true" class="fa fa-check fa-1x check"></span></span></div></li><li><div style="display: flex; flex-direction: row; justify-content: left; align-items: center;"><div><p class="functionen-text">Annahme von Bestellungen am Tisch auch ohne Internetverbindung für komplette Mobilität</p></div><span class="checkIcon"><span aria-hidden="true" class="fa fa-check fa-1x check"></span></span></div></li><li><div style="display: flex; flex-direction: row; justify-content: left; align-items: center;"><div><p class="functionen-text">Verkaufsübersichten und tägliche Umsatzberichte für bessere geschäftliche Entscheidungen</p></div><span class="checkIcon"><span aria-hidden="true" class="fa fa-check fa-1x check"></span></span></div></li></ul></div></div></section><section style="min-height: 943px; flex-direction: column;" id="preise" class="_desktop">PREISE</section><div><section style="flex-direction: column; min-height: 943px; background-color: rgb(26, 183, 234);" id="kontakt" class="_desktop"><div style="margin-left: auto; margin-right: auto; max-width: 42%; display: flex; flex-direction: column;"><div><div><h1 style="text-align: center; color: rgb(255, 255, 255);">Passt NourPos zu Ihrem Geschäft?</h1><p style="text-align: left; color: rgb(255, 255, 255); font-size: 1.2em;">Unsere
+ Kundenberater sind selbst gestandene Gastronomen und wissen, worauf es 
+ankommt. Einfach jetzt in unser Kontaktformular eintragen, anrufen unter
+ 0800 12345678 oder eine E-Mail an hello@nourpos.com senden.</p></div></div><div><form id="form1" class="mb-4"><label for="Betrieb">Name des Betriebs</label><input id="Betrieb"><div style="display: flex; flex-direction: row;"><div style="flex: 1 1 0%; flex-direction: column; display: flex;"><label for="plz">Postleitzahl</label><input id="plz"></div><div style="flex: 0.1 1 0%;"></div><div style="flex: 1 1 0%; flex-direction: column; display: flex;"><label for="stadt">Stadt</label><input id="stadt"></div></div><label for="Betrieb">E-Mail Adresse</label><input id="email"><label for="tel">Telefon</label><input id="tel"><button type="submit" class="btn btn-primary">Jetz Kontaktieren!</button></form></div></div></section></div><div><section class="footer" style="height: 300px; background-color: rgb(29, 29, 29); justify-content: center; display: flex;"><div style="display: flex; width: 70%;"><div style="margin: 20px; flex-direction: row; justify-content: center; align-items: center;"><h3>NourPos</h3><ul><li>Über uns</li><li>AGB</li><li>Datenschutz</li><li>Impressum</li></ul><p>Copyrights 2018</p></div></div></section></div></div></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  <script type="text/javascript" src="nourPos_files/bundle.js"></script>
+
+</body></html>

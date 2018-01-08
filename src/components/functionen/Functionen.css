@@ -1,0 +1,34 @@
+._SitThW {
+    color: #283664;
+    position: relative;
+    padding-right: 62px;
+}
+._SitThW ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.xs_width{
+  width: 100%;
+  padding: 10px;
+  font-size: 16px !important;
+  box-sizing: border-box;
+}
+
+.checkIcon {
+    display: flex;
+    margin-left: 25px;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: #25D366;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    position: absolute;
+    right: 0;
+}
+
+.functionen-text{
+  text-align: left;
+}

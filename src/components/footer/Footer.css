@@ -1,0 +1,16 @@
+.footer h3, .footer p {
+    color: white;
+    padding-left: 40px;
+}
+.footer ul{
+  margin: 0;
+  list-style-type:none;
+}
+.footer ul li{
+  color: gray;
+  cursor: pointer;
+}
+
+.footer ul li:hover{
+  color: white;
+}
