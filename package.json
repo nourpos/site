@@ -1,9 +1,10 @@
 {
   "name": "site",
-  "homepage": "https://nourpos.github.io/site",
+  "homepage": "http://nourpos.com",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.17.1",
     "gh-pages": "^1.1.0",
     "history": "^4.7.2",
     "react": "^16.2.0",
@@ -12,6 +13,7 @@
     "react-form": "^2.15.0",
     "react-lazy-load": "^3.0.13",
     "react-responsive": "^4.0.3",
+    "react-responsive-modal": "^2.0.0",
     "react-scripts": "1.0.17",
     "react-scrollspy": "^3.3.4",
     "react-slick": "^0.16.0",

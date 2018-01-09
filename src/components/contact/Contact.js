@@ -2,6 +2,10 @@ import React, {Component} from 'react';
 import Responsive from 'react-responsive';
 
 import {Form, Text} from 'react-form';
+import axios from 'axios';
+import Modal from 'react-responsive-modal';
+import 'react-responsive-modal/lib/react-responsive-modal.css';
+import ModalCss from 'react-responsive-modal/lib/css';
 import './Contact.css';
 
 const Desktop = props => <Responsive {...props} minWidth={992}/>;
@@ -117,17 +121,101 @@ const successValidator = (values) => {
   };
 }
 
+const statusOK="Wir haben Ihre Anfrage empfangen, wir kontaktieren Sie."
+const statusNotOK="Fehler aufgetretten!"
 class Contact extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      isEmailSended:false,
+      error:false,
+      ismodalOpen:false
+    };
   }
+  openModal = () => {
+  this.setState({ ismodalOpen: true });
+};
 
+onCloseModal = () => {
+  this.setState({ ismodalOpen: false });
+};
+  renderModal() {
+    const { ismodalOpen } = this.state;
+    return (
+      <div>
+        <Modal open={ismodalOpen} onClose={this.onCloseModal.bind(this)} little>
+          <h3 style={{color:this.state.errot?'#dd4b39':'#25D366'}}>{
+            this.state.errot?statusNotOK:statusOK
+          }</h3>
+        </Modal>
+      </div>
+    );
+  }
+  onSubmitForm=(submittedValues)=>{
+    var self=this;
+    var data = JSON.stringify(submittedValues);
+
+    console.log('aa',data);
+    self.setState({ismodalOpen:true})
+    axios({
+      method: 'post',
+      url: 'https://formspree.io/k.echchennouf@gmail.com',
+      data: {
+        data:data
+      }
+    })
+    .then(function (res) {
+      console.log('res',res.data);
+      if (true) {
+        self.setState({error:false,isEmailSended:true})
+      }
+    })
+    .catch(function (err) {
+      console.log('err',err.message);
+      self.setState({error:true,isEmailSended:false})
+    });
+  }
   mobileForm() {
-    return (<Form validateError={errorValidator} onSubmit={submittedValues => {
-        this.setState({submittedValues});
-        console.log(submittedValues)
-      }}>
+    return (<Form onSubmit={this.onSubmitForm}>
+      {
+        formApi => (<form onSubmit={formApi.submitForm} id="form1" className="mb-4">
+          <label htmlFor="Betrieb">Name des Betriebs</label>
+          <Text field="Betrieb" id="Betrieb"/>
+          <div style={{
+              display: 'flex',
+              flexDirection: 'column'
+            }}>
+            <div style={{
+                flex: 1,
+                flexDirection: 'column',
+                display: 'flex'
+              }}>
+              <label htmlFor="plz">Postleitzahl</label>
+              <Text field="plz" id="plz"/>
+            </div>
+            <div style={{
+                flex: .1
+              }}></div>
+            <div style={{
+                flex: 1,
+                flexDirection: 'column',
+                display: 'flex'
+              }}>
+              <label htmlFor="stadt">Stadt</label>
+              <Text field="stadt" id="stadt"/>
+            </div>
+          </div>
+          <label htmlFor="Betrieb">E-Mail Adresse</label>
+          <Text field="email" id="email"/>
+          <label htmlFor="tel">Telefon</label>
+          <Text field="tel" id="tel"/>
+          <button type="submit" className="btn btn-primary">Jetz Kontaktieren!</button>
+        </form>)
+      }
+    </Form>);
+  }
+  tabletForm() {
+    return (<Form onSubmit={this.onSubmitForm}>
       {
         formApi => (<form onSubmit={formApi.submitForm} id="form1" className="mb-4">
           <label htmlFor="Betrieb">Name des Betriebs</label>
@@ -166,10 +254,8 @@ class Contact extends Component {
     </Form>);
   }
   desktopForm() {
-    return (<Form validateError={errorValidator} onSubmit={submittedValues => {
-        this.setState({submittedValues});
-        console.log(submittedValues)
-      }}>
+
+    return (<Form onSubmit={this.onSubmitForm}>
       {
         formApi => (<form onSubmit={formApi.submitForm} id="form1" className="mb-4">
           <label htmlFor="Betrieb">Name des Betriebs</label>
@@ -226,6 +312,7 @@ class Contact extends Component {
 
   render() {
     return (<div>
+      {this.renderModal()}
       <Desktop>
         <section style={{
             flexDirection: 'column',
@@ -269,7 +356,7 @@ class Contact extends Component {
             </div>
 
             <div>
-              {this.mobileForm()}
+              {this.tabletForm()}
             </div>
           </div>
         </section>
