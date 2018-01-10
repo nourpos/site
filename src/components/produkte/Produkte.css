@@ -83,5 +83,8 @@
 }
 
 .rfid_reader_right{
-  width: 85%;
+  width: 50%;
+}
+#functionen {
+    margin-top: 2px;
 }

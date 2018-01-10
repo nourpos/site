@@ -7,6 +7,7 @@ import Home from './components/home/Home';
 import Produkte from './components/produkte/Produkte';
 import Functionen from './components/functionen/Functionen';
 import Preise from './components/preise/Preise';
+import AGB from './components/agb/AGB';
 import Contact from './components/contact/Contact';
 import Footer from './components/footer/Footer';
 
@@ -22,7 +23,8 @@ class App extends Component {
     this.state = {
       windowHeight: '0',
       headerFixedAtTheTop: false,
-      submittedValues: {}
+      submittedValues: {},
+      page:'home'
     };
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
 
@@ -35,7 +37,7 @@ class App extends Component {
   }
 
   componentWillUnmount() {
-    window.removeEventListener('resize', this.updateWindowDimensions);
+    //window.removeEventListener('resize', this.updateWindowDimensions);
     window.removeEventListener('scroll', this.handleScroll);
   }
   handleScroll() {
@@ -62,18 +64,54 @@ class App extends Component {
     </div>)
   }
 
+  getHome(){
+    return (
+      <div>
+        <Home minHeight={this.state.windowHeight}/>
+        <Produkte minHeight={this.state.windowHeight}/>
+        <Functionen minHeight={this.state.windowHeight} />
+        <Preise minHeight={this.state.windowHeight} />
+        <Contact minHeight={this.state.windowHeight}/>
+      </div>
+    )
+  }
 
+  getAGB(){
+    return (
+      <div>
+        <AGB setPage={this.setPage.bind(this)} minHeight={this.state.windowHeight} />
+      </div>
+    )
+  }
+  getPage(){
+    return this.state.page
+  }
+  setPage(page){
+    this.state.page===page || console.log('nei');
+    this.state.page===page || window.scrollTo( 0, 0 );
+    this.state.page===page || this.setState({page:page})
+  }
+
+  getpage(){
+    switch (this.state.page) {
+      case 'home':
+        return this.getHome()
+        break;
+      case 'agb':
+        return this.getAGB()
+        break;
+      default:
+
+    }
+  }
 
   render() {
+    console.log('hmm');
     return (<div className="App">
       <PageCover/>
-      <Header headerFixedAtTheTop={this.state.headerFixedAtTheTop}/>
-      <Home minHeight={this.state.windowHeight}/>
-      <Produkte minHeight={this.state.windowHeight}/>
-      <Functionen minHeight={this.state.windowHeight} />
-      <Preise minHeight={this.state.windowHeight} />
-      <Contact minHeight={this.state.windowHeight}/>
-      <Footer/>
+      <Header setPage={this.setPage.bind(this)} getPage={this.getPage.bind(this)} headerFixedAtTheTop={this.state.headerFixedAtTheTop}/>
+      {this.getpage()}
+      <Footer getPage={this.getPage.bind(this)} setPage={this.setPage.bind(this)}/>
     </div>);
   }
 }

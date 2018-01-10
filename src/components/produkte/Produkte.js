@@ -46,19 +46,17 @@ class Produkte extends Component {
             <div className="produkte_col">
               <div className="produkte_col_row">
                 <div className="produkte_col_row">
-                  <LazyLoad   offset={200} placeholder={"hallo"}>
-                    <img src={produkte}/>
-                  </LazyLoad>
-                  {loader}
+                  <img src={produkte}/>
+
                 </div>
               </div>
             </div>
             <div className="produkte_col">
               <div className="produkte_col_row">
-                <LazyLoad   offset={200} placeholder={"hallo"}>
+
                   <img src={raspi_left}/>
-                </LazyLoad>
-                {loader}
+
+
               </div>
               <div className="produkte_col_row">
                 <h2>Lorem ipsum dolor sit amet consetetur sadipscing.</h2>
@@ -75,18 +73,18 @@ class Produkte extends Component {
                 </p>
               </div>
               <div className="produkte_col_row">
-              <LazyLoad  offset={200}>
+
               <img className="rfid_reader_right" src={rfid_reader_right}/>
-              </LazyLoad>
-              {loader}
+
+
               </div>
             </div>
             <div className="produkte_col">
             <div className="produkte_col_row">
-            <LazyLoad   offset={200} >
+
             <img src={basis}/>
-            </LazyLoad>
-            {loader}
+
+
             </div>
               <div className="produkte_col_row">
                 <h2>Lorem ipsum dolor sit amet consetetur sadipscing.</h2>
@@ -103,18 +101,18 @@ class Produkte extends Component {
                 </p>
               </div>
               <div className="produkte_col_row">
-              <LazyLoad  offset={200}>
+
               <img className="mobile2" src={mobile2}/>
-              </LazyLoad>
-              {loader}
+
+
               </div>
             </div>
             <div className="produkte_col">
               <div className="produkte_col_row">
-                <LazyLoad  offset={200}>
+
                   <img src={epson_right}/>
-                </LazyLoad>
-                {loader}
+
+
               </div>
               <div className="produkte_col_row">
                 <h2>Lorem ipsum dolor sit amet consetetur sadipscing.</h2>
@@ -125,9 +123,7 @@ class Produkte extends Component {
             </div>
 
           </div>
-          <div className="carousel">
-          <Carousel></Carousel>
-          </div>
+
         </section>
       </Desktop>
       <Tablet>
@@ -142,19 +138,19 @@ class Produkte extends Component {
           <div className="produkte_col">
             <div className="produkte_col_row">
               <div className="produkte_col_row">
-                <LazyLoad   offset={200} placeholder={"hallo"}>
+
                   <img src={produkte}/>
-                </LazyLoad>
-                {loader}
+
+
               </div>
             </div>
           </div>
           <div className="produkte_col">
             <div className="produkte_col_row">
-              <LazyLoad   offset={200} placeholder={"hallo"}>
+
                 <img src={raspi_left}/>
-              </LazyLoad>
-              {loader}
+
+
             </div>
             <div className="produkte_col_row">
               <h2>Lorem ipsum dolor sit amet consetetur sadipscing.</h2>
@@ -171,18 +167,18 @@ class Produkte extends Component {
               </p>
             </div>
             <div className="produkte_col_row">
-            <LazyLoad  offset={200}>
+
             <img className="rfid_reader_right" src={rfid_reader_right}/>
-            </LazyLoad>
-            {loader}
+
+
             </div>
           </div>
           <div className="produkte_col">
           <div className="produkte_col_row">
-          <LazyLoad   offset={200} >
+
           <img src={basis}/>
-          </LazyLoad>
-          {loader}
+
+
           </div>
             <div className="produkte_col_row">
               <h2>Lorem ipsum dolor sit amet consetetur sadipscing.</h2>
@@ -199,18 +195,18 @@ class Produkte extends Component {
               </p>
             </div>
             <div className="produkte_col_row">
-            <LazyLoad  offset={200}>
+
             <img className="mobile2" src={mobile2}/>
-            </LazyLoad>
-            {loader}
+
+
             </div>
           </div>
           <div className="produkte_col">
             <div className="produkte_col_row">
-              <LazyLoad  offset={200}>
+
                 <img src={epson_right}/>
-              </LazyLoad>
-              {loader}
+
+
             </div>
             <div className="produkte_col_row">
               <h2>Lorem ipsum dolor sit amet consetetur sadipscing.</h2>
@@ -234,20 +230,20 @@ class Produkte extends Component {
           <div className="produkte_col produkte_col_mobile">
             <div className="produkte_col_row">
               <div className="produkte_col_row">
-                <LazyLoad   offset={200} placeholder={"hallo"}>
+
                   <img src={produkte}/>
-                </LazyLoad>
-                {loader}
+
+
               </div>
             </div>
           </div>
           <div className="produkte_col produkte_col_mobile">
             <div className="produkte_col_row">
             <h2>Lorem ipsum dolor sit amet consetetur sadipscing.</h2>
-              <LazyLoad   offset={200} placeholder={"hallo"}>
+
                 <img src={raspi_left}/>
-              </LazyLoad>
-              {loader}
+
+
             </div>
             <div className="produkte_col_row">
               <p>
@@ -258,10 +254,10 @@ class Produkte extends Component {
           <div className="produkte_col produkte_col_mobile">
             <div className="produkte_col_row">
             <h2>Lorem ipsum dolor sit amet consetetur sadipscing.</h2>
-            <LazyLoad  offset={200}>
+
             <img className="rfid_reader_right" src={rfid_reader_right}/>
-            </LazyLoad>
-            {loader}
+
+
             </div>
             <div className="produkte_col_row">
               <p>
@@ -272,10 +268,10 @@ class Produkte extends Component {
           <div className="produkte_col produkte_col_mobile">
           <div className="produkte_col_row">
           <h2>Lorem ipsum dolor sit amet consetetur sadipscing.</h2>
-          <LazyLoad   offset={200} >
+
           <img src={basis}/>
-          </LazyLoad>
-          {loader}
+
+
           </div>
             <div className="produkte_col_row">
               <p>
@@ -287,10 +283,10 @@ class Produkte extends Component {
 
             <div className="produkte_col_row">
             <h2>Lorem ipsum dolor sit amet consetetur sadipscing.</h2>
-            <LazyLoad  offset={200}>
+
             <img src={mobile2}/>
-            </LazyLoad>
-            {loader}
+
+
             </div>
             <div className="produkte_col_row">
               <p>
@@ -301,10 +297,10 @@ class Produkte extends Component {
           <div className="produkte_col produkte_col_mobile">
             <div className="produkte_col_row">
               <h2>Lorem ipsum dolor sit amet consetetur sadipscing.</h2>
-              <LazyLoad  offset={200}>
+
                 <img src={epson_right}/>
-              </LazyLoad>
-              {loader}
+
+
             </div>
             <div className="produkte_col_row">
               <p>

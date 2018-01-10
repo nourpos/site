@@ -24,7 +24,7 @@ class Header extends Component {
     return (<header className={this.props.headerFixedAtTheTop
         ? "App-header-at-top desktop"
         : "App-header desktop"}>
-      <a className="navbar-brand" href="#" style={{
+      <a onClick={()=>{this.props.setPage('home')}} className="navbar-brand" href="#" style={{
           flexDirection: 'row',
           justifyContent: 'center',
           alignItems: 'center'
@@ -37,21 +37,21 @@ class Header extends Component {
         </span>
       </a>
       <div >
-        <Scrollspy offset={0} items={['home', 'produkte', 'functionen', 'preise', 'kontakt']} currentClassName="is-current">
+        <Scrollspy offset={0} items={['home', 'produkte', 'functionen', 'preise', 'kontakt']} currentClassName="is-current" onUpdate={()=>{this.onPageUpdate()}}>
           <li>
-            <a href="#home">Home</a>
+            <a onClick={()=>{this.props.setPage('home')}} href="#home">Home</a>
           </li>
           <li>
-            <a href="#produkte">PRODUKTE</a>
+            <a onClick={()=>{this.props.setPage('home')}} href="#produkte">PRODUKTE</a>
           </li>
           <li>
-            <a href="#functionen">FUNCTIONEN</a>
+            <a onClick={()=>{this.props.setPage('home')}} href="#functionen">FUNCTIONEN</a>
           </li>
           <li>
-            <a href="#preise">PREISE</a>
+            <a onClick={()=>{this.props.setPage('home')}} href="#preise">PREISE</a>
           </li>
           <li>
-            <a href="#kontakt">KONTAKT</a>
+            <a onClick={()=>{this.props.setPage('home')}} href="#kontakt">KONTAKT</a>
           </li>
         </Scrollspy>
       </div>
@@ -75,7 +75,7 @@ class Header extends Component {
         </span>
       </a>
       <div >
-        <Scrollspy offset={0} items={['home', 'produkte', 'functionen', 'preise', 'kontakt']} currentClassName="is-current">
+        <Scrollspy offset={0} items={['home', 'produkte', 'functionen', 'preise', 'kontakt']} currentClassName="is-current" onUpdate={()=>{this.onPageUpdate()}}>
           <li>
             <a href="#home">Home</a>
           </li>
@@ -97,13 +97,11 @@ class Header extends Component {
   }
 
   toogleMenu() {
-    console.log('Desktop', Desktop);
-    console.log('Mobile', Mobile);
     this.setState({
       menuOpen: !this.state.menuOpen
     })
   }
-  closeMenu() {
+  onPageUpdate() {
     if (this.state.menuOpen) {
       this.setState({menuOpen: false})
     }
@@ -157,7 +155,7 @@ class Header extends Component {
       <div className={`spy ${this.state.menuOpen
           ? "open"
           : 'close'}`}>
-        <Scrollspy offset={0} items={['home', 'produkte', 'functionen', 'preise', 'kontakt']} currentClassName="is-current" onUpdate={()=>{this.closeMenu()} }>
+        <Scrollspy offset={0} items={['home', 'produkte', 'functionen', 'preise', 'kontakt']} currentClassName="is-current" onUpdate={()=>{this.onPageUpdate()}}>
           <li>
             <a href="#home">Home</a>
           </li>

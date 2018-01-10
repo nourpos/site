@@ -36,7 +36,9 @@ class Footer extends Component {
                 <div>
                   <h3>NourPos</h3>
                   <ul>
-                    <li>Über uns</li>
+                    <li><a  onClick={()=>{
+                      this.props.setPage('agb')
+                    }}>Über uns</a></li>
                     <li>AGB</li>
                     <li>Datenschutz</li>
                     <li>Impressum</li>
