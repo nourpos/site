@@ -39,7 +39,7 @@ class Header extends Component {
       <div >
         <Scrollspy offset={0} items={['home', 'produkte', 'functionen', 'preise', 'kontakt']} currentClassName="is-current">
           <li>
-            <a href="#home">ÜBER UNS</a>
+            <a href="#home">Home</a>
           </li>
           <li>
             <a href="#produkte">PRODUKTE</a>
@@ -159,7 +159,7 @@ class Header extends Component {
           : 'close'}`}>
         <Scrollspy offset={0} items={['home', 'produkte', 'functionen', 'preise', 'kontakt']} currentClassName="is-current" onUpdate={()=>{this.closeMenu()} }>
           <li>
-            <a href="#home">ÜBER UNS</a>
+            <a href="#home">Home</a>
           </li>
           <li>
             <a href="#produkte">PRODUKTE</a>

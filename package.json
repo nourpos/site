@@ -1,6 +1,6 @@
 {
   "name": "site",
-  "homepage": "http://nourpos.com",
+  "homepage": "https://nourpos-e2bee.firebaseapp.com",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -17,6 +17,7 @@
     "react-scripts": "1.0.17",
     "react-scrollspy": "^3.3.4",
     "react-slick": "^0.16.0",
+    "validator": "^9.2.0",
     "webfontloader": "^1.6.28"
   },
   "scripts": {

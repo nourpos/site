@@ -18,3 +18,7 @@
   color: white;
   background-color: #f57d00;
 }
+form div {
+    display: flex;
+    flex-direction: column;
+}

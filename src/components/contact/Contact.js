@@ -1,162 +1,133 @@
 import React, {Component} from 'react';
 import Responsive from 'react-responsive';
 
-import {Form, Text} from 'react-form';
+import {
+  Form,
+  StyledText,
+} from 'react-form';
 import axios from 'axios';
 import Modal from 'react-responsive-modal';
 import 'react-responsive-modal/lib/react-responsive-modal.css';
 import ModalCss from 'react-responsive-modal/lib/css';
 import './Contact.css';
+import './form.css';
+import logo from '../../img/logo.png';
+import validator from 'validator';
+
+const loader = (
+    <span><img style={{width:'20px',animation: 'rotating 0.45s linear infinite'}} src={logo}/></span>
+);
 
 const Desktop = props => <Responsive {...props} minWidth={992}/>;
 const Tablet = props => <Responsive {...props} minWidth={768} maxWidth={991}/>;
 const Mobile = props => <Responsive {...props} maxWidth={767}/>;
 const Default = props => <Responsive {...props} minWidth={768}/>;
 
+
 const errorValidator = (values) => {
-  const validateBetriebsName = (betriebsName) => {
-    return !betriebsName
-      ? 'Bitte nenne uns den Namen Deines Betriebs'
-      : null;
-  };
-  const validatePlz = (plz) => {
-    return !plz
-      ? 'Bitte nenne uns Deine Postleitzahl.'
-      : null;
-  };
-  const validateStadt = (stadt) => {
-    return !stadt
-      ? 'Bitte nenne uns Deine Stadt.'
-      : null;
-  };
-  const validateEmail = (email) => {
-    return !email
-      ? 'Bitte nenne uns Deine E-Mail Adresse.'
-      : null;
-  };
-  const validateTelefon = (telefon) => {
-    return !telefon
-      ? 'Bitte nenne uns Deine Telefonnummer.'
-      : null;
-  };
 
-  return {
-    betriebsName: validateBetriebsName(values.betriebsName),
-    plz: validatePlz(values.plz),
-    stadt: validateStadt(values.stadt),
-    email: validateEmail(values.email),
-    telefon: validateTelefon(values.telefon)
-  };
-}
+    const validateBetriebsName = (betriebsName) => {
+      if (!betriebsName) {
+        return 'Bitte nenne uns Deine Stadt.'
+      }
+      if (!validator.isAlpha(betriebsName)) {
+        return 'Bitte geben Sie einen gültigen Stadt Namen ein.'
+      }
+      return null
+    };
+    const validatePlz = (plz) => {
+      if (!plz) {
+        return 'Bitte nenne uns Deine Postleitzahl.'
+      }
+      if (!validator.isPostalCode(plz,'DE')) {
+        return 'Geben Sie eine gültige Postleitzahl ein.'
+      }
+      return null
+    };
+    const validateStadt = (stadt) => {
+      if (!stadt) {
+        return 'Bitte nenne uns Deine Stadt.'
+      }
+      if (!validator.isAlpha(stadt)) {
+        return 'Bitte geben Sie einen gültigen Stadt Namen ein.'
+      }
+      return null
+    };
+    const validatetel=(tel)  =>
+      {
+        var phoneno = /^\+?([0-9]{2})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/;
+        if (!tel) {
+          return 'Bitte nenne uns Deine Telefonnummer.'
+        }
+        if (!validator.isNumeric(tel) || tel.length<10){
+          return 'Geben Sie eine gültige Telefonnummer ein.'
+        }
+        return null
+      }
 
-const warningValidator = (values) => {
-  const validateBetriebsName = (betriebsName) => {
-    return !betriebsName
-      ? 'Bitte nenne uns den Namen Deines Betriebs'
-      : null;
-  };
-  const validatePlz = (plz) => {
-    return !plz
-      ? 'Bitte nenne uns Deine Postleitzahl.'
-      : null;
-  };
-  const validateStadt = (stadt) => {
-    return !stadt
-      ? 'Bitte nenne uns Deine Stadt.'
-      : null;
-  };
-  const validateEmail = (email) => {
-    return !email
-      ? 'Bitte nenne uns Deine E-Mail Adresse.'
-      : null;
-  };
-  const validateTelefon = (telefon) => {
-    return !telefon
-      ? 'Bitte nenne uns Deine Telefonnummer.'
-      : null;
-  };
+    const validateEmail = (email) => {
+      if (!email) {
+        return 'Bitte nenne uns Deine E-Mail Adresse.'
+      }
+      if (!validator.isEmail(email)) {
+        return 'Bitte geben Sie eine gültige E-Mail Adresse ein.'
+      }
+      return null
+    };
 
-  return {
-    betriebsName: validateBetriebsName(values.betriebsName),
-    plz: validatePlz(values.plz),
-    stadt: validateStadt(values.stadt),
-    email: validateEmail(values.email),
-    telefon: validateTelefon(values.telefon)
-  };
-}
 
-const successValidator = (values) => {
-  const validateBetriebsName = (betriebsName) => {
-    return !betriebsName
-      ? 'Bitte nenne uns den Namen Deines Betriebs'
-      : null;
-  };
-  const validatePlz = (plz) => {
-    return !plz
-      ? 'Bitte nenne uns Deine Postleitzahl.'
-      : null;
-  };
-  const validateStadt = (stadt) => {
-    return !stadt
-      ? 'Bitte nenne uns Deine Stadt.'
-      : null;
-  };
-  const validateEmail = (email) => {
-    return !email
-      ? 'Bitte nenne uns Deine E-Mail Adresse.'
-      : null;
-  };
-  const validateTelefon = (telefon) => {
-    return !telefon
-      ? 'Bitte nenne uns Deine Telefonnummer.'
-      : null;
-  };
-
-  return {
-    betriebsName: validateBetriebsName(values.betriebsName),
-    plz: validatePlz(values.plz),
-    stadt: validateStadt(values.stadt),
-    email: validateEmail(values.email),
-    telefon: validateTelefon(values.telefon)
-  };
-}
+    return {
+      Betrieb: validateBetriebsName(values.Betrieb),
+      plz: validatePlz(values.plz),
+      stadt: validateStadt(values.stadt),
+      email: validateEmail(values.email),
+      tel: validatetel(values.tel)
+    };
+  }
 
 const statusOK="Wir haben Ihre Anfrage empfangen, wir kontaktieren Sie."
 const statusNotOK="Fehler aufgetretten!"
+
 class Contact extends Component {
   constructor(props) {
     super(props);
     this.state = {
       isEmailSended:false,
       error:false,
-      ismodalOpen:false
+      ismodalOpen:false,
+      waitForResult:false,
+      validateOnSubmit:true,
     };
   }
   openModal = () => {
   this.setState({ ismodalOpen: true });
 };
 
-onCloseModal = () => {
-  this.setState({ ismodalOpen: false });
+  onCloseModal = () => {
+  this.setState ({
+    isEmailSended:false,
+    error:false,
+    ismodalOpen:false,
+    waitForResult:false,
+  });
 };
   renderModal() {
     const { ismodalOpen } = this.state;
     return (
       <div>
-        <Modal open={ismodalOpen} onClose={this.onCloseModal.bind(this)} little>
+        <Modal styles={{modal:{minWidth:'400px',justifyContent:'center',alignItems:'center',display:'flex'}}} open={ismodalOpen} onClose={this.onCloseModal.bind(this)} little>
           <h3 style={{color:this.state.errot?'#dd4b39':'#25D366'}}>{
-            this.state.errot?statusNotOK:statusOK
+            this.state.waitForResult?loader:this.state.errot?statusNotOK:statusOK
           }</h3>
         </Modal>
       </div>
     );
   }
-  onSubmitForm=(submittedValues)=>{
+  onSubmitForm=(submittedValues,e,formApi)=>{
     var self=this;
     var data = JSON.stringify(submittedValues);
 
-    console.log('aa',data);
-    self.setState({ismodalOpen:true})
+    self.setState({ismodalOpen:true,waitForResult:true})
     axios({
       method: 'post',
       url: 'https://formspree.io/k.echchennouf@gmail.com',
@@ -165,22 +136,26 @@ onCloseModal = () => {
       }
     })
     .then(function (res) {
-      console.log('res',res.data);
       if (true) {
-        self.setState({error:false,isEmailSended:true})
+        self.setState({error:false,isEmailSended:true,waitForResult:false})
+        formApi.resetAll()
       }
     })
     .catch(function (err) {
-      console.log('err',err.message);
-      self.setState({error:true,isEmailSended:false})
+      self.setState({error:true,isEmailSended:false,waitForResult:false})
     });
   }
+  onSubmitFailure=( errors, formApi )=>{
+    this.setState({validateOnSubmit:false})
+  }
+
   mobileForm() {
-    return (<Form onSubmit={this.onSubmitForm}>
+    return (<Form  validateError={errorValidator}
+      dontValidateOnMount={true} validateOnSubmit={this.state.validateOnSubmit} onSubmitFailure={this.onSubmitFailure} onSubmit={this.onSubmitForm}>
       {
-        formApi => (<form onSubmit={formApi.submitForm} id="form1" className="mb-4">
+        formApi => (<form onSubmit={formApi.submitForm}  id="form1" className="mb-4">
           <label htmlFor="Betrieb">Name des Betriebs</label>
-          <Text field="Betrieb" id="Betrieb"/>
+          <StyledText field="Betrieb" id="Betrieb"/>
           <div style={{
               display: 'flex',
               flexDirection: 'column'
@@ -191,7 +166,7 @@ onCloseModal = () => {
                 display: 'flex'
               }}>
               <label htmlFor="plz">Postleitzahl</label>
-              <Text field="plz" id="plz"/>
+              <StyledText field="plz" id="plz"/>
             </div>
             <div style={{
                 flex: .1
@@ -202,24 +177,25 @@ onCloseModal = () => {
                 display: 'flex'
               }}>
               <label htmlFor="stadt">Stadt</label>
-              <Text field="stadt" id="stadt"/>
+              <StyledText field="stadt" id="stadt"/>
             </div>
           </div>
           <label htmlFor="Betrieb">E-Mail Adresse</label>
-          <Text field="email" id="email"/>
-          <label htmlFor="tel">Telefon</label>
-          <Text field="tel" id="tel"/>
+          <StyledText field="email" id="email"/>
+          <label htmlFor="tel">tel</label>
+          <StyledText field="tel" id="tel"/>
           <button type="submit" className="btn btn-primary">Jetz Kontaktieren!</button>
         </form>)
       }
     </Form>);
   }
   tabletForm() {
-    return (<Form onSubmit={this.onSubmitForm}>
+    return (<Form  validateError={errorValidator}
+      dontValidateOnMount={true} validateOnSubmit={this.state.validateOnSubmit} onSubmitFailure={this.onSubmitFailure} onSubmit={this.onSubmitForm}>
       {
         formApi => (<form onSubmit={formApi.submitForm} id="form1" className="mb-4">
           <label htmlFor="Betrieb">Name des Betriebs</label>
-          <Text field="Betrieb" id="Betrieb"/>
+          <StyledText field="Betrieb" id="Betrieb"/>
           <div style={{
               display: 'flex',
               flexDirection: 'column'
@@ -230,7 +206,7 @@ onCloseModal = () => {
                 display: 'flex'
               }}>
               <label htmlFor="plz">Postleitzahl</label>
-              <Text field="plz" id="plz"/>
+              <StyledText field="plz" id="plz"/>
             </div>
             <div style={{
                 flex: .1
@@ -241,13 +217,13 @@ onCloseModal = () => {
                 display: 'flex'
               }}>
               <label htmlFor="stadt">Stadt</label>
-              <Text field="stadt" id="stadt"/>
+              <StyledText field="stadt" id="stadt"/>
             </div>
           </div>
           <label htmlFor="Betrieb">E-Mail Adresse</label>
-          <Text field="email" id="email"/>
-          <label htmlFor="tel">Telefon</label>
-          <Text field="tel" id="tel"/>
+          <StyledText field="email" id="email"/>
+          <label htmlFor="tel">tel</label>
+          <StyledText field="tel" id="tel"/>
           <button type="submit" className="btn btn-primary">Jetz Kontaktieren!</button>
         </form>)
       }
@@ -255,11 +231,12 @@ onCloseModal = () => {
   }
   desktopForm() {
 
-    return (<Form onSubmit={this.onSubmitForm}>
+    return (<Form  validateError={errorValidator}
+      dontValidateOnMount={true} validateOnSubmit={this.state.validateOnSubmit} onSubmitFailure={this.onSubmitFailure} onSubmit={this.onSubmitForm}>
       {
         formApi => (<form onSubmit={formApi.submitForm} id="form1" className="mb-4">
           <label htmlFor="Betrieb">Name des Betriebs</label>
-          <Text field="Betrieb" id="Betrieb"/>
+          <StyledText field="Betrieb" id="Betrieb"/>
           <div style={{
               display: 'flex',
               flexDirection: 'row'
@@ -270,7 +247,7 @@ onCloseModal = () => {
                 display: 'flex'
               }}>
               <label htmlFor="plz">Postleitzahl</label>
-              <Text field="plz" id="plz"/>
+              <StyledText field="plz" id="plz"/>
             </div>
             <div style={{
                 flex: .1
@@ -281,27 +258,27 @@ onCloseModal = () => {
                 display: 'flex'
               }}>
               <label htmlFor="stadt">Stadt</label>
-              <Text field="stadt" id="stadt"/>
+              <StyledText field="stadt" id="stadt"/>
             </div>
           </div>
-          <label htmlFor="Betrieb">E-Mail Adresse</label>
-          <Text field="email" id="email"/>
-          <label htmlFor="tel">Telefon</label>
-          <Text field="tel" id="tel"/>
+          <label htmlFor="email">E-Mail Adresse</label>
+          <StyledText field="email" id="email"/>
+          <label htmlFor="tel">tel</label>
+          <StyledText field="tel" id="tel"/>
           <button type="submit" className="btn btn-primary">Jetz Kontaktieren!</button>
         </form>)
       }
     </Form>);
   }
 
-  renderText() {
+  renderStyledText() {
     return (<div>
       <h1 style={{
-          textAlign: 'center',
+          StyledTextAlign: 'center',
           color: '#fff'
         }}>Passt NourPos zu Ihrem Geschäft?</h1>
       <p style={{
-          textAlign: 'left',
+          StyledTextAlign: 'left',
           color: '#fff',
           fontSize: '1.2em'
         }}>
@@ -328,7 +305,7 @@ onCloseModal = () => {
               flexDirection: 'column'
             }}>
             <div>
-              {this.renderText()}
+              {this.renderStyledText()}
             </div>
 
             <div>
@@ -352,7 +329,7 @@ onCloseModal = () => {
               flexDirection: 'column'
             }}>
             <div>
-              {this.renderText()}
+              {this.renderStyledText()}
             </div>
 
             <div>
@@ -376,7 +353,7 @@ onCloseModal = () => {
               flexDirection: 'column'
             }}>
             <div>
-              {this.renderText()}
+              {this.renderStyledText()}
             </div>
 
             <div>
