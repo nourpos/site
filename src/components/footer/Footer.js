@@ -36,12 +36,18 @@ class Footer extends Component {
                 <div>
                   <h3>NourPos</h3>
                   <ul>
-                    <li><a  onClick={()=>{
-                      this.props.setPage('agb')
+                  <li><a  onClick={()=>{
+                    this.props.setPage('about')
                     }}>Über uns</a></li>
-                    <li>AGB</li>
-                    <li>Datenschutz</li>
-                    <li>Impressum</li>
+                  <li><a  onClick={()=>{
+                    this.props.setPage('agb')
+                    }}>AGB</a></li>
+                  <li><a  onClick={()=>{
+                      this.props.setPage('datenschutz')
+                    }}>Datenschutz</a></li>
+                  <li><a  onClick={()=>{
+                      this.props.setPage('impressum')
+                    }}>Impressum</a></li>
                   </ul>
                   <p>Copyrights 2018</p>
                 </div>
@@ -65,10 +71,18 @@ class Footer extends Component {
               }}>
               <h3>NourPos</h3>
               <ul>
-                <li>Über uns</li>
-                <li>AGB</li>
-                <li>Datenschutz</li>
-                <li>Impressum</li>
+              <li><a  onClick={()=>{
+                this.props.setPage('about')
+                }}>Über uns</a></li>
+              <li><a  onClick={()=>{
+                this.props.setPage('agb')
+                }}>AGB</a></li>
+              <li><a  onClick={()=>{
+                  this.props.setPage('datenschutz')
+                }}>Datenschutz</a></li>
+              <li><a  onClick={()=>{
+                  this.props.setPage('impressum')
+                }}>Impressum</a></li>
               </ul>
               <p>Copyrights 2018</p>
             </div>
@@ -94,10 +108,18 @@ class Footer extends Component {
               }}>
               <h3>NourPos</h3>
               <ul>
-                <li>Über uns</li>
-                <li>AGB</li>
-                <li>Datenschutz</li>
-                <li>Impressum</li>
+              <li><a  onClick={()=>{
+                this.props.setPage('about')
+                }}>Über uns</a></li>
+              <li><a  onClick={()=>{
+                this.props.setPage('agb')
+                }}>AGB</a></li>
+              <li><a  onClick={()=>{
+                  this.props.setPage('datenschutz')
+                }}>Datenschutz</a></li>
+              <li><a  onClick={()=>{
+                  this.props.setPage('impressum')
+                }}>Impressum</a></li>
               </ul>
               <p>Copyrights 2018</p>
             </div>

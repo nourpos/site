@@ -2,11 +2,16 @@
     color: #283664;
     position: relative;
     padding-right: 62px;
+    border-bottom: solid 1px;
 }
 ._SitThW ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
+}
+._SitThW p {
+    margin: 0;
+    padding: 1.1em;
 }
 .xs_width{
   width: 100%;

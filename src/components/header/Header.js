@@ -4,12 +4,65 @@ import Responsive from 'react-responsive';
 import './Header.css';
 import logo from '../../img/logo.png';
 import createHistory from 'history/createBrowserHistory'
+import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap'
+import Sprachen from '../../languages/Sprachen'
+
 var FontAwesome = require('react-fontawesome')
 
 const Desktop = props => <Responsive {...props} minWidth={992}/>;
 const Tablet = props => <Responsive {...props} minWidth={768} maxWidth={991}/>;
 const Mobile = props => <Responsive {...props} maxWidth={767}/>;
 const Default = props => <Responsive {...props} minWidth={768}/>;
+
+class DropdownComponent extends Component {
+  constructor(props) {
+    super(props);
+    this.SprachenObj={
+      'ar':'العربية',
+      'en':'English',
+      'de':'Deutsch',
+      'fr':"Français"
+    }
+    this.toggle = this.toggle.bind(this);
+    this.onClickAction = this.onClickAction.bind(this);
+    this.state = {
+      dropdownOpen: false,
+      language:this.SprachenObj[this.props.getLanguage()]
+    };
+  }
+
+  onClickAction(lang){
+    this.props.setLanguage(lang)
+    this.setState({language:this.SprachenObj[lang],dropdownOpen:!this.state.dropdownOpen})
+  }
+
+  toggle() {
+    this.setState({
+      dropdownOpen: !this.state.dropdownOpen
+    });
+  }
+
+  render() {
+    return (
+      <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
+        <DropdownToggle caret>
+          {this.state.language}
+        </DropdownToggle>
+        <DropdownMenu>
+          <DropdownItem onClick={()=>{this.onClickAction('en')}} >English</DropdownItem>
+          <DropdownItem divider />
+          <DropdownItem onClick={()=>{this.onClickAction('de')}}  >Deutsch</DropdownItem>
+          <DropdownItem divider />
+          <DropdownItem onClick={()=>{this.onClickAction('fr')}} >Français</DropdownItem>
+          <DropdownItem divider />
+          <DropdownItem onClick={()=>{this.onClickAction('ar')}} >العربية</DropdownItem>
+
+
+        </DropdownMenu>
+      </Dropdown>
+    );
+  }
+}
 
 class Header extends Component {
   constructor(props) {
@@ -20,14 +73,20 @@ class Header extends Component {
 
   }
 
+  goToHome(){
+    this.props.setPage('home')
+  }
+
   desktopHeader() {
-    return (<header className={this.props.headerFixedAtTheTop
+    return (<header  className={this.props.headerFixedAtTheTop
         ? "App-header-at-top desktop"
-        : "App-header desktop"}>
-      <a onClick={()=>{this.props.setPage('home')}} className="navbar-brand" href="#" style={{
+        : "App-header desktop"} style={{direction:Sprachen.getLanguage()==='ar'?'rtl':'ltr'}}>
+
+      <a onClick={this.goToHome.bind(this)} className="navbar-brand" href="#" style={{
           flexDirection: 'row',
           justifyContent: 'center',
-          alignItems: 'center'
+          alignItems: 'center',
+          direction:'ltr'
         }}>
         <span className="logo">
           <img className="img-logo" src={logo} alt="Logo"></img>
@@ -36,22 +95,26 @@ class Header extends Component {
           NourPos
         </span>
       </a>
-      <div >
-        <Scrollspy offset={0} items={['home', 'produkte', 'functionen', 'preise', 'kontakt']} currentClassName="is-current" onUpdate={()=>{this.onPageUpdate()}}>
+      <div style={{display:'flex',flexDirection:'row',alignItems:'center',justifyContent:'center'}} >
+      <span>
+        <DropdownComponent getLanguage={this.props.getLanguage} setLanguage={this.props.setLanguage}></DropdownComponent>
+      </span>
+      <span style={{width:'20px'}}></span>
+        <Scrollspy  style={{display:'flex',direction:Sprachen.getLanguage()==='ar'?'rtl':'ltr'}} offset={0} items={['home', 'produkte', 'functionen', 'preise', 'kontakt']} currentClassName="is-current" onUpdate={()=>{this.onPageUpdate()}}>
           <li>
-            <a onClick={()=>{this.props.setPage('home')}} href="#home">Home</a>
+            <a onClick={this.goToHome.bind(this)} href="#home">{Sprachen.home}</a>
           </li>
           <li>
-            <a onClick={()=>{this.props.setPage('home')}} href="#produkte">PRODUKTE</a>
+            <a onClick={this.goToHome.bind(this)} href="#produkte">{Sprachen.products}</a>
           </li>
           <li>
-            <a onClick={()=>{this.props.setPage('home')}} href="#functionen">FUNCTIONEN</a>
+            <a onClick={this.goToHome.bind(this)} href="#functionen">{Sprachen.functions}</a>
           </li>
           <li>
-            <a onClick={()=>{this.props.setPage('home')}} href="#preise">PREISE</a>
+            <a onClick={this.goToHome.bind(this)} href="#preise">{Sprachen.prices}</a>
           </li>
           <li>
-            <a onClick={()=>{this.props.setPage('home')}} href="#kontakt">KONTAKT</a>
+            <a onClick={this.goToHome.bind(this)} href="#kontakt">{Sprachen.contact}</a>
           </li>
         </Scrollspy>
       </div>
@@ -61,11 +124,12 @@ class Header extends Component {
   tabletHeader() {
     return (<header className={this.props.headerFixedAtTheTop
         ? "App-header-at-top desktop"
-        : "App-header desktop"}>
+        : "App-header desktop"} style={{direction:Sprachen.getLanguage()==='ar'?'rtl':'ltr'}}>
       <a className="navbar-brand" href="#" style={{
           flexDirection: 'row',
           justifyContent: 'center',
-          alignItems: 'center'
+          alignItems: 'center',
+          direction:'ltr'
         }}>
         <span className="logo">
           <img className="img-logo" src={logo} alt="Logo"></img>
@@ -75,21 +139,21 @@ class Header extends Component {
         </span>
       </a>
       <div >
-        <Scrollspy offset={0} items={['home', 'produkte', 'functionen', 'preise', 'kontakt']} currentClassName="is-current" onUpdate={()=>{this.onPageUpdate()}}>
+        <Scrollspy style={{display:'flex',direction:Sprachen.getLanguage()==='ar'?'rtl':'ltr'}} offset={0} items={['home', 'produkte', 'functionen', 'preise', 'kontakt']} currentClassName="is-current" onUpdate={()=>{this.onPageUpdate()}}>
           <li>
-            <a href="#home">Home</a>
+            <a onClick={this.goToHome.bind(this)} href="#home">{Sprachen.home}</a>
           </li>
           <li>
-            <a href="#produkte">PRODUKTE</a>
+            <a onClick={this.goToHome.bind(this)} href="#produkte">{Sprachen.products}</a>
           </li>
           <li>
-            <a href="#functionen">FUNCTIONEN</a>
+            <a onClick={this.goToHome.bind(this)} href="#functionen">{Sprachen.functions}</a>
           </li>
           <li>
-            <a href="#preise">PREISE</a>
+            <a onClick={this.goToHome.bind(this)} href="#preise">{Sprachen.prices}</a>
           </li>
           <li>
-            <a href="#kontakt">KONTAKT</a>
+            <a onClick={this.goToHome.bind(this)} href="#kontakt">{Sprachen.contact}</a>
           </li>
         </Scrollspy>
       </div>
@@ -108,11 +172,12 @@ class Header extends Component {
   }
 
   mobileHeader() {
-    return (<header className="mobile">
+    return (<header className="mobile" >
       <a className="navbar-brand" href="#" style={{
           flexDirection: 'row',
           justifyContent: 'center',
-          alignItems: 'center'
+          alignItems: 'center',
+          direction:'ltr'
         }}>
         <span className="logo">
           <img className="img-logo" src={logo} alt="Logo"></img>
@@ -155,22 +220,22 @@ class Header extends Component {
       <div className={`spy ${this.state.menuOpen
           ? "open"
           : 'close'}`}>
-        <Scrollspy offset={0} items={['home', 'produkte', 'functionen', 'preise', 'kontakt']} currentClassName="is-current" onUpdate={()=>{this.onPageUpdate()}}>
-          <li>
-            <a href="#home">Home</a>
-          </li>
-          <li>
-            <a href="#produkte">PRODUKTE</a>
-          </li>
-          <li>
-            <a href="#functionen">FUNCTIONEN</a>
-          </li>
-          <li>
-            <a href="#preise">PREISE</a>
-          </li>
-          <li>
-            <a href="#kontakt">KONTAKT</a>
-          </li>
+        <Scrollspy style={{textAlign:Sprachen.getLanguage()==='ar'?'right':'left'}} offset={0} items={['home', 'produkte', 'functionen', 'preise', 'kontakt']} currentClassName="is-current" onUpdate={()=>{this.onPageUpdate()}}>
+        <li>
+          <a onClick={this.goToHome.bind(this)} href="#home">{Sprachen.home}</a>
+        </li>
+        <li>
+          <a onClick={this.goToHome.bind(this)} href="#produkte">{Sprachen.products}</a>
+        </li>
+        <li>
+          <a onClick={this.goToHome.bind(this)} href="#functionen">{Sprachen.functions}</a>
+        </li>
+        <li>
+          <a onClick={this.goToHome.bind(this)} href="#preise">{Sprachen.prices}</a>
+        </li>
+        <li>
+          <a onClick={this.goToHome.bind(this)} href="#kontakt">{Sprachen.contact}</a>
+        </li>
         </Scrollspy>
       </div>
     </header>)

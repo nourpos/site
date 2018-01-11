@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Responsive from 'react-responsive';
+import MobileDetect from'mobile-detect';
 import './App.css';
 import PageCover from './components/pageCover/PageCover';
 import Header from './components/header/Header';
@@ -7,9 +8,19 @@ import Home from './components/home/Home';
 import Produkte from './components/produkte/Produkte';
 import Functionen from './components/functionen/Functionen';
 import Preise from './components/preise/Preise';
+import About from './components/about/About';
 import AGB from './components/agb/AGB';
+import Datenschutz from './components/datenschutz/Datenschutz';
+import Impressum from './components/impressum/Impressum';
 import Contact from './components/contact/Contact';
 import Footer from './components/footer/Footer';
+import Sprachen from './languages/Sprachen'
+import {reactLocalStorage} from 'reactjs-localstorage';
+
+reactLocalStorage.set('lang', 'de');
+
+
+const md = new MobileDetect(window.navigator.userAgent);
 
 
 const Desktop = props => <Responsive {...props} minWidth={992}/>;
@@ -27,18 +38,43 @@ class App extends Component {
       page:'home'
     };
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
+    this._setLanguage = this._setLanguage.bind(this);
+    this._getLanguage = this._getLanguage.bind(this);
 
+  }
+  componentWillMount(){
+    this._check_language()
   }
 
   componentDidMount() {
     this.updateWindowDimensions();
-    //window.addEventListener('resize', this.updateWindowDimensions);
-    window.addEventListener('scroll', this.handleScroll.bind(this));
+    md.mobile() ||  window.addEventListener('resize', this.updateWindowDimensions);
+    md.mobile() || window.addEventListener('scroll', this.handleScroll.bind(this));
   }
 
   componentWillUnmount() {
-    //window.removeEventListener('resize', this.updateWindowDimensions);
-    window.removeEventListener('scroll', this.handleScroll);
+    md.mobile() ||  window.removeEventListener('resize', this.updateWindowDimensions);
+    md.mobile() ||  window.removeEventListener('scroll', this.handleScroll);
+  }
+  _check_language(){
+    let langFromSession = reactLocalStorage.get('lang');
+    console.log('langFromSession',langFromSession);
+    if(langFromSession){
+      Sprachen.setLanguage(langFromSession)
+    }else{
+      Sprachen.setLanguage(Sprachen.getInterfaceLanguage())
+    }
+  }
+  _setLanguage(lang){
+    Sprachen.setLanguage(lang)
+    console.log('lang',lang);
+    reactLocalStorage.set('lang',lang);
+    let langFromSession = reactLocalStorage.get('lang');
+    console.log('langFromSession',langFromSession);
+    this.setState({})//refresh page
+  }
+  _getLanguage(lang){
+    return Sprachen.getLanguage()
   }
   handleScroll() {
     if (window.scrollY > 50) {
@@ -76,6 +112,13 @@ class App extends Component {
     )
   }
 
+  getAbout(){
+    return (
+      <div>
+        <About setPage={this.setPage.bind(this)} minHeight={this.state.windowHeight} />
+      </div>
+    )
+  }
   getAGB(){
     return (
       <div>
@@ -83,8 +126,19 @@ class App extends Component {
       </div>
     )
   }
-  getPage(){
-    return this.state.page
+  getDatenschutz(){
+    return (
+      <div>
+        <Datenschutz setPage={this.setPage.bind(this)} minHeight={this.state.windowHeight} />
+      </div>
+    )
+  }
+  getImpressum(){
+    return (
+      <div>
+        <Impressum setPage={this.setPage.bind(this)} minHeight={this.state.windowHeight} />
+      </div>
+    )
   }
   setPage(page){
     this.state.page===page || console.log('nei');
@@ -97,8 +151,17 @@ class App extends Component {
       case 'home':
         return this.getHome()
         break;
+      case 'about':
+        return this.getAbout()
+        break;
       case 'agb':
         return this.getAGB()
+        break;
+      case 'datenschutz':
+        return this.getDatenschutz()
+        break;
+      case 'impressum':
+        return this.getImpressum()
         break;
       default:
 
@@ -109,9 +172,9 @@ class App extends Component {
     console.log('hmm');
     return (<div className="App">
       <PageCover/>
-      <Header setPage={this.setPage.bind(this)} getPage={this.getPage.bind(this)} headerFixedAtTheTop={this.state.headerFixedAtTheTop}/>
+      <Header getLanguage={this._getLanguage} setLanguage={this._setLanguage} setPage={this.setPage.bind(this)}  headerFixedAtTheTop={this.state.headerFixedAtTheTop}/>
       {this.getpage()}
-      <Footer getPage={this.getPage.bind(this)} setPage={this.setPage.bind(this)}/>
+      <Footer setLanguage={this._setLanguage}  setPage={this.setPage.bind(this)}/>
     </div>);
   }
 }

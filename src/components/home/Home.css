@@ -1,0 +1,34 @@
+.download{
+  display: flex;
+  justify-content: center;;
+  align-items: center;
+  height: 50px;
+  width: 100%;
+  padding-top: 5px;
+}
+.download a,.download-tablet a,.download-mobile a {
+    background: -o-linear-gradient(right, #f94877, #dd4b39);
+    background: linear-gradient(to left, #f94877, #dd4b39);
+    border-radius: 22px;
+    padding: 10px 15px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+    opacity: 0.8;
+    text-decoration: none;
+    min-width: 125px;
+}
+.download a:hover,.download-tablet:hover a,.download-mobile:hover a {
+  background: -o-linear-gradient(right, #dd4b39, #f94877);
+  background: linear-gradient(to left, #dd4b39, #f94877 );
+    box-shadow: 0 2px 8px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+    opacity: 1;
+}
+.download-mobile {
+      padding-top: 14px;
+}
+.download-mobile a {
+    font-size: 14px;
+    min-width: 110px;
+}

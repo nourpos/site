@@ -1,4 +1,7 @@
 
+.carousel{
+  direction:ltr
+}
 .carousel-list-item {
   display: flex;
   flex: 1;

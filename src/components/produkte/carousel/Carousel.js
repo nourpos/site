@@ -22,7 +22,7 @@ class Carousel extends React.Component {
       easing :'ease-in-out'
     };
     return (
-      <Slider {...settings}>
+      <Slider  {...settings}>
         <div>
           <div className="carousel-list-item">
             <div className="TextBox blueTextBox">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</div>

@@ -28,10 +28,10 @@ const errorValidator = (values) => {
 
     const validateBetriebsName = (betriebsName) => {
       if (!betriebsName) {
-        return 'Bitte nenne uns Deine Stadt.'
+        return 'Bitte nenne uns den Namen Deines Betriebs.'
       }
       if (!validator.isAlpha(betriebsName)) {
-        return 'Bitte geben Sie einen gültigen Stadt Namen ein.'
+        return 'Bitte geben Sie einen gültigen Betrieb Namen ein.'
       }
       return null
     };

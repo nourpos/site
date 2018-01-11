@@ -3,8 +3,7 @@ import React, {Component} from 'react';
 import Responsive from 'react-responsive';
 import FunctionenCSS from './Functionen.css';
 
-
-
+import Sprachen from '../../languages/Sprachen'
 
 const Desktop = props => <Responsive {...props} minWidth={992}/>;
 const Tablet = props => <Responsive {...props} minWidth={768} maxWidth={991}/>;
@@ -14,124 +13,128 @@ const Default = props => <Responsive {...props} minWidth={768}/>;
 
 var FontAwesome = require('react-fontawesome')
 const checkIcon = (<FontAwesome className="check" name="check" size="1x"/>)
-
 class Functionen extends React.Component {
   render() {
+    const checkIconSpan = (<span class="checkIcon" style={{left:Sprachen.getLanguage()==='ar'?'-100px':'auto',right:Sprachen.getLanguage()==='ar'?'auto':'0'}}>{checkIcon}</span>)
+
     return (
       <div>
       <Desktop>
        <section style={{
           flexDirection: 'column',
           minHeight: this.props.minHeight,
-          backgroundColor: '#fff'
+          backgroundColor: '#fff',
+          textAlign:Sprachen.getLanguage()==='ar'?'right':'left',
+          direction: Sprachen.getLanguage()==='ar'?'rtl':'ltr'
         }} id="functionen" className="_desktop">
 
         <div className="md_width">
-          <h3 >Vorteile und Funktionen</h3>
-          <div class="_SitThW">
+          <h3 >{Sprachen.vorteile}</h3>
+          <div class="_SitThW" style={{paddingRight:Sprachen.getLanguage()==='ar'?'0px':''}}>
             <ul >
             <li>
-              <div style={{display:'flex',flexDirection:'row',justifyContent:'left',alignItems:'center'}}>
+              <div style={{display:'flex',flexDirection:'row',alignItems:'center'}}>
                 <div>
-                  <p className="functionen-text">Verkaufsübersichten und tägliche Umsatzberichte für bessere geschäftliche Entscheidungen</p>
+                  <p className="functionen-text">{Sprachen.offlineArbeiten}</p>
                 </div>
-                <span class="checkIcon">{checkIcon}</span>
-              </div>
-            </li>
-            <li>
-              <div style={{display:'flex',flexDirection:'row',justifyContent:'left',alignItems:'center'}}>
-                <div>
-                  <p className="functionen-text">Lager- und Bestandsmanagement zur effizienten Planung von Lieferantenbestellungen</p>
-                </div>
-                <span class="checkIcon">{checkIcon}</span>
+                {checkIconSpan}
               </div>
             </li>
               <li>
-                <div style={{display:'flex',flexDirection:'row',justifyContent:'left',alignItems:'center'}}>
+                <div style={{display:'flex',flexDirection:'row',alignItems:'center'}}>
                   <div>
-                    <p className="functionen-text">Zahlungen in bar, per Karte oder NFC annehmen und digitale Quittungen senden</p>
+                    <p className="functionen-text">{Sprachen.escSupport}</p>
                   </div>
-                  <span class="checkIcon">{checkIcon}</span>
+                  {checkIconSpan}
                 </div>
               </li>
               <li>
-                <div style={{display:'flex',flexDirection:'row',justifyContent:'left',alignItems:'center'}}>
+                <div style={{display:'flex',flexDirection:'row',alignItems:'center'}}>
                   <div>
-                    <p className="functionen-text">Verschiedene Funktionen für die Gastronomie wie offene und geteilte Rechnungen sowie Tischmanagement</p>
+                    <p className="functionen-text">{Sprachen.bericht}</p>
                   </div>
-                  <span class="checkIcon">{checkIcon}</span>
+                  {checkIconSpan}
                 </div>
               </li>
               <li>
-                <div style={{display:'flex',flexDirection:'row',justifyContent:'left',alignItems:'center'}}>
+                <div style={{display:'flex',flexDirection:'row',alignItems:'center'}}>
                   <div>
-                    <p className="functionen-text">Verkaufsübersichten und tägliche Umsatzberichte für bessere geschäftliche Entscheidungen</p>
+                    <p className="functionen-text">{Sprachen.bestellNotiz}</p>
                   </div>
-                  <span class="checkIcon">{checkIcon}</span>
+                  {checkIconSpan}
                 </div>
               </li>
               <li>
-                <div style={{display:'flex',flexDirection:'row',justifyContent:'left',alignItems:'center'}}>
+                <div style={{display:'flex',flexDirection:'row',alignItems:'center'}}>
                   <div>
-                    <p className="functionen-text">Lager- und Bestandsmanagement zur effizienten Planung von Lieferantenbestellungen</p>
+                    <p className="functionen-text">{Sprachen.rechnungRecover} </p>
                   </div>
-                  <span class="checkIcon">{checkIcon}</span>
+                  {checkIconSpan}
                 </div>
               </li>
               <li>
-                <div style={{display:'flex',flexDirection:'row',justifyContent:'left',alignItems:'center'}}>
+                <div style={{display:'flex',flexDirection:'row',alignItems:'center'}}>
                   <div>
-                    <p className="functionen-text">Annahme von Bestellungen am Tisch auch ohne Internetverbindung für komplette Mobilität</p>
+                    <p className="functionen-text">{Sprachen.rueckgeldrechner}</p>
                   </div>
-                  <span class="checkIcon">{checkIcon}</span>
+                  {checkIconSpan}
                 </div>
               </li>
               <li>
-                <div style={{display:'flex',flexDirection:'row',justifyContent:'left',alignItems:'center'}}>
+                <div style={{display:'flex',flexDirection:'row',alignItems:'center'}}>
                   <div>
-                    <p className="functionen-text">Verkaufsübersichten und tägliche Umsatzberichte für bessere geschäftliche Entscheidungen</p>
+                    <p className="functionen-text">{Sprachen.splittRechnung} </p>
                   </div>
-                  <span class="checkIcon">{checkIcon}</span>
+                  {checkIconSpan}
                 </div>
               </li>
               <li>
-                <div style={{display:'flex',flexDirection:'row',justifyContent:'left',alignItems:'center'}}>
+                <div style={{display:'flex',flexDirection:'row',alignItems:'center'}}>
                   <div>
-                    <p className="functionen-text">Lager- und Bestandsmanagement zur effizienten Planung von Lieferantenbestellungen</p>
+                    <p className="functionen-text">{Sprachen.verlegeTische} </p>
                   </div>
-                  <span class="checkIcon">{checkIcon}</span>
+                  {checkIconSpan}
+                </div>
+              </li>
+
+              <li>
+                <div style={{display:'flex',flexDirection:'row',alignItems:'center'}}>
+                  <div>
+                    <p className="functionen-text">{Sprachen.annahmeBestellunegn}</p>
+                  </div>
+                  {checkIconSpan}
                 </div>
               </li>
               <li>
-                <div style={{display:'flex',flexDirection:'row',justifyContent:'left',alignItems:'center'}}>
+                <div style={{display:'flex',flexDirection:'row',alignItems:'center'}}>
                   <div>
-                    <p className="functionen-text">Annahme von Bestellungen am Tisch auch ohne Internetverbindung für komplette Mobilität</p>
+                    <p className="functionen-text">{Sprachen.rechtemanagementUndBenutzerprofile} </p>
                   </div>
-                  <span class="checkIcon">{checkIcon}</span>
+                  {checkIconSpan}
                 </div>
               </li>
               <li>
-                <div style={{display:'flex',flexDirection:'row',justifyContent:'left',alignItems:'center'}}>
+                <div style={{display:'flex',flexDirection:'row',alignItems:'center'}}>
                   <div>
-                    <p className="functionen-text">Verkaufsübersichten und tägliche Umsatzberichte für bessere geschäftliche Entscheidungen</p>
+                    <p className="functionen-text">{Sprachen.rabatteVergeben}</p>
                   </div>
-                  <span class="checkIcon">{checkIcon}</span>
+                  {checkIconSpan}
                 </div>
               </li>
               <li>
-                <div style={{display:'flex',flexDirection:'row',justifyContent:'left',alignItems:'center'}}>
+                <div style={{display:'flex',flexDirection:'row',alignItems:'center'}}>
                   <div>
-                    <p className="functionen-text">Annahme von Bestellungen am Tisch auch ohne Internetverbindung für komplette Mobilität</p>
+                    <p className="functionen-text">{Sprachen.editArtikel} </p>
                   </div>
-                  <span class="checkIcon">{checkIcon}</span>
+                  {checkIconSpan}
                 </div>
               </li>
               <li>
-                <div style={{display:'flex',flexDirection:'row',justifyContent:'left',alignItems:'center'}}>
+                <div style={{display:'flex',flexDirection:'row',alignItems:'center'}}>
                   <div>
-                    <p className="functionen-text">Verkaufsübersichten und tägliche Umsatzberichte für bessere geschäftliche Entscheidungen</p>
+                    <p className="functionen-text">{Sprachen.emailSupport}</p>
                   </div>
-                  <span class="checkIcon">{checkIcon}</span>
+                  {checkIconSpan}
                 </div>
               </li>
             </ul>
@@ -143,115 +146,118 @@ class Functionen extends React.Component {
       <section style={{
          flexDirection: 'column',
          minHeight: this.props.minHeight,
-         backgroundColor: '#fff'
+         backgroundColor: '#fff',
+         textAlign:Sprachen.getLanguage()==='ar'?'right':'left',
+         direction: Sprachen.getLanguage()==='ar'?'rtl':'ltr'
        }} id="functionen" className="_tablet">
 
        <div className="xs_width">
-         <h3 >Vorteile und Funktionen</h3>
-         <div class="_SitThW">
+         <h3 >{Sprachen.vorteile}</h3>
+         <div class="_SitThW" style={{paddingRight:Sprachen.getLanguage()==='ar'?'0px':''}}>
            <ul >
            <li>
-             <div style={{display:'flex',flexDirection:'row',justifyContent:'left',alignItems:'center'}}>
+             <div style={{display:'flex',flexDirection:'row',alignItems:'center'}}>
                <div>
-                 <p className="functionen-text">Verkaufsübersichten und tägliche Umsatzberichte für bessere geschäftliche Entscheidungen</p>
+                 <p className="functionen-text">{Sprachen.offlineArbeiten}</p>
                </div>
-               <span class="checkIcon">{checkIcon}</span>
-             </div>
-           </li>
-           <li>
-             <div style={{display:'flex',flexDirection:'row',justifyContent:'left',alignItems:'center'}}>
-               <div>
-                 <p className="functionen-text">Lager- und Bestandsmanagement zur effizienten Planung von Lieferantenbestellungen</p>
-               </div>
-               <span class="checkIcon">{checkIcon}</span>
+               {checkIconSpan}
              </div>
            </li>
              <li>
-               <div style={{display:'flex',flexDirection:'row',justifyContent:'left',alignItems:'center'}}>
+               <div style={{display:'flex',flexDirection:'row',alignItems:'center'}}>
                  <div>
-                   <p className="functionen-text">Zahlungen in bar, per Karte oder NFC annehmen und digitale Quittungen senden</p>
+                   <p className="functionen-text">{Sprachen.escSupport}</p>
                  </div>
-                 <span class="checkIcon">{checkIcon}</span>
+                 {checkIconSpan}
                </div>
              </li>
              <li>
-               <div style={{display:'flex',flexDirection:'row',justifyContent:'left',alignItems:'center'}}>
+               <div style={{display:'flex',flexDirection:'row',alignItems:'center'}}>
                  <div>
-                   <p className="functionen-text">Verschiedene Funktionen für die Gastronomie wie offene und geteilte Rechnungen sowie Tischmanagement</p>
+                   <p className="functionen-text">{Sprachen.bericht}</p>
                  </div>
-                 <span class="checkIcon">{checkIcon}</span>
+                 {checkIconSpan}
                </div>
              </li>
              <li>
-               <div style={{display:'flex',flexDirection:'row',justifyContent:'left',alignItems:'center'}}>
+               <div style={{display:'flex',flexDirection:'row',alignItems:'center'}}>
                  <div>
-                   <p className="functionen-text">Verkaufsübersichten und tägliche Umsatzberichte für bessere geschäftliche Entscheidungen</p>
+                   <p className="functionen-text">{Sprachen.bestellNotiz}</p>
                  </div>
-                 <span class="checkIcon">{checkIcon}</span>
+                 {checkIconSpan}
                </div>
              </li>
              <li>
-               <div style={{display:'flex',flexDirection:'row',justifyContent:'left',alignItems:'center'}}>
+               <div style={{display:'flex',flexDirection:'row',alignItems:'center'}}>
                  <div>
-                   <p className="functionen-text">Lager- und Bestandsmanagement zur effizienten Planung von Lieferantenbestellungen</p>
+                   <p className="functionen-text">{Sprachen.rechnungRecover} </p>
                  </div>
-                 <span class="checkIcon">{checkIcon}</span>
+                 {checkIconSpan}
                </div>
              </li>
              <li>
-               <div style={{display:'flex',flexDirection:'row',justifyContent:'left',alignItems:'center'}}>
+               <div style={{display:'flex',flexDirection:'row',alignItems:'center'}}>
                  <div>
-                   <p className="functionen-text">Annahme von Bestellungen am Tisch auch ohne Internetverbindung für komplette Mobilität</p>
+                   <p className="functionen-text">{Sprachen.rueckgeldrechner}</p>
                  </div>
-                 <span class="checkIcon">{checkIcon}</span>
+                 {checkIconSpan}
                </div>
              </li>
              <li>
-               <div style={{display:'flex',flexDirection:'row',justifyContent:'left',alignItems:'center'}}>
+               <div style={{display:'flex',flexDirection:'row',alignItems:'center'}}>
                  <div>
-                   <p className="functionen-text">Verkaufsübersichten und tägliche Umsatzberichte für bessere geschäftliche Entscheidungen</p>
+                   <p className="functionen-text">{Sprachen.splittRechnung} </p>
                  </div>
-                 <span class="checkIcon">{checkIcon}</span>
+                 {checkIconSpan}
                </div>
              </li>
              <li>
-               <div style={{display:'flex',flexDirection:'row',justifyContent:'left',alignItems:'center'}}>
+               <div style={{display:'flex',flexDirection:'row',alignItems:'center'}}>
                  <div>
-                   <p className="functionen-text">Lager- und Bestandsmanagement zur effizienten Planung von Lieferantenbestellungen</p>
+                   <p className="functionen-text">{Sprachen.verlegeTische} </p>
                  </div>
-                 <span class="checkIcon">{checkIcon}</span>
+                 {checkIconSpan}
+               </div>
+             </li>
+
+             <li>
+               <div style={{display:'flex',flexDirection:'row',alignItems:'center'}}>
+                 <div>
+                   <p className="functionen-text">{Sprachen.annahmeBestellunegn}</p>
+                 </div>
+                 {checkIconSpan}
                </div>
              </li>
              <li>
-               <div style={{display:'flex',flexDirection:'row',justifyContent:'left',alignItems:'center'}}>
+               <div style={{display:'flex',flexDirection:'row',alignItems:'center'}}>
                  <div>
-                   <p className="functionen-text">Annahme von Bestellungen am Tisch auch ohne Internetverbindung für komplette Mobilität</p>
+                   <p className="functionen-text">{Sprachen.rechtemanagementUndBenutzerprofile} </p>
                  </div>
-                 <span class="checkIcon">{checkIcon}</span>
+                 {checkIconSpan}
                </div>
              </li>
              <li>
-               <div style={{display:'flex',flexDirection:'row',justifyContent:'left',alignItems:'center'}}>
+               <div style={{display:'flex',flexDirection:'row',alignItems:'center'}}>
                  <div>
-                   <p className="functionen-text">Verkaufsübersichten und tägliche Umsatzberichte für bessere geschäftliche Entscheidungen</p>
+                   <p className="functionen-text">{Sprachen.rabatteVergeben}</p>
                  </div>
-                 <span class="checkIcon">{checkIcon}</span>
+                 {checkIconSpan}
                </div>
              </li>
              <li>
-               <div style={{display:'flex',flexDirection:'row',justifyContent:'left',alignItems:'center'}}>
+               <div style={{display:'flex',flexDirection:'row',alignItems:'center'}}>
                  <div>
-                   <p className="functionen-text">Annahme von Bestellungen am Tisch auch ohne Internetverbindung für komplette Mobilität</p>
+                   <p className="functionen-text">{Sprachen.editArtikel} </p>
                  </div>
-                 <span class="checkIcon">{checkIcon}</span>
+                 {checkIconSpan}
                </div>
              </li>
              <li>
-               <div style={{display:'flex',flexDirection:'row',justifyContent:'left',alignItems:'center'}}>
+               <div style={{display:'flex',flexDirection:'row',alignItems:'center'}}>
                  <div>
-                   <p className="functionen-text">Verkaufsübersichten und tägliche Umsatzberichte für bessere geschäftliche Entscheidungen</p>
+                   <p className="functionen-text">{Sprachen.emailSupport}</p>
                  </div>
-                 <span class="checkIcon">{checkIcon}</span>
+                 {checkIconSpan}
                </div>
              </li>
            </ul>
@@ -263,115 +269,118 @@ class Functionen extends React.Component {
       <section style={{
           flexDirection: 'column',
           minHeight: this.props.minHeight,
-          backgroundColor: '#fff'
+          backgroundColor: '#fff',
+          textAlign:Sprachen.getLanguage()==='ar'?'right':'left',
+          direction: Sprachen.getLanguage()==='ar'?'rtl':'ltr'
         }} id="functionen" className="_desktop">
 
         <div className="xs_width">
-          <h3 >Vorteile und Funktionen</h3>
-          <div class="_SitThW">
+          <h3 >{Sprachen.vorteile}</h3>
+          <div class="_SitThW" style={{paddingRight:Sprachen.getLanguage()==='ar'?'0px':''}}>
             <ul >
             <li>
-              <div style={{display:'flex',flexDirection:'row',justifyContent:'left',alignItems:'center'}}>
+              <div style={{display:'flex',flexDirection:'row',alignItems:'center'}}>
                 <div>
-                  <p className="functionen-text">Verkaufsübersichten und tägliche Umsatzberichte für bessere geschäftliche Entscheidungen</p>
+                  <p className="functionen-text">{Sprachen.offlineArbeiten}</p>
                 </div>
-                <span class="checkIcon">{checkIcon}</span>
-              </div>
-            </li>
-            <li>
-              <div style={{display:'flex',flexDirection:'row',justifyContent:'left',alignItems:'center'}}>
-                <div>
-                  <p className="functionen-text">Lager- und Bestandsmanagement zur effizienten Planung von Lieferantenbestellungen</p>
-                </div>
-                <span class="checkIcon">{checkIcon}</span>
+                {checkIconSpan}
               </div>
             </li>
               <li>
-                <div style={{display:'flex',flexDirection:'row',justifyContent:'left',alignItems:'center'}}>
+                <div style={{display:'flex',flexDirection:'row',alignItems:'center'}}>
                   <div>
-                    <p className="functionen-text">Zahlungen in bar, per Karte oder NFC annehmen und digitale Quittungen senden</p>
+                    <p className="functionen-text">{Sprachen.escSupport}</p>
                   </div>
-                  <span class="checkIcon">{checkIcon}</span>
+                  {checkIconSpan}
                 </div>
               </li>
               <li>
-                <div style={{display:'flex',flexDirection:'row',justifyContent:'left',alignItems:'center'}}>
+                <div style={{display:'flex',flexDirection:'row',alignItems:'center'}}>
                   <div>
-                    <p className="functionen-text">Verschiedene Funktionen für die Gastronomie wie offene und geteilte Rechnungen sowie Tischmanagement</p>
+                    <p className="functionen-text">{Sprachen.bericht}</p>
                   </div>
-                  <span class="checkIcon">{checkIcon}</span>
+                  {checkIconSpan}
                 </div>
               </li>
               <li>
-                <div style={{display:'flex',flexDirection:'row',justifyContent:'left',alignItems:'center'}}>
+                <div style={{display:'flex',flexDirection:'row',alignItems:'center'}}>
                   <div>
-                    <p className="functionen-text">Verkaufsübersichten und tägliche Umsatzberichte für bessere geschäftliche Entscheidungen</p>
+                    <p className="functionen-text">{Sprachen.bestellNotiz}</p>
                   </div>
-                  <span class="checkIcon">{checkIcon}</span>
+                  {checkIconSpan}
                 </div>
               </li>
               <li>
-                <div style={{display:'flex',flexDirection:'row',justifyContent:'left',alignItems:'center'}}>
+                <div style={{display:'flex',flexDirection:'row',alignItems:'center'}}>
                   <div>
-                    <p className="functionen-text">Lager- und Bestandsmanagement zur effizienten Planung von Lieferantenbestellungen</p>
+                    <p className="functionen-text">{Sprachen.rechnungRecover} </p>
                   </div>
-                  <span class="checkIcon">{checkIcon}</span>
+                  {checkIconSpan}
                 </div>
               </li>
               <li>
-                <div style={{display:'flex',flexDirection:'row',justifyContent:'left',alignItems:'center'}}>
+                <div style={{display:'flex',flexDirection:'row',alignItems:'center'}}>
                   <div>
-                    <p className="functionen-text">Annahme von Bestellungen am Tisch auch ohne Internetverbindung für komplette Mobilität</p>
+                    <p className="functionen-text">{Sprachen.rueckgeldrechner}</p>
                   </div>
-                  <span class="checkIcon">{checkIcon}</span>
+                  {checkIconSpan}
                 </div>
               </li>
               <li>
-                <div style={{display:'flex',flexDirection:'row',justifyContent:'left',alignItems:'center'}}>
+                <div style={{display:'flex',flexDirection:'row',alignItems:'center'}}>
                   <div>
-                    <p className="functionen-text">Verkaufsübersichten und tägliche Umsatzberichte für bessere geschäftliche Entscheidungen</p>
+                    <p className="functionen-text">{Sprachen.splittRechnung} </p>
                   </div>
-                  <span class="checkIcon">{checkIcon}</span>
+                  {checkIconSpan}
                 </div>
               </li>
               <li>
-                <div style={{display:'flex',flexDirection:'row',justifyContent:'left',alignItems:'center'}}>
+                <div style={{display:'flex',flexDirection:'row',alignItems:'center'}}>
                   <div>
-                    <p className="functionen-text">Lager- und Bestandsmanagement zur effizienten Planung von Lieferantenbestellungen</p>
+                    <p className="functionen-text">{Sprachen.verlegeTische} </p>
                   </div>
-                  <span class="checkIcon">{checkIcon}</span>
+                  {checkIconSpan}
+                </div>
+              </li>
+
+              <li>
+                <div style={{display:'flex',flexDirection:'row',alignItems:'center'}}>
+                  <div>
+                    <p className="functionen-text">{Sprachen.annahmeBestellunegn}</p>
+                  </div>
+                  {checkIconSpan}
                 </div>
               </li>
               <li>
-                <div style={{display:'flex',flexDirection:'row',justifyContent:'left',alignItems:'center'}}>
+                <div style={{display:'flex',flexDirection:'row',alignItems:'center'}}>
                   <div>
-                    <p className="functionen-text">Annahme von Bestellungen am Tisch auch ohne Internetverbindung für komplette Mobilität</p>
+                    <p className="functionen-text">{Sprachen.rechtemanagementUndBenutzerprofile} </p>
                   </div>
-                  <span class="checkIcon">{checkIcon}</span>
+                  {checkIconSpan}
                 </div>
               </li>
               <li>
-                <div style={{display:'flex',flexDirection:'row',justifyContent:'left',alignItems:'center'}}>
+                <div style={{display:'flex',flexDirection:'row',alignItems:'center'}}>
                   <div>
-                    <p className="functionen-text">Verkaufsübersichten und tägliche Umsatzberichte für bessere geschäftliche Entscheidungen</p>
+                    <p className="functionen-text">{Sprachen.rabatteVergeben}</p>
                   </div>
-                  <span class="checkIcon">{checkIcon}</span>
+                  {checkIconSpan}
                 </div>
               </li>
               <li>
-                <div style={{display:'flex',flexDirection:'row',justifyContent:'left',alignItems:'center'}}>
+                <div style={{display:'flex',flexDirection:'row',alignItems:'center'}}>
                   <div>
-                    <p className="functionen-text">Annahme von Bestellungen am Tisch auch ohne Internetverbindung für komplette Mobilität</p>
+                    <p className="functionen-text">{Sprachen.editArtikel} </p>
                   </div>
-                  <span class="checkIcon">{checkIcon}</span>
+                  {checkIconSpan}
                 </div>
               </li>
               <li>
-                <div style={{display:'flex',flexDirection:'row',justifyContent:'left',alignItems:'center'}}>
+                <div style={{display:'flex',flexDirection:'row',alignItems:'center'}}>
                   <div>
-                    <p className="functionen-text">Verkaufsübersichten und tägliche Umsatzberichte für bessere geschäftliche Entscheidungen</p>
+                    <p className="functionen-text">{Sprachen.emailSupport}</p>
                   </div>
-                  <span class="checkIcon">{checkIcon}</span>
+                  {checkIconSpan}
                 </div>
               </li>
             </ul>

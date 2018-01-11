@@ -179,3 +179,11 @@ a[href^="tel:"]:before {
     margin-right: 0.09em;
     font-size: 18px;
 }
+
+.dropdown.dropdown-toggle{
+  padding: 0.350rem 1.05rem;
+}
+.dropdown .btn-secondary{
+  transition: 0.3s ease-in-out ;
+  background: #272727 ;
+}

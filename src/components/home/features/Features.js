@@ -3,6 +3,7 @@ import Responsive from 'react-responsive';
 
 import {Form, Text} from 'react-form';
 import './Features.css';
+import Sprachen from '../../../languages/Sprachen'
 var FontAwesome = require('react-fontawesome')
 
 var einfachIcon = (<FontAwesome className="fa-thumbs-o-up" size="4x"/>)
@@ -12,6 +13,8 @@ var geringeKostenIcon = (<FontAwesome className="fa-pie-chart" size="4x"/>)
 var einfachIconMobile = (<FontAwesome className="fa-thumbs-o-up" size="2x"/>)
 var zuverlaessigIconMobile = (<FontAwesome className="fa-check" size="2x"/>)
 var geringeKostenIconMobile = (<FontAwesome className="fa-pie-chart" size="2x"/>)
+
+
 
 const Desktop = props => <Responsive {...props} minWidth={992}/>;
 const Tablet = props => <Responsive {...props} minWidth={768} maxWidth={991}/>;
@@ -39,9 +42,9 @@ class Features extends Component {
               marginRight: 'auto',
               justifyContent: 'center',
               alignItems: 'center',
-              flexDirection: 'column'
+              flexDirection: 'column',
             }}>
-            <h2>Ein elektronisches Kassensystem für Android Geräte, das alle Funktionen herkömmlicher Kassensysteme bietet, nur einen Bruchteil kostet und weniger Platz auf dem Tresen wegnimmt.</h2>
+            <h2>{Sprachen.featuresText}</h2>
             <div style={{
                 display: 'flex'
               }}>
@@ -63,8 +66,8 @@ class Features extends Component {
                   }}>
                   {geringeKostenIcon}
                 </div>
-                <p>Geringe Kosten</p>
-                <p>Sparen Sie Geld und kaufen Sie sich Eis dafür :)</p>
+                <p>{Sprachen.lowCost}</p>
+                <p>{Sprachen.lowCostText} </p>
               </div>
               <div className="md4" style={{
                   display: 'flex',
@@ -83,8 +86,8 @@ class Features extends Component {
                   }}>
                   {einfachIcon}
                 </div>
-                <p>Einfache Bedienung</p>
-                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor</p>
+                <p>{Sprachen.easyHandling}</p>
+                <p>{Sprachen.easyHandlingText}</p>
               </div>
               <div className="md4" style={{
                   display: 'flex',
@@ -103,8 +106,8 @@ class Features extends Component {
                   }}>
                   {zuverlaessigIcon}
                 </div>
-                <p>Zuverlässig</p>
-                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor</p>
+                <p>{Sprachen.reliable}</p>
+                <p>{Sprachen.reliableText}</p>
               </div>
             </div>
           </div>
@@ -125,7 +128,7 @@ class Features extends Component {
               alignItems: 'center',
               flexDirection: 'column'
             }}>
-            <h2>Ein elektronisches Kassensystem für Android Geräte, das alle Funktionen herkömmlicher Kassensysteme bietet, nur einen Bruchteil kostet und weniger Platz auf dem Tresen wegnimmt.</h2>
+            <h2>{Sprachen.featuresText}</h2>
             <div style={{
                 display: 'flex'
               }}>
@@ -146,8 +149,8 @@ class Features extends Component {
                   }}>
                   {geringeKostenIcon}
                 </div>
-                <p>Geringe Kosten</p>
-                <p>Sparen Sie Geld und kaufen Sie sich Eis dafür :)</p>
+                <p>{Sprachen.lowCost}</p>
+                <p>{Sprachen.lowCostText} </p>
               </div>
               <div className="md4" style={{
                   display: 'flex',
@@ -166,8 +169,8 @@ class Features extends Component {
                   }}>
                   {einfachIcon}
                 </div>
-                <p>Einfach</p>
-                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor</p>
+                <p>{Sprachen.easyHandling}</p>
+                <p>{Sprachen.easyHandlingText}</p>
               </div>
               <div className="md4" style={{
                   display: 'flex',
@@ -186,8 +189,8 @@ class Features extends Component {
                   }}>
                   {zuverlaessigIcon}
                 </div>
-                <p>Zuverlässig</p>
-                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor</p>
+                <p>{Sprachen.reliable}</p>
+                <p>{Sprachen.reliableText}</p>
               </div>
             </div>
           </div>
@@ -208,7 +211,7 @@ class Features extends Component {
               alignItems: 'center',
               flexDirection: 'column'
             }}>
-            <h2>Ein elektronisches Kassensystem für Android Geräte, das alle Funktionen herkömmlicher Kassensysteme bietet, nur einen Bruchteil kostet und weniger Platz auf dem Tresen wegnimmt.</h2>
+            <h2>{Sprachen.featuresText}</h2>
             <div style={{
                 display: 'flex',flexDirection:'column'
               }}>
@@ -229,8 +232,8 @@ class Features extends Component {
                   }}>
                   {geringeKostenIconMobile}
                 </div>
-                <p>Geringe Kosten</p>
-                <p>Sparen Sie Geld und kaufen Sie sich Eis dafür :)</p>
+                <p>{Sprachen.lowCost}</p>
+                <p>{Sprachen.lowCostText} </p>
               </div>
               <div className="md0" style={{
                   display: 'flex',
@@ -249,8 +252,8 @@ class Features extends Component {
                   }}>
                   {einfachIconMobile}
                 </div>
-                <p>Einfach</p>
-                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor</p>
+                <p>{Sprachen.easyHandling}</p>
+                <p>{Sprachen.easyHandlingText}</p>
               </div>
               <div className="md0" style={{
                   display: 'flex',
@@ -269,8 +272,8 @@ class Features extends Component {
                   }}>
                   {zuverlaessigIconMobile}
                 </div>
-                <p>Zuverlässig</p>
-                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor</p>
+                <p>{Sprachen.reliable}</p>
+                <p>{Sprachen.reliableText}</p>
               </div>
             </div>
           </div>
