@@ -77,7 +77,13 @@ export default new LocalizedStrings({
     copyrights:"Copyrights",
 
     weContactYou:"We have received your request, we will contact you.",
-    errorOcurred:"Error occurred"
+    errorOcurred:"Error occurred",
+
+    theTeam:"The Team",
+    contactUs:"contact us",
+    maintenanceText:"Sorry for the inconvenience but we’re performing some maintenance at the moment. If you need to you can always {0}, otherwise we'll be back online shortly!",
+    weComeBack:"we\'ll be back soon"
+
   },
   "de":{
     posSystems:"NourPos Kassensysteme",
@@ -154,7 +160,12 @@ export default new LocalizedStrings({
     copyrights:"Copyrights",
 
     weContactYou:"Wir haben Ihre Anfrage empfangen, wir kontaktieren Sie.",
-    errorOcurred:"Fehler aufgetreten"
+    errorOcurred:"Fehler aufgetreten",
+
+    theTeam:"Das Team",
+    contactUs:"kontaktieren",
+    maintenanceText:"Entschuldigung für die Unannehmlichkeiten, aber wir führen gerade Wartungsarbeiten durch. Wenn Sie möchten, können Sie uns jederzeit {0}, sonst sind wir in Kürze wieder online!",
+    weComeBack:"Wir kommen bald wieder"
   },
   "fr":{
     posSystems:"NourPos Systèmes POS",
@@ -231,7 +242,12 @@ export default new LocalizedStrings({
     copyrights:"Copyrights",
 
     weContactYou:"Nous avons reçu votre demande, nous vous contacterons.",
-    errorOcurred:"Erreur survenue"
+    errorOcurred:"Erreur survenue",
+
+    theTeam:"L'équipe",
+    contactUs:"nous contacter",
+    maintenanceText:"Désolé pour le dérangement, mais nous faisons actuellement la maintenance. Si vous le souhaitez, vous pouvez nous {0} à tout moment, sinon nous serons bientôt en ligne!",
+    weComeBack:"Nous reviendrons bientôt"
   },
   "ar":{
     posSystems:"نقطة البيع نوربوس",
@@ -307,7 +323,12 @@ export default new LocalizedStrings({
     copyrights:"حقوق النشر محفوظة",
 
     weContactYou:"لقد تلقينا طلبك، وسوف نتصل بك.",
-    errorOcurred:"حدث خطأ"
+    errorOcurred:"حدث خطأ",
+
+    theTeam:"الفريق",
+    contactUs:"الإتصال بنا",
+    maintenanceText:"آسف للإزعاج، ولكن نحن نجري حاليا الصيانة. إذا كنت تريد، يمكنك {0}  في أي وقت، وإلا فإننا سوف تكون على الانترنت قريبا!",
+    weComeBack:"سنعود قريبا"
 
 
   }

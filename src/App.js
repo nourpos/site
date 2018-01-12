@@ -10,13 +10,17 @@ import Functionen from './components/functionen/Functionen';
 import Preise from './components/preise/Preise';
 import About from './components/about/About';
 import AGB from './components/agb/AGB';
+import Bundle from './components/utils/Bundle';
 import Datenschutz from './components/datenschutz/Datenschutz';
 import Impressum from './components/impressum/Impressum';
 import Contact from './components/contact/Contact';
 import Footer from './components/footer/Footer';
+import Maintenance from './components/maintenance/Maintenance';
 import Sprachen from './languages/Sprachen'
 import {reactLocalStorage} from 'reactjs-localstorage';
 
+import config from './config.json'
+var maintenance = config.maintenance
 reactLocalStorage.set('lang', 'de');
 
 
@@ -164,6 +168,11 @@ class App extends Component {
 
   render() {
     console.log('hmm');
+    if (maintenance) {
+      return(
+        <Maintenance />
+      )
+    }
     return (<div className="App">
       <PageCover/>
       <Header getLanguage={this._getLanguage} setLanguage={this._setLanguage} setPage={this.setPage.bind(this)}  headerFixedAtTheTop={this.state.headerFixedAtTheTop}/>
