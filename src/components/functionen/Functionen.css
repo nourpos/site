@@ -11,12 +11,16 @@
 }
 ._SitThW p {
     margin: 0;
-    padding: 1.1em;
+    padding: 1.1em 1.1em;
+}
+.functionen-mobile ._SitThW p {
+  padding: 1.1em 1.25em;
+
 }
 .xs_width{
   width: 100%;
   padding: 10px;
-  font-size: 16px !important;
+  font-size: 1em !important;
   box-sizing: border-box;
 }
 
@@ -33,7 +37,13 @@
     position: absolute;
     right: 0;
 }
-
-.functionen-text{
-  text-align: left;
+.functionen-mobile .checkIcon {
+    display: flex;
+    margin-left: 25px;
+    width: 40px;
+    height: 40px;
+    background-color: #FFFFFF;
+    justify-content: center;
+    align-items: center;
+    color: #25D366;
 }

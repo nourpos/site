@@ -1,10 +1,9 @@
-import React, {Component} from 'react';
+import React from 'react';
 import Responsive from 'react-responsive';
 
-import DatenschutzCss from './Datenschutz.css';
+import './Datenschutz.css';
 
 var FontAwesome = require('react-fontawesome')
-const checkIcon = (<FontAwesome className="check" name="check" size="1x"/>)
 
 
 
@@ -15,21 +14,26 @@ const Default = props => <Responsive {...props} minWidth={768}/>;
 
 
 class Datenschutz extends React.Component {
+  renderDesktop(){
+    return(
+      <section style={{
+          flexDirection: 'column',
+          minHeight: this.props.minHeight,
+          backgroundColor: '#e8e8ec'
+        }} id="Datenschutz" className="_desktop">
+
+        <div className="md_width">
+          <h3>Datenschutz</h3>
+
+
+        </div>
+      </section>
+    )
+  }
   render() {
     return (<div>
       <Desktop>
-        <section style={{
-            flexDirection: 'column',
-            minHeight: this.props.minHeight,
-            backgroundColor: '#e8e8ec'
-          }} id="Datenschutz" className="_desktop">
-
-          <div className="md_width">
-            <h3>Datenschutz</h3>
-
-
-          </div>
-        </section>
+        {this.renderDesktop()}
       </Desktop>
       <Tablet>
         <section style={{
@@ -55,6 +59,9 @@ class Datenschutz extends React.Component {
         </div>
       </section>
       </Mobile>
+      <Default>
+        {this.renderDesktop()}
+      </Default>
     </div>)
   }
 }

@@ -16,6 +16,8 @@ const checkIcon = (<FontAwesome className="check" name="check" size="1x"/>)
 class Functionen extends React.Component {
   render() {
     const checkIconSpan = (<span class="checkIcon" style={{left:Sprachen.getLanguage()==='ar'?'-100px':'auto',right:Sprachen.getLanguage()==='ar'?'auto':'0'}}>{checkIcon}</span>)
+    const checkIconSpanTablet = (<span class="checkIcon" style={{left:Sprachen.getLanguage()==='ar'?'-100px':'auto',right:Sprachen.getLanguage()==='ar'?'auto':'0'}}>{checkIcon}</span>)
+    const checkIconSpanMobile = (<span class="checkIcon" style={{left:Sprachen.getLanguage()==='ar'?'-2em':'auto',right:Sprachen.getLanguage()==='ar'?'auto':'0'}}>{checkIcon}</span>)
 
     return (
       <div>
@@ -272,7 +274,7 @@ class Functionen extends React.Component {
           backgroundColor: '#fff',
           textAlign:Sprachen.getLanguage()==='ar'?'right':'left',
           direction: Sprachen.getLanguage()==='ar'?'rtl':'ltr'
-        }} id="functionen" className="_desktop">
+        }} id="functionen" className="functionen-mobile">
 
         <div className="xs_width">
           <h3 >{Sprachen.vorteile}</h3>
@@ -280,10 +282,10 @@ class Functionen extends React.Component {
             <ul >
             <li>
               <div style={{display:'flex',flexDirection:'row',alignItems:'center'}}>
-                <div>
+                <div className="functionen-paragraph">
                   <p className="functionen-text">{Sprachen.offlineArbeiten}</p>
                 </div>
-                {checkIconSpan}
+                {checkIconSpanMobile}
               </div>
             </li>
               <li>
@@ -291,7 +293,7 @@ class Functionen extends React.Component {
                   <div>
                     <p className="functionen-text">{Sprachen.escSupport}</p>
                   </div>
-                  {checkIconSpan}
+                  {checkIconSpanMobile}
                 </div>
               </li>
               <li>
@@ -299,7 +301,7 @@ class Functionen extends React.Component {
                   <div>
                     <p className="functionen-text">{Sprachen.bericht}</p>
                   </div>
-                  {checkIconSpan}
+                  {checkIconSpanMobile}
                 </div>
               </li>
               <li>
@@ -307,7 +309,7 @@ class Functionen extends React.Component {
                   <div>
                     <p className="functionen-text">{Sprachen.bestellNotiz}</p>
                   </div>
-                  {checkIconSpan}
+                  {checkIconSpanMobile}
                 </div>
               </li>
               <li>
@@ -315,7 +317,7 @@ class Functionen extends React.Component {
                   <div>
                     <p className="functionen-text">{Sprachen.rechnungRecover} </p>
                   </div>
-                  {checkIconSpan}
+                  {checkIconSpanMobile}
                 </div>
               </li>
               <li>
@@ -323,7 +325,7 @@ class Functionen extends React.Component {
                   <div>
                     <p className="functionen-text">{Sprachen.rueckgeldrechner}</p>
                   </div>
-                  {checkIconSpan}
+                  {checkIconSpanMobile}
                 </div>
               </li>
               <li>
@@ -331,7 +333,7 @@ class Functionen extends React.Component {
                   <div>
                     <p className="functionen-text">{Sprachen.splittRechnung} </p>
                   </div>
-                  {checkIconSpan}
+                  {checkIconSpanMobile}
                 </div>
               </li>
               <li>
@@ -339,7 +341,7 @@ class Functionen extends React.Component {
                   <div>
                     <p className="functionen-text">{Sprachen.verlegeTische} </p>
                   </div>
-                  {checkIconSpan}
+                  {checkIconSpanMobile}
                 </div>
               </li>
 
@@ -348,7 +350,7 @@ class Functionen extends React.Component {
                   <div>
                     <p className="functionen-text">{Sprachen.annahmeBestellunegn}</p>
                   </div>
-                  {checkIconSpan}
+                  {checkIconSpanMobile}
                 </div>
               </li>
               <li>
@@ -356,7 +358,7 @@ class Functionen extends React.Component {
                   <div>
                     <p className="functionen-text">{Sprachen.rechtemanagementUndBenutzerprofile} </p>
                   </div>
-                  {checkIconSpan}
+                  {checkIconSpanMobile}
                 </div>
               </li>
               <li>
@@ -364,7 +366,7 @@ class Functionen extends React.Component {
                   <div>
                     <p className="functionen-text">{Sprachen.rabatteVergeben}</p>
                   </div>
-                  {checkIconSpan}
+                  {checkIconSpanMobile}
                 </div>
               </li>
               <li>
@@ -372,7 +374,7 @@ class Functionen extends React.Component {
                   <div>
                     <p className="functionen-text">{Sprachen.editArtikel} </p>
                   </div>
-                  {checkIconSpan}
+                  {checkIconSpanMobile}
                 </div>
               </li>
               <li>
@@ -380,7 +382,7 @@ class Functionen extends React.Component {
                   <div>
                     <p className="functionen-text">{Sprachen.emailSupport}</p>
                   </div>
-                  {checkIconSpan}
+                  {checkIconSpanMobile}
                 </div>
               </li>
             </ul>

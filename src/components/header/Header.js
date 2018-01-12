@@ -3,7 +3,6 @@ import Scrollspy from 'react-scrollspy'
 import Responsive from 'react-responsive';
 import './Header.css';
 import logo from '../../img/logo.png';
-import createHistory from 'history/createBrowserHistory'
 import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap'
 import Sprachen from '../../languages/Sprachen'
 
@@ -138,7 +137,11 @@ class Header extends Component {
           NourPos
         </span>
       </a>
-      <div >
+      <div style={{display:'flex',flexDirection:'row',alignItems:'center',justifyContent:'center'}} >
+        <span>
+          <DropdownComponent getLanguage={this.props.getLanguage} setLanguage={this.props.setLanguage}></DropdownComponent>
+        </span>
+        <span style={{width:'20px'}}></span>
         <Scrollspy style={{display:'flex',direction:Sprachen.getLanguage()==='ar'?'rtl':'ltr'}} offset={0} items={['home', 'produkte', 'functionen', 'preise', 'kontakt']} currentClassName="is-current" onUpdate={()=>{this.onPageUpdate()}}>
           <li>
             <a onClick={this.goToHome.bind(this)} href="#home">{Sprachen.home}</a>
@@ -220,7 +223,13 @@ class Header extends Component {
       <div className={`spy ${this.state.menuOpen
           ? "open"
           : 'close'}`}>
+
         <Scrollspy style={{textAlign:Sprachen.getLanguage()==='ar'?'right':'left'}} offset={0} items={['home', 'produkte', 'functionen', 'preise', 'kontakt']} currentClassName="is-current" onUpdate={()=>{this.onPageUpdate()}}>
+        <li>
+          <span>
+            <DropdownComponent getLanguage={this.props.getLanguage} setLanguage={this.props.setLanguage}></DropdownComponent>
+          </span>
+        </li>
         <li>
           <a onClick={this.goToHome.bind(this)} href="#home">{Sprachen.home}</a>
         </li>

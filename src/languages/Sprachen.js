@@ -42,7 +42,42 @@ export default new LocalizedStrings({
     rechtemanagementUndBenutzerprofile :"Rights management and user profiles ",
     rabatteVergeben:"Give discounts and edit",
     editArtikel:"Article and product groups independently and easily changeable",
-    emailSupport:"Free e-mail support"
+    emailSupport:"Free e-mail support",
+    preisModel:"our pricing model",
+    serverAndRfidReader:"Server + RFID Reader",
+    epsonDrucker:"Epson printer",
+    orderMan:"Orderman",
+    unlimitiert:"Unlimited",
+    passtNourPos:"Does NourPos fit in with your business?",
+    contactText:"Our customer advisers are themselves seasoned restaurateurs and know what's important. Just fill in our contact form, call 0800 12345678 or send an e-mail to hello@nourpos.com.",
+
+    nameOfConcern:"Name of the concern",
+    nameOfConcernError:"Please tell us the name of your company.",
+    plz:"Post Code",
+    plzError:"Please give us your postal code.",
+    city:"city",
+    cityError:"Please tell us your city.",
+    email:"e-mail address",
+    emailError:"Please enter your e-mail address.",
+    tel:"Phone",
+    telError:"Please enter your telephone Number.",
+
+
+    nameOfConcernWarning:"Please enter a valid company name.",
+    plzWarning:"Enter a valid postal code.",
+    cityWarning:"Bitte geben Sie einen gültigen Stadt Namen ein.",
+    emailWarning:"Please enter a valid e-mail address.",
+    telWarning:"Enter a valid telephone number",
+
+    contactNow:"Contact now",
+    aboutUs:"About us",
+    conditions:"Conditions",
+    datenschutz:"Data protection",
+    impressum:"Imprint",
+    copyrights:"Copyrights",
+
+    weContactYou:"We have received your request, we will contact you.",
+    errorOcurred:"Error occurred"
   },
   "de":{
     posSystems:"NourPos Kassensysteme",
@@ -85,7 +120,41 @@ export default new LocalizedStrings({
     rechtemanagementUndBenutzerprofile :"Rechtemanagement und Benutzerprofile ",
     rabatteVergeben:"Rabatte vergeben und editieren",
     editArtikel:"Artikel- und Warengruppen selbstständig und unkompliziert änderbar ",
-    emailSupport:"Kostenloser E-mail-Support"
+    emailSupport:"Kostenloser E-mail-Support",
+    preisModel:"Unser Preismodell",
+    serverAndRfidReader:"Server + RFID Reader",
+    epsonDrucker:"Epson Drucker",
+    orderMan:"Orderman",
+    unlimitiert:"Unbeschränkt",
+    passtNourPos:"Passt NourPos zu Ihrem Geschäft?",
+    contactText:"Unsere Kundenberater sind selbst gestandene Gastronomen und wissen, worauf es ankommt. Einfach jetzt in unser Kontaktformular eintragen, anrufen unter 0800 12345678 oder eine E-Mail an hello@nourpos.com senden.",
+    nameOfConcern:"Name des Betriebs",
+    nameOfConcernError:"Bitte nenne uns den Namen Deines Betriebs.",
+    plz:"Postleitzahl",
+    plzError:"Bitte nenne uns Deine Postleitzahl.",
+    city:"Stadt",
+    cityError:"Bitte nenne uns Deine Stadt.",
+    email:"E-Mail Adresse",
+    emailError:"Bitte geben Sie Ihre E-Mail-Adresse ein.",
+    tel:"Telefon",
+    telError:"Bitte geben Sie Ihre Telefonnummer ein.",
+
+    nameOfConcernWarning:"Bitte geben Sie einen gültigen Firmennamen ein.",
+    plzWarning:"Geben Sie eine gültige Postleitzahl ein.",
+    cityWarning:"Bitte geben Sie einen gültigen Stadt Namen ein.",
+    emailWarning:"Bitte geben Sie eine gültige E-Mail Adresse ein.",
+    telWarning:"Geben Sie eine gültige Telefonnummer ein",
+
+
+    contactNow:"Jetzt kontaktieren",
+    aboutUs:"Über uns",
+    conditions:"AGB",
+    datenschutz:"Datenschutz",
+    impressum:"Impressum",
+    copyrights:"Copyrights",
+
+    weContactYou:"Wir haben Ihre Anfrage empfangen, wir kontaktieren Sie.",
+    errorOcurred:"Fehler aufgetreten"
   },
   "fr":{
     posSystems:"NourPos Systèmes POS",
@@ -102,7 +171,7 @@ export default new LocalizedStrings({
     easyHandlingText:"Opération très simple et intuitive",
     reliable:"Fiable",
     reliableText:"Sauvegarde automatique des données pour une fiabilité accrue",
-    featuresText:"Un système de point de vente électronique pour les appareils Android qui offre toutes les fonctionnalités des systèmes POS traditionnels, ne coûte qu\'une fraction et prend moins de place sur le comptoir.",
+    featuresText:"Un système de point de vente électronique pour les appareils Android qui offre toutes les fonctionnalités des systèmes POS traditionnels, ne coûte qu'une fraction et prend moins de place sur le comptoir.",
     nourPosHardwareBox:"NourPos Hardware-Box",
     OneBox:"Une boîte, tout en elle - commencez directement avec la commande",
     nourPosServer:"Serveur NourPos",
@@ -128,7 +197,41 @@ export default new LocalizedStrings({
     rechtemanagementUndBenutzerprofile :"Gestion des droits et profils d'utilisateurs ",
     rabatteVergeben:"Donner des réductions et modifier",
     editArtikel:"Groupes d'articles et de produits indépendants et facilement modifiables ",
-    emailSupport:"Support e-mail gratuit"
+    emailSupport:"Support e-mail gratuit",
+    preisModel:"Notre modèle de tarification",
+    serverAndRfidReader:"Serveur + lecteur RFID",
+    epsonDrucker:"Imprimante Epson",
+    orderMan:"Orderman",
+    unlimitiert:"illimité",
+    passtNourPos:"Est-ce que nourPos correspond à votre entreprise?",
+    contactText:"Nos conseillers clientèle sont eux-mêmes des restaurateurs chevronnés et savent ce qui est important. Remplissez simplement notre formulaire de contact, appelez le 0800 12345678 ou envoyez un e-mail à hello@nourpos.com.",
+    nameOfConcern:"Nom de l'entreprise",
+    nameOfConcernError:"S'il vous plaît dites-nous le nom de votre entreprise.",
+    plz:"code postal",
+    plzError:"S'il vous plaît donnez-nous votre code postal.",
+    city:"ville",
+    cityError:"S'il vous plaît dites-nous votre ville.",
+    email:"Adresse e-mail",
+    emailError:"S'il vous plaît entrez votre adresse e-mail.",
+    tel:"téléphone",
+    telError:"S'il vous plaît entrer votre numéro de téléphone.",
+
+    nameOfConcernWarning:"Veuillez entrer un nom de société valide.",
+    plzWarning:"Entrez un code postal valide.",
+    cityWarning:"Veuillez entrer un nom de ville valide",
+    emailWarning:"Veuillez entrer une adresse e-mail valide",
+    telWarning:"Entrez un numéro de téléphone valide",
+
+
+    contactNow:"Contacter maintenant",
+    aboutUs:"À propos de nous",
+    conditions:"Conditions",
+    datenschutz:"Politique de confidentialité",
+    impressum:"Empreinte",
+    copyrights:"Copyrights",
+
+    weContactYou:"Nous avons reçu votre demande, nous vous contacterons.",
+    errorOcurred:"Erreur survenue"
   },
   "ar":{
     posSystems:"نقطة البيع نوربوس",
@@ -171,6 +274,41 @@ export default new LocalizedStrings({
     rechtemanagementUndBenutzerprofile :"إدارة الحقوق والملفات الشخصية للمستخدم ",
     rabatteVergeben:"إعطاء خصومات مع امكانية التغيير",
     editArtikel:"امكانية تغيير المنتجات والمجموعات بشكل مستقل وسهل للتغيير",
-    emailSupport:"دعم البريد الإلكتروني مجانا"
+    emailSupport:"دعم البريد الإلكتروني مجانا",
+    preisModel:"نموذج التسعير",
+    serverAndRfidReader:"خادم + قارئ رفيد",
+    epsonDrucker:"طابعة إيبسون",
+    orderMan:"Orderman",
+    unlimitiert:"غير محدود",
+    passtNourPos:"هل تناسب نوربوس  مشروعك؟",
+    contactText:"مستشارينا العملاء هم أنفسهم من دوي المجال  ولديهم معرفة. ما عليك سوى ملء نموذج للااتصال بنا، اتصل على الرقم 0800 12345678 أو أرسل بريدا إلكترونيا إلى hello@nourpos.com.",
+    nameOfConcern:"اسم الشركة",
+    nameOfConcernError:"من فضلك قل لنا اسم شركتك.",
+    plz:"الرمز البريدي",
+    plzError:"يرجى تعطينا الرمز البريدي الخاص بك.",
+    city:"مدينة",
+    cityError:"من فضلك قل لنا مدينتك.",
+    email:"عنوان البريد الإلكتروني",
+    emailError:"يرجى ادخال عنوان البريد الإلكتروني الخاص بك.",
+    tel:"هاتف",
+    telError:"الرجاء إدخال رقم هاتفك.",
+
+    nameOfConcernWarning:"الرجاء إدخال اسم شركة صالح.",
+    plzWarning:"أدخل رمز بريدي صالح.",
+    cityWarning:"الرجاء إدخال اسم مدينة صالح.",
+    emailWarning:"الرجاء إدخال عنوان بريد إلكتروني صالح.",
+    telWarning:"أدخل رقم هاتف صالح",
+
+    contactNow:"اتصل الآن",
+    aboutUs:"من نحن",
+    conditions:"الشروط",
+    datenschutz:"سياسة الخصوصية",
+    impressum:"بصمة",
+    copyrights:"حقوق النشر محفوظة",
+
+    weContactYou:"لقد تلقينا طلبك، وسوف نتصل بك.",
+    errorOcurred:"حدث خطأ"
+
+
   }
 });

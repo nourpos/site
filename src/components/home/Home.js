@@ -31,7 +31,7 @@ class Home extends React.Component {
          minHeight: this.props.minHeight,
        }}>
         <div className="about-wrapper">
-          <div className="row">
+          <div className="about-wrapper-tablet-row">
             <div className="col left" style={{
                 flexDirection: 'column'
               }}>
@@ -71,7 +71,7 @@ class Home extends React.Component {
          minHeight: this.props.minHeight,
        }}>
         <div className="about-wrapper">
-          <div className="row">
+          <div className="about-wrapper-tablet-row">
             <div className="col left" style={{
                 flexDirection: 'column'
               }}>
@@ -111,7 +111,7 @@ class Home extends React.Component {
         minHeight: this.props.minHeight,
         }}>
         <div className="about-wrapper about-wrapper-mobile">
-          <div className="row">
+          <div className="about-wrapper-mobile-row">
             <div className="col left" style={{
                 flexDirection: 'column'
               }}>

@@ -48,6 +48,7 @@ section._mobile::before {
 }
 .about-wrapper-mobile {
     padding: 60px 0px;
+    max-width: 100%;
 }
 .left, .right{
   flex: 1;
@@ -57,13 +58,14 @@ section._mobile::before {
   padding-left: 15px;
   padding-right: 15px;
 }
-.row {
+.about-wrapper-mobile-row, .about-wrapper-tablet-row {
     display: flex;
     flex-direction: row;
 }
-.about-wrapper-mobile .row{
+.about-wrapper-mobile, .about-wrapper-mobile-row {
   flex-direction: column;
 }
+
 .img-mobile{
   width: 90%;
 }

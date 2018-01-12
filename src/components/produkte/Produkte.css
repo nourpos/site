@@ -82,9 +82,15 @@
   animation: rotating 0.5s linear infinite;
 }
 
-.rfid_reader_right{
-  width: 50%;
+.rfid_reader_right {
+    width: 12em;
 }
 #functionen {
+    margin-top: 2px;
+}
+#produkte {
+    margin-top: 2px;
+}
+#kontakt {
     margin-top: 2px;
 }

@@ -8,14 +8,15 @@ import {
 import axios from 'axios';
 import Modal from 'react-responsive-modal';
 import 'react-responsive-modal/lib/react-responsive-modal.css';
-import ModalCss from 'react-responsive-modal/lib/css';
+import 'react-responsive-modal/lib/css';
 import './Contact.css';
 import './form.css';
 import logo from '../../img/logo.png';
 import validator from 'validator';
+import Sprachen from '../../languages/Sprachen'
 
 const loader = (
-    <span><img style={{width:'20px',animation: 'rotating 0.45s linear infinite'}} src={logo}/></span>
+    <span><img style={{width:'20px',animation: 'rotating 0.45s linear infinite'}} src={logo} alt="loader"/></span>
 );
 
 const Desktop = props => <Responsive {...props} minWidth={992}/>;
@@ -28,49 +29,48 @@ const errorValidator = (values) => {
 
     const validateBetriebsName = (betriebsName) => {
       if (!betriebsName) {
-        return 'Bitte nenne uns den Namen Deines Betriebs.'
+        return Sprachen.nameOfConcernError
       }
       if (!validator.isAlpha(betriebsName)) {
-        return 'Bitte geben Sie einen gültigen Betrieb Namen ein.'
+        return Sprachen.nameOfConcernWarning
       }
       return null
     };
     const validatePlz = (plz) => {
       if (!plz) {
-        return 'Bitte nenne uns Deine Postleitzahl.'
+        return Sprachen.plzError
       }
       if (!validator.isPostalCode(plz,'DE')) {
-        return 'Geben Sie eine gültige Postleitzahl ein.'
+        return Sprachen.plzWarning
       }
       return null
     };
     const validateStadt = (stadt) => {
       if (!stadt) {
-        return 'Bitte nenne uns Deine Stadt.'
+        return Sprachen.cityError
       }
       if (!validator.isAlpha(stadt)) {
-        return 'Bitte geben Sie einen gültigen Stadt Namen ein.'
+        return Sprachen.cityWarning
       }
       return null
     };
     const validatetel=(tel)  =>
       {
-        var phoneno = /^\+?([0-9]{2})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/;
         if (!tel) {
-          return 'Bitte nenne uns Deine Telefonnummer.'
+          return Sprachen.telError
         }
         if (!validator.isNumeric(tel) || tel.length<10){
-          return 'Geben Sie eine gültige Telefonnummer ein.'
+          return Sprachen.telWarning
         }
         return null
       }
 
     const validateEmail = (email) => {
       if (!email) {
-        return 'Bitte nenne uns Deine E-Mail Adresse.'
+        return Sprachen.emailError
       }
       if (!validator.isEmail(email)) {
-        return 'Bitte geben Sie eine gültige E-Mail Adresse ein.'
+        return Sprachen.emailWarning
       }
       return null
     };
@@ -85,8 +85,8 @@ const errorValidator = (values) => {
     };
   }
 
-const statusOK="Wir haben Ihre Anfrage empfangen, wir kontaktieren Sie."
-const statusNotOK="Fehler aufgetretten!"
+const statusOK=Sprachen.weContactYou
+const statusNotOK=Sprachen.errorOcurred
 
 class Contact extends Component {
   constructor(props) {
@@ -154,7 +154,7 @@ class Contact extends Component {
       dontValidateOnMount={true} validateOnSubmit={this.state.validateOnSubmit} onSubmitFailure={this.onSubmitFailure} onSubmit={this.onSubmitForm}>
       {
         formApi => (<form onSubmit={formApi.submitForm}  id="form1" className="mb-4">
-          <label htmlFor="Betrieb">Name des Betriebs</label>
+          <label   style={{textAlign:Sprachen.getLanguage()==='ar'?'right':'left'}}  htmlFor="Betrieb">{Sprachen.nameOfConcern}</label>
           <StyledText field="Betrieb" id="Betrieb"/>
           <div style={{
               display: 'flex',
@@ -165,7 +165,7 @@ class Contact extends Component {
                 flexDirection: 'column',
                 display: 'flex'
               }}>
-              <label htmlFor="plz">Postleitzahl</label>
+              <label   style={{textAlign:Sprachen.getLanguage()==='ar'?'right':'left'}}htmlFor="plz">{Sprachen.plz}</label>
               <StyledText field="plz" id="plz"/>
             </div>
             <div style={{
@@ -176,15 +176,15 @@ class Contact extends Component {
                 flexDirection: 'column',
                 display: 'flex'
               }}>
-              <label htmlFor="stadt">Stadt</label>
+              <label   style={{textAlign:Sprachen.getLanguage()==='ar'?'right':'left'}}htmlFor="stadt">{Sprachen.city}</label>
               <StyledText field="stadt" id="stadt"/>
             </div>
           </div>
-          <label htmlFor="Betrieb">E-Mail Adresse</label>
+          <label   style={{textAlign:Sprachen.getLanguage()==='ar'?'right':'left'}}htmlFor="Betrieb">{Sprachen.email}</label>
           <StyledText field="email" id="email"/>
-          <label htmlFor="tel">tel</label>
+          <label   style={{textAlign:Sprachen.getLanguage()==='ar'?'right':'left'}}htmlFor="tel">{Sprachen.tel}</label>
           <StyledText field="tel" id="tel"/>
-          <button type="submit" className="btn btn-primary">Jetz Kontaktieren!</button>
+          <button type="submit" className="btn btn-primary">{Sprachen.contactNow}</button>
         </form>)
       }
     </Form>);
@@ -194,7 +194,7 @@ class Contact extends Component {
       dontValidateOnMount={true} validateOnSubmit={this.state.validateOnSubmit} onSubmitFailure={this.onSubmitFailure} onSubmit={this.onSubmitForm}>
       {
         formApi => (<form onSubmit={formApi.submitForm} id="form1" className="mb-4">
-          <label htmlFor="Betrieb">Name des Betriebs</label>
+          <label   style={{textAlign:Sprachen.getLanguage()==='ar'?'right':'left'}}htmlFor="Betrieb">{Sprachen.nameOfConcern}</label>
           <StyledText field="Betrieb" id="Betrieb"/>
           <div style={{
               display: 'flex',
@@ -205,7 +205,7 @@ class Contact extends Component {
                 flexDirection: 'column',
                 display: 'flex'
               }}>
-              <label htmlFor="plz">Postleitzahl</label>
+              <label   style={{textAlign:Sprachen.getLanguage()==='ar'?'right':'left'}}htmlFor="plz">{Sprachen.plz}</label>
               <StyledText field="plz" id="plz"/>
             </div>
             <div style={{
@@ -216,15 +216,15 @@ class Contact extends Component {
                 flexDirection: 'column',
                 display: 'flex'
               }}>
-              <label htmlFor="stadt">Stadt</label>
+              <label   style={{textAlign:Sprachen.getLanguage()==='ar'?'right':'left'}}htmlFor="stadt">{Sprachen.city}</label>
               <StyledText field="stadt" id="stadt"/>
             </div>
           </div>
-          <label htmlFor="Betrieb">E-Mail Adresse</label>
+          <label   style={{textAlign:Sprachen.getLanguage()==='ar'?'right':'left'}}htmlFor="Betrieb">{Sprachen.email}</label>
           <StyledText field="email" id="email"/>
-          <label htmlFor="tel">tel</label>
+          <label   style={{textAlign:Sprachen.getLanguage()==='ar'?'right':'left'}}htmlFor="tel">{Sprachen.tel}</label>
           <StyledText field="tel" id="tel"/>
-          <button type="submit" className="btn btn-primary">Jetz Kontaktieren!</button>
+          <button type="submit" className="btn btn-primary">{Sprachen.contactNow}</button>
         </form>)
       }
     </Form>);
@@ -235,7 +235,7 @@ class Contact extends Component {
       dontValidateOnMount={true} validateOnSubmit={this.state.validateOnSubmit} onSubmitFailure={this.onSubmitFailure} onSubmit={this.onSubmitForm}>
       {
         formApi => (<form onSubmit={formApi.submitForm} id="form1" className="mb-4">
-          <label htmlFor="Betrieb">Name des Betriebs</label>
+          <label   style={{textAlign:Sprachen.getLanguage()==='ar'?'right':'left'}}htmlFor="Betrieb">{Sprachen.nameOfConcern}</label>
           <StyledText field="Betrieb" id="Betrieb"/>
           <div style={{
               display: 'flex',
@@ -246,7 +246,7 @@ class Contact extends Component {
                 flexDirection: 'column',
                 display: 'flex'
               }}>
-              <label htmlFor="plz">Postleitzahl</label>
+              <label   style={{textAlign:Sprachen.getLanguage()==='ar'?'right':'left'}}htmlFor="plz">{Sprachen.plz}</label>
               <StyledText field="plz" id="plz"/>
             </div>
             <div style={{
@@ -257,15 +257,15 @@ class Contact extends Component {
                 flexDirection: 'column',
                 display: 'flex'
               }}>
-              <label htmlFor="stadt">Stadt</label>
+              <label   style={{textAlign:Sprachen.getLanguage()==='ar'?'right':'left'}}htmlFor="stadt">{Sprachen.city}</label>
               <StyledText field="stadt" id="stadt"/>
             </div>
           </div>
-          <label htmlFor="email">E-Mail Adresse</label>
+          <label   style={{textAlign:Sprachen.getLanguage()==='ar'?'right':'left'}}htmlFor="email">{Sprachen.email}</label>
           <StyledText field="email" id="email"/>
-          <label htmlFor="tel">tel</label>
+          <label   style={{textAlign:Sprachen.getLanguage()==='ar'?'right':'left'}}htmlFor="tel">{Sprachen.tel}</label>
           <StyledText field="tel" id="tel"/>
-          <button type="submit" className="btn btn-primary">Jetz Kontaktieren!</button>
+          <button type="submit" className="btn btn-primary">{Sprachen.contactNow}</button>
         </form>)
       }
     </Form>);
@@ -276,13 +276,13 @@ class Contact extends Component {
       <h1 style={{
           StyledTextAlign: 'center',
           color: '#fff'
-        }}>Passt NourPos zu Ihrem Geschäft?</h1>
+        }}>{Sprachen.passtNourPos}</h1>
       <p style={{
           StyledTextAlign: 'left',
           color: '#fff',
           fontSize: '1.2em'
         }}>
-        Unsere Kundenberater sind selbst gestandene Gastronomen und wissen, worauf es ankommt. Einfach jetzt in unser Kontaktformular eintragen, anrufen unter 0800 12345678 oder eine E-Mail an hello@nourpos.com senden.
+        {Sprachen.contactText}
       </p>
     </div>)
   }
@@ -294,7 +294,9 @@ class Contact extends Component {
         <section style={{
             flexDirection: 'column',
             minHeight: this.props.minHeight,
-            backgroundColor: '#1ab7ea'
+            backgroundColor: '#1ab7ea',
+            textAlign:Sprachen.getLanguage()==='ar'?'right':'left',
+            direction: Sprachen.getLanguage()==='ar'?'rtl':'ltr'
           }} id="kontakt" className="_desktop">
 
           <div style={{
@@ -318,7 +320,9 @@ class Contact extends Component {
         <section style={{
             flexDirection: 'column',
             minHeight: this.props.minHeight,
-            backgroundColor: '#1ab7ea'
+            backgroundColor: '#1ab7ea',
+            textAlign:Sprachen.getLanguage()==='ar'?'right':'left',
+            direction: Sprachen.getLanguage()==='ar'?'rtl':'ltr'
           }} id="kontakt" className="_mobile">
 
           <div style={{
@@ -342,7 +346,9 @@ class Contact extends Component {
         <section style={{
             flexDirection: 'column',
             minHeight: this.props.minHeight,
-            backgroundColor: '#1ab7ea'
+            backgroundColor: '#1ab7ea',
+            textAlign:Sprachen.getLanguage()==='ar'?'right':'left',
+            direction: Sprachen.getLanguage()==='ar'?'rtl':'ltr'
           }} id="kontakt" className="_mobile">
 
           <div style={{

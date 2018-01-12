@@ -7,7 +7,7 @@
     margin-left: -12px;
     pointer-events: none;
     position: absolute;
-    top: 100%;
+    top: 99%;
     width: 0;
 }
 .angebot-pro::after {
@@ -19,7 +19,7 @@
     margin-left: -12px;
     pointer-events: none;
     position: absolute;
-    top: 100%;
+    top: 99%;
     width: 0;
 }
 .angebot-pro-x::after {
@@ -31,7 +31,7 @@
     margin-left: -12px;
     pointer-events: none;
     position: absolute;
-    top: 100%;
+    top: 99%;
     width: 0;
 }
 .angebot{
@@ -42,8 +42,9 @@
 }
 .angebot-row{
   position: relative;
-  padding: 30px;
+  min-height: 60px;
   font-size: 25px;
+  margin: 0 5px;
 }
 .angebot-row-mobile,.angebot-mobile{
   font-size: 16px;
@@ -54,5 +55,10 @@
 }
 
 .angebot-mbile-row-mbile.angebot-row-basis,.angebot-mbile-row-mbile.angebot-row-pro,.angebot-mbile-row-mbile.angebot-row-pro-x{
-  padding: 25px 5px;
+  padding: 5px 5px;
+    margin: 0 5px;
+}
+
+#preise{
+  padding-bottom: 25px;
 }

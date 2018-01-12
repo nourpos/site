@@ -26,7 +26,6 @@ const md = new MobileDetect(window.navigator.userAgent);
 const Desktop = props => <Responsive {...props} minWidth={992}/>;
 const Tablet = props => <Responsive {...props} minWidth={768} maxWidth={991}/>;
 const Mobile = props => <Responsive {...props} maxWidth={767}/>;
-const Default = props => <Responsive {...props} minWidth={768}/>;
 
 class App extends Component {
   constructor(props) {
@@ -48,13 +47,13 @@ class App extends Component {
 
   componentDidMount() {
     this.updateWindowDimensions();
-    md.mobile() ||  window.addEventListener('resize', this.updateWindowDimensions);
-    md.mobile() || window.addEventListener('scroll', this.handleScroll.bind(this));
+     window.addEventListener('resize', this.updateWindowDimensions);
+     window.addEventListener('scroll', this.handleScroll.bind(this));
   }
 
   componentWillUnmount() {
-    md.mobile() ||  window.removeEventListener('resize', this.updateWindowDimensions);
-    md.mobile() ||  window.removeEventListener('scroll', this.handleScroll);
+      window.removeEventListener('resize', this.updateWindowDimensions);
+      window.removeEventListener('scroll', this.handleScroll);
   }
   _check_language(){
     let langFromSession = reactLocalStorage.get('lang');
@@ -150,19 +149,14 @@ class App extends Component {
     switch (this.state.page) {
       case 'home':
         return this.getHome()
-        break;
       case 'about':
         return this.getAbout()
-        break;
       case 'agb':
         return this.getAGB()
-        break;
       case 'datenschutz':
         return this.getDatenschutz()
-        break;
       case 'impressum':
         return this.getImpressum()
-        break;
       default:
 
     }

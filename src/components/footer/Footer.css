@@ -2,9 +2,13 @@
     color: white;
     padding-left: 40px;
 }
-.footer ul{
+.footer ul,p,h3{
   margin: 0;
+  padding: 0;
   list-style-type:none;
+}
+.footer p,.footer h3{
+  padding: 10px 0;
 }
 .footer ul li{
   color: gray;
