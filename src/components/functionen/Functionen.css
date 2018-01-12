@@ -1,13 +1,15 @@
 ._SitThW {
     color: #283664;
     position: relative;
-    padding-right: 62px;
     border-bottom: solid 1px;
 }
 ._SitThW ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
+}
+._desktop ._SitThW p {
+    padding-right: 8.1em
 }
 ._SitThW p {
     margin: 0;
