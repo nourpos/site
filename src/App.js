@@ -21,7 +21,7 @@ import {reactLocalStorage} from 'reactjs-localstorage';
 
 import config from './config.json'
 var maintenance = config.maintenance
-reactLocalStorage.set('lang', 'de');
+
 
 
 const md = new MobileDetect(window.navigator.userAgent);
@@ -30,7 +30,7 @@ const md = new MobileDetect(window.navigator.userAgent);
 const Desktop = props => <Responsive {...props} minWidth={992}/>;
 const Tablet = props => <Responsive {...props} minWidth={768} maxWidth={991}/>;
 const Mobile = props => <Responsive {...props} maxWidth={767}/>;
-
+console.log('load ...');
 class App extends Component {
   constructor(props) {
     super(props);

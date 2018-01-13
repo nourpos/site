@@ -1,6 +1,5 @@
-body { text-align: center; padding: 150px 40px; }
+.maintenance-body { text-align: center; padding: 150px 40px; }
 h1 { font-size: 46px; }
-body { font: 20px Helvetica, sans-serif; color: #333; }
 article {
   display: block; text-align: left; display: flex;
   justify-content: center;

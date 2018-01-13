@@ -1,7 +1,7 @@
 import React from 'react';
 import Responsive from 'react-responsive';
 
-import './Impressum.css';
+//#import './Impressum.css';
 
 var FontAwesome = require('react-fontawesome')
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import Responsive from 'react-responsive';
 
-import './About.css';
+//#import './About.css';
 
 var FontAwesome = require('react-fontawesome')
 
