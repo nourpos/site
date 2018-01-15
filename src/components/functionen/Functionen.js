@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
 import Responsive from 'react-responsive';
-import FunctionenCSS from './Functionen.css';
+import './Functionen.css';
 
 import Sprachen from '../../languages/Sprachen'
 
@@ -14,6 +14,13 @@ const Default = props => <Responsive {...props} minWidth={768}/>;
 var FontAwesome = require('react-fontawesome')
 const checkIcon = (<FontAwesome className="check" name="check" size="1x"/>)
 class Functionen extends React.Component {
+  constructor(props){
+    super(props);
+  }
+
+  componentWillMount(){
+    this.props.incrmentLoadedPages()
+  }
   render() {
     const checkIconSpan = (<span class="checkIcon" style={{left:Sprachen.getLanguage()==='ar'?'-100px':'auto',right:Sprachen.getLanguage()==='ar'?'auto':'0'}}>{checkIcon}</span>)
     const checkIconSpanTablet = (<span class="checkIcon" style={{left:Sprachen.getLanguage()==='ar'?'-100px':'auto',right:Sprachen.getLanguage()==='ar'?'auto':'0'}}>{checkIcon}</span>)
@@ -31,7 +38,7 @@ class Functionen extends React.Component {
         }} id="functionen" className="_desktop">
 
         <div className="md_width">
-          <h3 >{Sprachen.vorteile}</h3>
+          <h1 >{Sprachen.vorteile}</h1>
           <div class="_SitThW" style={{paddingRight:Sprachen.getLanguage()==='ar'?'0px':''}}>
             <ul >
             <li>
@@ -154,7 +161,7 @@ class Functionen extends React.Component {
        }} id="functionen" className="_tablet">
 
        <div className="xs_width">
-         <h3 >{Sprachen.vorteile}</h3>
+         <h1 >{Sprachen.vorteile}</h1>
          <div class="_SitThW" style={{paddingRight:Sprachen.getLanguage()==='ar'?'0px':''}}>
            <ul >
            <li>
@@ -274,10 +281,10 @@ class Functionen extends React.Component {
           backgroundColor: '#fff',
           textAlign:Sprachen.getLanguage()==='ar'?'right':'left',
           direction: Sprachen.getLanguage()==='ar'?'rtl':'ltr'
-        }} id="functionen" className="functionen-mobile">
+        }} id="functionen" className="_mobile">
 
         <div className="xs_width">
-          <h3 >{Sprachen.vorteile}</h3>
+          <h1 >{Sprachen.vorteile}</h1>
           <div class="_SitThW" style={{paddingRight:Sprachen.getLanguage()==='ar'?'0px':''}}>
             <ul >
             <li>

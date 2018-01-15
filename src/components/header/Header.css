@@ -79,12 +79,7 @@ header {
 .App-header-at-top.desktop  .is-current a{
   color: black;
 }
-.App-header.desktop a:hover{
-  color: white;
-}
-.App-header-at-top.desktop a:hover{
-  color: black;
-}
+
 
 .desktop .navbar-brand {
   position: fixed;

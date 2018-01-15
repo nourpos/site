@@ -1,9 +1,7 @@
 import React from 'react';
 import Responsive from 'react-responsive';
 
-//#import './AGB.css';
-
-
+import './AGB.css';
 
 
 const Desktop = props => <Responsive {...props} minWidth={992}/>;

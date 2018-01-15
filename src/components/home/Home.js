@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Responsive from 'react-responsive';
 
-import HomeCss from './Home.css';
+import './Home.css';
 import mobileBasisRaspi from '../../img/mobileBasis.png';
 import Features from './features/Features';
 import Sprachen from '../../languages/Sprachen'
@@ -12,7 +12,6 @@ const checkIcon = (<FontAwesome className="check" name="check" size="1x"/>)
 const Desktop = props => <Responsive {...props} minWidth={992}/>;
 const Tablet = props => <Responsive {...props} minWidth={768} maxWidth={991}/>;
 const Mobile = props => <Responsive {...props} maxWidth={767}/>;
-const Default = props => <Responsive {...props} minWidth={768}/>;
 
 
 class Home extends React.Component {

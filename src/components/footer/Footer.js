@@ -7,7 +7,7 @@ import Sprachen from '../../languages/Sprachen'
 const Desktop = props => <Responsive {...props} minWidth={992}/>;
 const Tablet = props => <Responsive {...props} minWidth={768} maxWidth={991}/>;
 const Mobile = props => <Responsive {...props} maxWidth={767}/>;
-const Default = props => <Responsive {...props} minWidth={768}/>;
+
 
 
 class Footer extends Component {
@@ -54,8 +54,6 @@ class Footer extends Component {
               </div>
           </div>
         </div>
-        <link async rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />
-        <link async rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
       </section>
     )
   }
@@ -98,8 +96,6 @@ class Footer extends Component {
               <p>{Sprachen.copyrights} 2018</p>
             </div>
           </div>
-          <link async rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />
-          <link async rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
         </section>
       </Tablet>
       <Mobile>

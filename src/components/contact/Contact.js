@@ -22,7 +22,6 @@ const loader = (
 const Desktop = props => <Responsive {...props} minWidth={992}/>;
 const Tablet = props => <Responsive {...props} minWidth={768} maxWidth={991}/>;
 const Mobile = props => <Responsive {...props} maxWidth={767}/>;
-const Default = props => <Responsive {...props} minWidth={768}/>;
 
 
 const errorValidator = (values) => {
@@ -97,7 +96,10 @@ class Contact extends Component {
       ismodalOpen:false,
       waitForResult:false,
       validateOnSubmit:true,
+
     };
+
+
   }
   openModal = () => {
   this.setState({ ismodalOpen: true });
@@ -188,6 +190,10 @@ class Contact extends Component {
         </form>)
       }
     </Form>);
+  }
+  componentDidMount(){
+    this.props.incrmentLoadedPages()
+
   }
   tabletForm() {
     return (<Form  validateError={errorValidator}
@@ -323,7 +329,7 @@ class Contact extends Component {
             backgroundColor: '#1ab7ea',
             textAlign:Sprachen.getLanguage()==='ar'?'right':'left',
             direction: Sprachen.getLanguage()==='ar'?'rtl':'ltr'
-          }} id="kontakt" className="_mobile">
+          }} id="kontakt" className="_tablet">
 
           <div style={{
               marginLeft: 'auto',

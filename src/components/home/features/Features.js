@@ -18,7 +18,6 @@ var geringeKostenIconMobile = (<FontAwesome className="fa-pie-chart" size="2x"/>
 const Desktop = props => <Responsive {...props} minWidth={992}/>;
 const Tablet = props => <Responsive {...props} minWidth={768} maxWidth={991}/>;
 const Mobile = props => <Responsive {...props} maxWidth={767}/>;
-const Default = props => <Responsive {...props} minWidth={768}/>;
 
 class Features extends Component {
   constructor(props) {
@@ -113,9 +112,9 @@ class Features extends Component {
   }
   render() {
     return (<div>
-      <Default>
+      <Desktop>
         {this.renderDesktop()}
-      </Default>
+      </Desktop>
       <Tablet>
         {this.renderDesktop()}
       </Tablet>

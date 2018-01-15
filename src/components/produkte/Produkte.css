@@ -15,7 +15,7 @@
   flex-direction: row;
   width: 100%;
   flex: 1;
-  padding: 25px;
+
   box-sizing: border-box;
 }
 .produkte_col.produkte_col_mobile{
@@ -51,14 +51,16 @@
     justify-content: center;
 }
 .carousel {
-    max-height: 475px;
+    max-height: 450px;
     position: relative;
     background-color: #fff;
     flex: 1;
-    margin-top:45px;
     overflow: hidden;
 }
+.carousel img {
+    width: 100%;
 
+}
 .carousel::after {
   content: "";
   display: block;
@@ -79,18 +81,9 @@
 }
 
 .rotating {
-  animation: rotating 0.5s linear infinite;
+  animation: rotating 0.295s linear infinite;
 }
 
 .rfid_reader_right {
     width: 12em;
-}
-#functionen {
-    margin-top: 2px;
-}
-#produkte {
-    margin-top: 2px;
-}
-#kontakt {
-    margin-top: 2px;
 }

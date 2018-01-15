@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import Responsive from 'react-responsive';
 import './Produkte.css';
+
+
 import produkte from '../../img/produkte.png';
 import mobile2 from '../../img/mobile2.png';
 import basis from '../../img/basis.png';
@@ -30,7 +32,10 @@ class Produkte extends Component {
     };
   }
 
+componentDidMount(){
+  this.props.incrmentLoadedPages()
 
+}
 shouldComponentUpdate(nextProps, nextState){
     return nextProps.minHeight!== this.state.minHeight || Sprachen.getLanguage()!==this.state.lang
   }
@@ -50,20 +55,13 @@ shouldComponentUpdate(nextProps, nextState){
           <div className="produkte_col">
             <div className="produkte_col_row">
               <div className="produkte_col_row">
-                <LazyLoad offset={400} debounce={false}>
                 <img src={produkte} alt={Sprachen.OneBox}/>
-                </LazyLoad>
-                {loader}
               </div>
             </div>
           </div>
           <div className="produkte_col">
             <div className="produkte_col_row">
-
-              <LazyLoad offset={400} debounce={false}>
               <img src={raspi_left} alt={Sprachen.nourPosServer}/>
-              </LazyLoad>
-              {loader}
             </div>
             <div className="produkte_col_row">
               <h2>{Sprachen.nourPosServer}</h2>
@@ -80,20 +78,12 @@ shouldComponentUpdate(nextProps, nextState){
               </p>
             </div>
             <div className="produkte_col_row">
-
-              <LazyLoad offset={400} debounce={false}>
               <img className="rfid_reader_right" src={rfid_reader_right} alt={Sprachen.rfidReader} />
-              </LazyLoad>
-              {loader}
             </div>
           </div>
           <div className="produkte_col">
             <div className="produkte_col_row">
-
-              <LazyLoad offset={400} debounce={false}>
               <img src={basis}  alt={Sprachen.basisTablet}/>
-              </LazyLoad>
-              {loader}
             </div>
             <div className="produkte_col_row">
               <h2>{Sprachen.basisTablet} </h2>
@@ -110,20 +100,12 @@ shouldComponentUpdate(nextProps, nextState){
               </p>
             </div>
             <div className="produkte_col_row">
-
-              <LazyLoad offset={400} debounce={false}>
               <img className="mobile2" src={mobile2} alt={Sprachen.mobileClient}/>
-              </LazyLoad>
-              {loader}
             </div>
           </div>
           <div className="produkte_col">
             <div className="produkte_col_row">
-
-              <LazyLoad offset={400} debounce={false}>
               <img src={epson_right} alt={Sprachen.drucker} />
-              </LazyLoad>
-              {loader}
             </div>
             <div className="produkte_col_row">
               <h2>{Sprachen.drucker}</h2>
@@ -132,11 +114,11 @@ shouldComponentUpdate(nextProps, nextState){
               </p>
             </div>
           </div>
-
         </div>
         <div className="carousel">
-          <Carousel></Carousel>
+          <Carousel/>
         </div>
+
       </section>
     )
   }
@@ -154,7 +136,7 @@ shouldComponentUpdate(nextProps, nextState){
             direction: Sprachen.getLanguage()==='ar'?'rtl':'ltr'
           }} id="produkte" className="_tablet">
           <div className="xs_width">
-          <h1>{Sprachen.NourPosHardwareBox}</h1>
+          <h1>{Sprachen.nourPosHardwareBox}</h1>
           <h3 style={{
               color: 'gray'
             }}>{Sprachen.OneBox}</h3>
@@ -168,9 +150,7 @@ shouldComponentUpdate(nextProps, nextState){
           </div>
           <div className="produkte_col">
             <div className="produkte_col_row">
-
               <img src={raspi_left} alt={Sprachen.nourPosServer}/>
-
             </div>
             <div className="produkte_col_row">
               <h2>{Sprachen.nourPosServer}</h2>
@@ -220,7 +200,7 @@ shouldComponentUpdate(nextProps, nextState){
           </div>
           <div className="produkte_col">
             <div className="produkte_col_row">
-
+              
               <img src={epson_right} alt={Sprachen.drucker}/>
 
             </div>
@@ -243,7 +223,7 @@ shouldComponentUpdate(nextProps, nextState){
             direction: Sprachen.getLanguage()==='ar'?'rtl':'ltr'
           }} id="produkte" className="_desktop">
           <div className="xs_width">
-          <h1>{Sprachen.NourPosHardwareBox}</h1>
+          <h1>{Sprachen.nourPosHardwareBox}</h1>
           <h3 style={{
               color: 'gray'
             }}>{Sprachen.OneBox}</h3>

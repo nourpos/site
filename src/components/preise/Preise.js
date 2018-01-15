@@ -13,10 +13,16 @@ const checkIcon = (<FontAwesome className="check" name="check" size="1x"/>)
 const Desktop = props => <Responsive {...props} minWidth={992}/>;
 const Tablet = props => <Responsive {...props} minWidth={768} maxWidth={991}/>;
 const Mobile = props => <Responsive {...props} maxWidth={767}/>;
-const Default = props => <Responsive {...props} minWidth={768}/>;
 
 
 class Preise extends React.Component {
+  constructor(props){
+    super(props);
+
+  }
+  componentDidMount(){
+    this.props.incrmentLoadedPages()
+  }
   render() {
     return (<div>
       <Desktop>
@@ -29,7 +35,7 @@ class Preise extends React.Component {
           }} id="preise" className="_desktop">
 
           <div className="md_width">
-            <h3>{Sprachen.preisModel}</h3>
+            <h1>{Sprachen.preisModel}</h1>
             <div className="_SitThW_padding">
               <div style={{display:'flex',justifyContent:'flex-end',alignItems:'center',height:'255px',width:'100%',marginTop:'20px'}}>
                   <div className="angebot angebot-basis" style={{display:'flex',flexDirection:'column',height:'185px',width:'160px',justifyContent:'center',alignItems:'center',backgroundColor:'#f3f3f5'}}>
@@ -119,7 +125,7 @@ class Preise extends React.Component {
         }} id="preise" className="_tablet">
 
         <div className="xs_width">
-          <h3>{Sprachen.preisModel}</h3>
+          <h1>{Sprachen.preisModel}</h1>
           <div className="_SitThW_padding">
             <div style={{display:'flex',justifyContent:'flex-end',alignItems:'center',height:'255px',width:'100%',marginTop:'20px'}}>
                 <div className="angebot angebot-basis" style={{display:'flex',flexDirection:'column',height:'185px',width:'100px',justifyContent:'center',alignItems:'center',backgroundColor:'#f3f3f5'}}>
@@ -210,21 +216,21 @@ class Preise extends React.Component {
         }} id="preise" className="_desktop">
 
         <div className="xs_width">
-          <h3>{Sprachen.preisModel}</h3>
+          <h1>{Sprachen.preisModel}</h1>
           <div className="_SitThW_padding">
             <div style={{display:'flex',justifyContent:'flex-end',alignItems:'center',height:'150px',width:'100%',marginTop:'20px'}}>
-                <div className="angebot-mbile angebot-basis" style={{display:'flex',flexDirection:'column',height:'150px',width:'75px',justifyContent:'center',alignItems:'center',backgroundColor:'#f3f3f5'}}>
+                <div className="angebot-mbile angebot-basis" style={{display:'flex',flexDirection:'column',height:'150px',width:'65px',justifyContent:'center',alignItems:'center',backgroundColor:'#f3f3f5'}}>
                   <div style={{color:'gray',flex:1.3}}><p>BASIS</p></div>
                   <div style={{color:'black',flex:1}}><p>400 €</p></div>
                   <div style={{color:'white',flex:1}}><p></p></div>
                 </div>
 
-                <div className="angebot-mbile angebot-pro"  style={{display:'flex',flexDirection:'column',height:'150px',width:'75px',backgroundColor:'#1159bc',justifyContent:'center',alignItems:'center'}}>
+                <div className="angebot-mbile angebot-pro"  style={{display:'flex',flexDirection:'column',height:'150px',width:'65px',backgroundColor:'#1159bc',justifyContent:'center',alignItems:'center'}}>
                   <div style={{color:'white',flex:1.3}}><p>PRO</p></div>
                   <div style={{color:'white',flex:1}}><p>500 €</p></div>
                   <div style={{color:'white',flex:1}}><p></p></div>
                 </div>
-                <div className="angebot-mbile angebot-pro-x"  style={{display:'flex',flexDirection:'column',height:'150px',width:'75px',backgroundColor:'rgb(29, 29, 29)',justifyContent:'center',alignItems:'center'}}>
+                <div className="angebot-mbile angebot-pro-x"  style={{display:'flex',flexDirection:'column',height:'150px',width:'65px',backgroundColor:'rgb(29, 29, 29)',justifyContent:'center',alignItems:'center'}}>
                   <div style={{color:'white',flex:1.3}}><p>PRO+</p></div>
                   <div style={{color:'white',flex:1}}><p>600 €</p></div>
                   <div style={{color:'white',flex:1}}><p></p></div>
@@ -234,13 +240,13 @@ class Preise extends React.Component {
                 <div className="angebot-mbile-row-mbile angebot-row-basis" style={{display:'flex',flexDirection:'column',flex:1,justifyContent: 'center',alignItems:'left'}}>
                   {Sprachen.serverAndRfidReader}
                 </div>
-                <div className="angebot-mbile-row-mbile angebot-row-basis" style={{color:"gray",display:'flex',flexDirection:'column',width:'75px',justifyContent:'center',alignItems:'center'}}>
+                <div className="angebot-mbile-row-mbile angebot-row-basis" style={{color:"gray",display:'flex',flexDirection:'column',width:'55px',justifyContent:'center',alignItems:'center'}}>
                   {checkIcon}
                 </div>
-                <div className="angebot-mbile-row-mbile angebot-row-basis" style={{color:"#1159bc",display:'flex',flexDirection:'column',width:'75px',justifyContent:'center',alignItems:'center'}}>
+                <div className="angebot-mbile-row-mbile angebot-row-basis" style={{color:"#1159bc",display:'flex',flexDirection:'column',width:'55px',justifyContent:'center',alignItems:'center'}}>
                   {checkIcon}
                 </div>
-                <div className="angebot-mbile-row-mbile angebot-row-basis" style={{color:"rgb(29, 29, 29)",display:'flex',flexDirection:'column',width:'75px',justifyContent:'center',alignItems:'center'}}>
+                <div className="angebot-mbile-row-mbile angebot-row-basis" style={{color:"rgb(29, 29, 29)",display:'flex',flexDirection:'column',width:'55px',justifyContent:'center',alignItems:'center'}}>
                   {checkIcon}
                 </div>
             </div>
@@ -248,13 +254,13 @@ class Preise extends React.Component {
                 <div className="angebot-mbile-row-mbile angebot-row-basis" style={{display:'flex',flexDirection:'column',flex:1,justifyContent: 'center',alignItems:'left'}}>
                   {Sprachen.basisTablet}
                 </div>
-                <div className="angebot-mbile-row-mbile angebot-row-basis" style={{color:"gray",display:'flex',flexDirection:'column',width:'75px',justifyContent:'center',alignItems:'center'}}>
+                <div className="angebot-mbile-row-mbile angebot-row-basis" style={{color:"gray",display:'flex',flexDirection:'column',width:'55px',justifyContent:'center',alignItems:'center'}}>
                   {checkIcon}
                 </div>
-                <div className="angebot-mbile-row-mbile angebot-row-basis" style={{color:"#1159bc",display:'flex',flexDirection:'column',width:'75px',justifyContent:'center',alignItems:'center'}}>
+                <div className="angebot-mbile-row-mbile angebot-row-basis" style={{color:"#1159bc",display:'flex',flexDirection:'column',width:'55px',justifyContent:'center',alignItems:'center'}}>
                   {checkIcon}
                 </div>
-                <div className="angebot-mbile-row-mbile angebot-row-basis" style={{color:"rgb(29, 29, 29)",display:'flex',flexDirection:'column',width:'75px',justifyContent:'center',alignItems:'center'}}>
+                <div className="angebot-mbile-row-mbile angebot-row-basis" style={{color:"rgb(29, 29, 29)",display:'flex',flexDirection:'column',width:'55px',justifyContent:'center',alignItems:'center'}}>
                   {checkIcon}
                 </div>
             </div>
@@ -262,13 +268,13 @@ class Preise extends React.Component {
                 <div className="angebot-mbile-row-mbile angebot-row-basis" style={{display:'flex',flexDirection:'column',flex:1,justifyContent: 'center',alignItems:'left'}}>
                   {Sprachen.epsonDrucker}
                 </div>
-                <div className="angebot-mbile-row-mbile angebot-row-basis" style={{color:"gray",display:'flex',flexDirection:'column',width:'75px',justifyContent:'center',alignItems:'center'}}>
+                <div className="angebot-mbile-row-mbile angebot-row-basis" style={{color:"gray",display:'flex',flexDirection:'column',width:'55px',justifyContent:'center',alignItems:'center'}}>
                   {checkIcon}
                 </div>
-                <div className="angebot-mbile-row-mbile angebot-row-basis" style={{color:"#1159bc",display:'flex',flexDirection:'column',width:'75px',justifyContent:'center',alignItems:'center'}}>
+                <div className="angebot-mbile-row-mbile angebot-row-basis" style={{color:"#1159bc",display:'flex',flexDirection:'column',width:'55px',justifyContent:'center',alignItems:'center'}}>
                   {checkIcon}
                 </div>
-                <div className="angebot-mbile-row-mbile angebot-row-basis" style={{color:"rgb(29, 29, 29)",display:'flex',flexDirection:'column',width:'75px',justifyContent:'center',alignItems:'center'}}>
+                <div className="angebot-mbile-row-mbile angebot-row-basis" style={{color:"rgb(29, 29, 29)",display:'flex',flexDirection:'column',width:'55px',justifyContent:'center',alignItems:'center'}}>
                   {checkIcon}
                 </div>
             </div>
@@ -276,13 +282,13 @@ class Preise extends React.Component {
                 <div className="angebot-mbile-row-mbile angebot-row-basis" style={{display:'flex',flexDirection:'column',flex:1,justifyContent: 'center',alignItems:'left'}}>
                   {Sprachen.orderMan}
                 </div>
-                <div className="angebot-mbile-row-mbile angebot-row-basis" style={{color:"gray",display:'flex',flexDirection:'column',width:'75px',justifyContent:'center',alignItems:'center'}}>
+                <div className="angebot-mbile-row-mbile angebot-row-basis" style={{color:"gray",display:'flex',flexDirection:'column',width:'55px',justifyContent:'center',alignItems:'center'}}>
                   1
                 </div>
-                <div className="angebot-mbile-row-mbile angebot-row-basis" style={{color:"#1159bc",display:'flex',flexDirection:'column',width:'75px',justifyContent:'center',alignItems:'center'}}>
+                <div className="angebot-mbile-row-mbile angebot-row-basis" style={{color:"#1159bc",display:'flex',flexDirection:'column',width:'55px',justifyContent:'center',alignItems:'center'}}>
                   4
                 </div>
-                <div className="angebot-mbile-row-mbile angebot-row-basis" style={{color:"rgb(29, 29, 29)",display:'flex',flexDirection:'column',width:'75px',justifyContent:'center',alignItems:'center'}}>
+                <div className="angebot-mbile-row-mbile angebot-row-basis" style={{color:"rgb(29, 29, 29)",display:'flex',flexDirection:'column',width:'55px',justifyContent:'center',alignItems:'center'}}>
                   {Sprachen.unlimitiert}
                 </div>
             </div>

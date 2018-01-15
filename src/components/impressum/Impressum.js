@@ -1,9 +1,7 @@
 import React from 'react';
 import Responsive from 'react-responsive';
 
-//#import './Impressum.css';
-
-var FontAwesome = require('react-fontawesome')
+import './Impressum.css';
 
 const Desktop = props => <Responsive {...props} minWidth={992}/>;
 const Tablet = props => <Responsive {...props} minWidth={768} maxWidth={991}/>;

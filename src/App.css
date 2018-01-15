@@ -1,23 +1,34 @@
+section h1{
+  margin: 0;
+  padding: 0;
+}
 section{
   background-color: white;
   display: flex;
+  overflow: hidden;
 }
 
-section._desktop::before {
+section._desktop:before {
     content: "";
     height: 65px;
     width: 100%;
 }
-section._mobile::before {
+section._tablet:before {
+    content: "";
+    height: 90px;
+    width: 100%;
+}
+#home::before {
+  height: 0px;
+}
+section._mobile:before {
     content: "";
     height: 50px;
     width: 100%;
 }
-#section-5::before {
-    background: white;
-}
-#preise::before {
-    background: white;
+#preise{
+  padding: 10px 0;
+  margin: 3px 0;
 }
 .App-intro {
   font-size: large;
