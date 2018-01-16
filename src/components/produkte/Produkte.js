@@ -32,10 +32,7 @@ class Produkte extends Component {
     };
   }
 
-componentDidMount(){
-  this.props.incrmentLoadedPages()
 
-}
 shouldComponentUpdate(nextProps, nextState){
     return nextProps.minHeight!== this.state.minHeight || Sprachen.getLanguage()!==this.state.lang
   }
@@ -200,7 +197,7 @@ shouldComponentUpdate(nextProps, nextState){
           </div>
           <div className="produkte_col">
             <div className="produkte_col_row">
-              
+
               <img src={epson_right} alt={Sprachen.drucker}/>
 
             </div>
@@ -304,6 +301,8 @@ shouldComponentUpdate(nextProps, nextState){
           </div>
         </section>
       </Mobile>
+      <link async rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />
+      <link async rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
     </div>)
   }
 }

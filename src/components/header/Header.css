@@ -47,13 +47,15 @@ header {
   padding: 0;
   overflow: hidden;
 }
-
+.spy{
+  background: #000;
+  padding-top: 5px;
+}
 .mobile ul{
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: black;
   width: 100%;
 }
 
@@ -113,7 +115,6 @@ header {
 
 
 .mobile ul li,.mobile ul li{
-  float: block;
   padding: 16px;
 }
 
@@ -175,10 +176,65 @@ a[href^="tel:"]:before {
     font-size: 18px;
 }
 
-.dropdown.dropdown-toggle{
-  padding: 0.350rem 1.05rem;
+
+.dropdown {
+    width: auto;
+    background: #1b1b1b;
+    color: white;
+    position: relative;
+    text-align: center;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    border: 3px gray solid;
 }
-.dropdown .btn-secondary{
-  transition: 0.3s ease-in-out ;
-  background: #272727 ;
+.dropdown ul {
+    position: absolute;
+    background: #fefefe;
+    height: auto;
+    top: 100%;
+    width: 130px;
+    color: #1b1b1b;
+    margin-top: 3px;
+    border-radius: 4px;
+    border: 1px gray solid;
+}
+.dropdown ul li {
+    width: 100%;
+    border-bottom: 1px #fff solid;
+    border-bottom-color: #e0e0e0;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.dropdown button {
+    background: #1b1b1b;
+    border: navajowhite;
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+.dropdown button::after {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: .255em;
+    vertical-align: .255em;
+    content: "";
+    border-top: .3em solid;
+    border-right: .3em solid transparent;
+    border-bottom: 0;
+    border-left: .3em solid transparent;
+}
+.Dropdown-mobile ul li {
+    padding: 0;
+}
+.dropdown.Dropdown-mobile {
+    width: 100px;
+    margin: 0 15px;
 }

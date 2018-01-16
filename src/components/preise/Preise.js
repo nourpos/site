@@ -20,9 +20,7 @@ class Preise extends React.Component {
     super(props);
 
   }
-  componentDidMount(){
-    this.props.incrmentLoadedPages()
-  }
+
   render() {
     return (<div>
       <Desktop>

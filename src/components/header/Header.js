@@ -6,11 +6,9 @@ import logo from '../../img/logo.png';
 import Sprachen from '../../languages/Sprachen'
 
 var FontAwesome = require('react-fontawesome')
-
 const Desktop = props => <Responsive {...props} minWidth={992}/>;
 const Tablet = props => <Responsive {...props} minWidth={768} maxWidth={991}/>;
 const Mobile = props => <Responsive {...props} maxWidth={767}/>;
-const Default = props => <Responsive {...props} minWidth={768}/>;
 
 class DropdownComponent extends Component {
   constructor(props) {
@@ -32,6 +30,7 @@ class DropdownComponent extends Component {
   onClickAction(lang){
     this.props.setLanguage(lang)
     this.setState({language:this.SprachenObj[lang],dropdownOpen:!this.state.dropdownOpen})
+    this.toggle()
   }
 
   toggle() {
@@ -43,23 +42,17 @@ class DropdownComponent extends Component {
   render() {
     return (
 
-      // <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
-      //   <DropdownToggle caret>
-      //     {this.state.language}
-      //   </DropdownToggle>
-      //   <DropdownMenu>
-      //     <DropdownItem onClick={()=>{this.onClickAction('en')}} >English</DropdownItem>
-      //     <DropdownItem divider />
-      //     <DropdownItem onClick={()=>{this.onClickAction('de')}}  >Deutsch</DropdownItem>
-      //     <DropdownItem divider />
-      //     <DropdownItem onClick={()=>{this.onClickAction('fr')}} >Français</DropdownItem>
-      //     <DropdownItem divider />
-      //     <DropdownItem onClick={()=>{this.onClickAction('ar')}} >العربية</DropdownItem>
-      //
-      //
-      //   </DropdownMenu>
-      // </Dropdown>
-      <div></div>
+      <div  className={`dropdown Dropdown-${this.props.breakpoint}`}>
+      <button onClick={()=>{this.toggle()}}>
+          {this.state.language}</button>
+        <ul style={{display:this.state.dropdownOpen?'block':'none',left:Sprachen.getLanguage()==='ar'?'auto':'0',right:Sprachen.getLanguage()==='ar'?'0':'auto'}}>
+          <li onClick={()=>{this.onClickAction('en')}} >English</li>
+          <li onClick={()=>{this.onClickAction('de')}}  >Deutsch</li>
+          <li onClick={()=>{this.onClickAction('fr')}} >Français</li>
+          <li onClick={()=>{this.onClickAction('ar')}} >العربية</li>
+        </ul>
+      </div>
+
     );
   }
 }
@@ -98,7 +91,7 @@ class Header extends Component {
         ? "App-header-at-top desktop"
         : "App-header desktop"} style={{direction:Sprachen.getLanguage()==='ar'?'rtl':'ltr'}}>
 
-      <a onClick={this.goToHome.bind(this)} className="navbar-brand" href="#" style={{
+      <a onClick={()=>{this.goToHome()}} className="navbar-brand" href="#" style={{
           flexDirection: 'row',
           justifyContent: 'center',
           alignItems: 'center',
@@ -118,19 +111,19 @@ class Header extends Component {
       <span style={{width:'20px'}}></span>
         <Scrollspy style={{display:'flex',direction:Sprachen.getLanguage()==='ar'?'rtl':'ltr'}} offset={0} items={['home', 'produkte', 'functionen', 'preise', 'kontakt']} currentClassName="is-current" onUpdate={()=>{this.onPageUpdate()}}>
           <li>
-            <a onClick={this.goToHome.bind(this)} href="#home">{Sprachen.home}</a>
+            <a onClick={()=>{this.goToHome()}} href="#home">{Sprachen.home}</a>
           </li>
           <li>
-            <a ref={(ref=>this.firstAnchor1=ref)} onClick={()=>{this.goToHome(this.firstAnchor1)}} href="#produkte">{Sprachen.products}</a>
+            <a  onClick={()=>{this.goToHome()}} href="#produkte">{Sprachen.products}</a>
           </li>
           <li>
-            <a ref={(ref=>this.firstAnchor2=ref)} onClick={()=>{this.goToHome(this.firstAnchor2)}} href="#functionen">{Sprachen.functions}</a>
+            <a  onClick={()=>{this.goToHome()}} href="#functionen">{Sprachen.functions}</a>
           </li>
           <li>
-            <a ref={(ref=>this.firstAnchor3=ref)} onClick={()=>{this.goToHome(this.firstAnchor3)}} href="#preise">{Sprachen.prices}</a>
+            <a  onClick={()=>{this.goToHome()}} href="#preise">{Sprachen.prices}</a>
           </li>
           <li>
-            <a ref={(ref=>this.firstAnchor4=ref)} onClick={()=>{this.goToHome(this.firstAnchor4)}} href="#kontakt">{Sprachen.contact}</a>
+            <a  onClick={()=>{this.goToHome()}} href="#kontakt">{Sprachen.contact}</a>
           </li>
         </Scrollspy>
       </div>
@@ -161,19 +154,19 @@ class Header extends Component {
         <span style={{width:'20px'}}></span>
         <Scrollspy style={{display:'flex',direction:Sprachen.getLanguage()==='ar'?'rtl':'ltr'}} offset={0} items={['home', 'produkte', 'functionen', 'preise', 'kontakt']} currentClassName="is-current" onUpdate={()=>{this.onPageUpdate()}}>
         <li>
-          <a onClick={this.goToHome.bind(this)} href="#home">{Sprachen.home}</a>
+          <a onClick={()=>{this.goToHome()}} href="#home">{Sprachen.home}</a>
         </li>
         <li>
-          <a ref={(ref=>this.firstAnchor1=ref)} onClick={()=>{this.goToHome(this.firstAnchor1)}} href="#produkte">{Sprachen.products}</a>
+          <a  onClick={()=>{this.goToHome()}} href="#produkte">{Sprachen.products}</a>
         </li>
         <li>
-          <a ref={(ref=>this.firstAnchor2=ref)} onClick={()=>{this.goToHome(this.firstAnchor2)}} href="#functionen">{Sprachen.functions}</a>
+          <a  onClick={()=>{this.goToHome()}} href="#functionen">{Sprachen.functions}</a>
         </li>
         <li>
-          <a ref={(ref=>this.firstAnchor3=ref)} onClick={()=>{this.goToHome(this.firstAnchor3)}} href="#preise">{Sprachen.prices}</a>
+          <a  onClick={()=>{this.goToHome()}} href="#preise">{Sprachen.prices}</a>
         </li>
         <li>
-          <a ref={(ref=>this.firstAnchor4=ref)} onClick={()=>{this.goToHome(this.firstAnchor4)}} href="#kontakt">{Sprachen.contact}</a>
+          <a  onClick={()=>{this.goToHome()}} href="#kontakt">{Sprachen.contact}</a>
         </li>
         </Scrollspy>
       </div>
@@ -237,28 +230,26 @@ class Header extends Component {
       </span>
       <div className={`spy ${this.state.menuOpen
           ? "open"
-          : 'close'}`}>
+          : 'close'}`} style={{direction:Sprachen.getLanguage()==='ar'?'rtl':'ltr'}}>
+
+
+          <DropdownComponent breakpoint={"mobile"} getLanguage={this.props.getLanguage} setLanguage={this.props.setLanguage}></DropdownComponent>
 
         <Scrollspy style={{textAlign:Sprachen.getLanguage()==='ar'?'right':'left'}} offset={0} items={['home', 'produkte', 'functionen', 'preise', 'kontakt']} currentClassName="is-current" onUpdate={()=>{this.onPageUpdate()}}>
         <li>
-          <span>
-            <DropdownComponent getLanguage={this.props.getLanguage} setLanguage={this.props.setLanguage}></DropdownComponent>
-          </span>
+          <a onClick={()=>{this.goToHome()}} href="#home">{Sprachen.home}</a>
         </li>
         <li>
-          <a onClick={this.goToHome.bind(this)} href="#home">{Sprachen.home}</a>
+          <a  onClick={()=>{this.goToHome()}} href="#produkte">{Sprachen.products}</a>
         </li>
         <li>
-          <a ref={(ref=>this.firstAnchor1=ref)} onClick={()=>{this.goToHome(this.firstAnchor1)}} href="#produkte">{Sprachen.products}</a>
+          <a  onClick={()=>{this.goToHome()}} href="#functionen">{Sprachen.functions}</a>
         </li>
         <li>
-          <a ref={(ref=>this.firstAnchor2=ref)} onClick={()=>{this.goToHome(this.firstAnchor2)}} href="#functionen">{Sprachen.functions}</a>
+          <a  onClick={()=>{this.goToHome()}} href="#preise">{Sprachen.prices}</a>
         </li>
         <li>
-          <a ref={(ref=>this.firstAnchor3=ref)} onClick={()=>{this.goToHome(this.firstAnchor3)}} href="#preise">{Sprachen.prices}</a>
-        </li>
-        <li>
-          <a ref={(ref=>this.firstAnchor4=ref)} onClick={()=>{this.goToHome(this.firstAnchor4)}} href="#kontakt">{Sprachen.contact}</a>
+          <a  onClick={()=>{this.goToHome()}} href="#kontakt">{Sprachen.contact}</a>
         </li>
         </Scrollspy>
       </div>

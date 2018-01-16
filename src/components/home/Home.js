@@ -5,6 +5,7 @@ import './Home.css';
 import mobileBasisRaspi from '../../img/mobileBasis.png';
 import Features from './features/Features';
 import Sprachen from '../../languages/Sprachen'
+import DocumentMeta from 'react-document-meta';
 
 var FontAwesome = require('react-fontawesome')
 const checkIcon = (<FontAwesome className="check" name="check" size="1x"/>)
@@ -47,7 +48,7 @@ class Home extends React.Component {
               </div>
             </div>
             <div className="col right" style={{}}>
-              <img className="img-mobile" src={mobileBasisRaspi} alt="mobileLogo"></img>
+              <img className="img-mobile" src={mobileBasisRaspi} alt="NourPos"></img>
             </div>
           </div>
         </div>
@@ -87,7 +88,7 @@ class Home extends React.Component {
               </div>
             </div>
             <div className="col right" style={{}}>
-              <img className="img-mobile" src={mobileBasisRaspi} alt="mobileLogo"></img>
+              <img className="img-mobile" src={mobileBasisRaspi} alt="NourPos"></img>
             </div>
           </div>
         </div>
@@ -126,7 +127,7 @@ class Home extends React.Component {
               </div>
             </div>
             <div className="col right" style={{display:'flex',flexDirection:'column'}}>
-              <img className="img-mobile" src={mobileBasisRaspi} alt="mobileLogo"></img>
+              <img className="img-mobile" src={mobileBasisRaspi} alt="NourPos"></img>
               <p className="download-mobile"><a download="NourPos_Mobile" href="https://firebasestorage.googleapis.com/v0/b/nourpos-e2bee.appspot.com/o/NourPos_Mobile.apk?alt=media&token=0129b2d9-634b-40ce-b2d9-16c29c5d0a4a">{Sprachen.download} Mobile</a></p>
               <p className="download-mobile"><a download="NourPos_Basis" href="https://firebasestorage.googleapis.com/v0/b/nourpos-e2bee.appspot.com/o/NourPos_Basis.apk?alt=media&token=2e7e3ce3-027e-41f3-b27e-1d53984644aa">{Sprachen.download} Basis</a></p>
             </div>
@@ -137,11 +138,30 @@ class Home extends React.Component {
     </section>)
   }
   render() {
-    return (<div>
+    const meta = {
+      property: {
+        'og:title': 'NourPos Kassensystem keine monatliche Gebühr keine Verträge| NourPos',
+        'og:type': 'website',
+        'og:image': mobileBasisRaspi,
+        'og:site_name': 'NourPos',
+        'og:image:height': "503",
+        'og:image:width': "716"
+      },
+      title:'NourPos',
+      description: 'Kassensystem von NourPos ✓ Für alle Gastronomie-Betriebe ✓ Sehr leichte Bedienung ✓ Geringe Kosten ✓',
+      canonical: 'http://nourpos.com',
+      meta: {
+        charset: 'utf-8',
+        name: {
+          keywords: 'gastronomie,Kassensystem,pos,funkbonieren,nourpos'
+        }
+      }
+    };
+    return (<DocumentMeta {...meta}>>
       <Desktop>{this.desktopHome()}</Desktop>
       <Tablet>{this.tabletHome()}</Tablet>
       <Mobile>{this.mobileHome()}</Mobile>
-    </div>)
+    </DocumentMeta>)
   }
 }
 

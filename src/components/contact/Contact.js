@@ -113,6 +113,9 @@ class Contact extends Component {
     waitForResult:false,
   });
 };
+componentDidMount(){
+
+}
   renderModal() {
     const { ismodalOpen } = this.state;
     return (
@@ -191,10 +194,7 @@ class Contact extends Component {
       }
     </Form>);
   }
-  componentDidMount(){
-    this.props.incrmentLoadedPages()
 
-  }
   tabletForm() {
     return (<Form  validateError={errorValidator}
       dontValidateOnMount={true} validateOnSubmit={this.state.validateOnSubmit} onSubmitFailure={this.onSubmitFailure} onSubmit={this.onSubmitForm}>

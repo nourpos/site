@@ -26,8 +26,6 @@ class Carousel extends Component {
           <div className="carousel-list-item">
               <img src={car1} alt="Caroussel pic 1"/>
           </div>
-          <link async rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />
-          <link async rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
       </Slider>
     );
   }

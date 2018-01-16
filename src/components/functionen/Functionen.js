@@ -18,9 +18,6 @@ class Functionen extends React.Component {
     super(props);
   }
 
-  componentWillMount(){
-    this.props.incrmentLoadedPages()
-  }
   render() {
     const checkIconSpan = (<span class="checkIcon" style={{left:Sprachen.getLanguage()==='ar'?'-100px':'auto',right:Sprachen.getLanguage()==='ar'?'auto':'0'}}>{checkIcon}</span>)
     const checkIconSpanTablet = (<span class="checkIcon" style={{left:Sprachen.getLanguage()==='ar'?'-100px':'auto',right:Sprachen.getLanguage()==='ar'?'auto':'0'}}>{checkIcon}</span>)

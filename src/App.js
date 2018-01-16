@@ -17,13 +17,15 @@ const Maintenance = Loadable({
   loading: () => (<div> Loading...</div>),
 });
 
-
+const Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+const langHashes={
+  de:'default',
+  ar:'1c3u5sl8t',
+  en:'1c3u6020u',
+  fr:'1c3u63baq'
+}
 var othersPagesLoaded = false;
-var allPagesToBeLoaded = 4;
-var pagesLoaded = 0;
-const Desktop = props => <Responsive {...props} minWidth={992}/>;
-const Tablet = props => <Responsive {...props} minWidth={768} maxWidth={991}/>;
-const Mobile = props => <Responsive {...props} maxWidth={767}/>;
+
 
 class App extends Component {
   constructor(props) {
@@ -38,7 +40,6 @@ class App extends Component {
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
     this._setLanguage = this._setLanguage.bind(this);
     this._getLanguage = this._getLanguage.bind(this);
-    this.incrmentLoadedPages = this.incrmentLoadedPages.bind(this);
     this.setPage = this.setPage.bind(this);
     this.savePageUntilOthersPagesLoaded=""
 
@@ -82,17 +83,29 @@ class App extends Component {
       loading: () => (<div> Loading...</div>),
     });
     othersPagesLoaded=true
-    this.setState({})
-
   }
   componentWillMount(){
     this._check_language()
   }
 
+  loadChatSupportTool =(langHash)=>{
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src=`https://embed.tawk.to/5a5d3192d7591465c706c61c/${langHash}`;
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+  };
+
   componentDidMount() {
+    this.loadOtherPagesForStart()
     this.updateWindowDimensions();
      window.addEventListener('resize', this.updateWindowDimensions);
      window.addEventListener('scroll', this.handleScroll.bind(this));
+     setTimeout(()=>{
+       let langHash = langHashes[Sprachen.getLanguage()]
+       this.loadChatSupportTool(langHash)
+     },10000)
   }
 
   componentWillUnmount() {
@@ -110,19 +123,10 @@ class App extends Component {
   _setLanguage(lang){
     Sprachen.setLanguage(lang)
     reactLocalStorage.set('lang',lang);
-    let langFromSession = reactLocalStorage.get('lang');
     this.setState({})//refresh page
   }
   _getLanguage(lang){
     return Sprachen.getLanguage()
-  }
-  incrmentLoadedPages(){
-    pagesLoaded++
-    if (pagesLoaded===allPagesToBeLoaded) {
-      pagesLoaded=0
-      this.setState({load:true})
-      //window.scrollTo(0,0)
-    }
   }
   handleScroll() {
     if (window.scrollY > 50) {
@@ -134,7 +138,6 @@ class App extends Component {
         this.setState({headerFixedAtTheTop: false})
       }
     }
-    this.loadOtherPagesForStart()
   }
 
   updateWindowDimensions() {
@@ -166,10 +169,6 @@ class App extends Component {
   }
 
   setPage(page){
-    if (!othersPagesLoaded) {
-      this.loadOtherPagesForStart()
-      return
-    }
     if (this.state.page!==page) {
       this.setState({page:page})
       page==='home' || this.loadOtherPages()
@@ -200,7 +199,7 @@ class App extends Component {
     }
     return (<div className="App">
       <PageCover/>
-      <Header othersPagesLoaded={othersPagesLoaded} getLanguage={this._getLanguage} setLanguage={this._setLanguage} setPage={this.setPage.bind(this)}  headerFixedAtTheTop={this.state.headerFixedAtTheTop}/>
+      <Header  getLanguage={this._getLanguage} setLanguage={this._setLanguage} setPage={this.setPage.bind(this)}  headerFixedAtTheTop={this.state.headerFixedAtTheTop}/>
       {this.getpage()}
       <Footer setLanguage={this._setLanguage}  setPage={this.setPage.bind(this)}/>
     </div>);
