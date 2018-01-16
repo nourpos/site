@@ -149,7 +149,7 @@ class Home extends React.Component {
       },
       title:'NourPos',
       description: 'Kassensystem von NourPos ✓ Für alle Gastronomie-Betriebe ✓ Sehr leichte Bedienung ✓ Geringe Kosten ✓',
-      canonical: 'http://nourpos.com',
+      canonical: 'https://nourpos.com',
       meta: {
         charset: 'utf-8',
         name: {
