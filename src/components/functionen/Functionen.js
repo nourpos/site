@@ -8,35 +8,42 @@ import Sprachen from '../../languages/Sprachen'
 const Desktop = props => <Responsive {...props} minWidth={992}/>;
 const Tablet = props => <Responsive {...props} minWidth={768} maxWidth={991}/>;
 const Mobile = props => <Responsive {...props} maxWidth={767}/>;
-const Default = props => <Responsive {...props} minWidth={768}/>;
 
 
 var FontAwesome = require('react-fontawesome')
 const checkIcon = (<FontAwesome className="check" name="check" size="1x"/>)
 class Functionen extends React.Component {
   constructor(props){
-    super(props);
+    super(props)
+    this.lang=Sprachen.getLanguage()
   }
-
+  shouldComponentUpdate(){
+    if (this.lang!==Sprachen.getLanguage()) {
+      this.lang=Sprachen.getLanguage()
+      return true
+    }
+    return false
+  }
   render() {
-    const checkIconSpan = (<span class="checkIcon" style={{left:Sprachen.getLanguage()==='ar'?'-100px':'auto',right:Sprachen.getLanguage()==='ar'?'auto':'0'}}>{checkIcon}</span>)
-    const checkIconSpanTablet = (<span class="checkIcon" style={{left:Sprachen.getLanguage()==='ar'?'-100px':'auto',right:Sprachen.getLanguage()==='ar'?'auto':'0'}}>{checkIcon}</span>)
-    const checkIconSpanMobile = (<span class="checkIcon" style={{left:Sprachen.getLanguage()==='ar'?'-2em':'auto',right:Sprachen.getLanguage()==='ar'?'auto':'0'}}>{checkIcon}</span>)
+    console.log('test');
+    const checkIconSpan = (<span class="checkIcon" style={{left:this.lang==='ar'?'-100px':'auto',right:this.lang==='ar'?'auto':'0'}}>{checkIcon}</span>)
+    const checkIconSpanTablet = (<span class="checkIcon" style={{left:this.lang==='ar'?'-100px':'auto',right:this.lang==='ar'?'auto':'0'}}>{checkIcon}</span>)
+    const checkIconSpanMobile = (<span class="checkIcon" style={{left:this.lang==='ar'?'-2em':'auto',right:this.lang==='ar'?'auto':'0'}}>{checkIcon}</span>)
 
     return (
       <div>
       <Desktop>
        <section style={{
           flexDirection: 'column',
-          minHeight: this.props.minHeight,
-          backgroundColor: '#fff',
-          textAlign:Sprachen.getLanguage()==='ar'?'right':'left',
-          direction: Sprachen.getLanguage()==='ar'?'rtl':'ltr'
+          minHeight: '100vh',
+
+          textAlign:this.lang==='ar'?'right':'left',
+          direction: this.lang==='ar'?'rtl':'ltr'
         }} id="functionen" className="_desktop">
 
         <div className="md_width">
           <h1 >{Sprachen.vorteile}</h1>
-          <div class="_SitThW" style={{paddingRight:Sprachen.getLanguage()==='ar'?'0px':''}}>
+          <div class="_SitThW" style={{paddingRight:this.lang==='ar'?'0px':''}}>
             <ul >
             <li>
               <div style={{display:'flex',flexDirection:'row',alignItems:'center'}}>
@@ -151,15 +158,15 @@ class Functionen extends React.Component {
       <Tablet>
       <section style={{
          flexDirection: 'column',
-         minHeight: this.props.minHeight,
-         backgroundColor: '#fff',
-         textAlign:Sprachen.getLanguage()==='ar'?'right':'left',
-         direction: Sprachen.getLanguage()==='ar'?'rtl':'ltr'
+         minHeight: '100vh',
+
+         textAlign:this.lang==='ar'?'right':'left',
+         direction: this.lang==='ar'?'rtl':'ltr'
        }} id="functionen" className="_tablet">
 
        <div className="xs_width">
          <h1 >{Sprachen.vorteile}</h1>
-         <div class="_SitThW" style={{paddingRight:Sprachen.getLanguage()==='ar'?'0px':''}}>
+         <div class="_SitThW" style={{paddingRight:this.lang==='ar'?'0px':''}}>
            <ul >
            <li>
              <div style={{display:'flex',flexDirection:'row',alignItems:'center'}}>
@@ -274,15 +281,15 @@ class Functionen extends React.Component {
       <Mobile>
       <section style={{
           flexDirection: 'column',
-          minHeight: this.props.minHeight,
-          backgroundColor: '#fff',
-          textAlign:Sprachen.getLanguage()==='ar'?'right':'left',
-          direction: Sprachen.getLanguage()==='ar'?'rtl':'ltr'
+          minHeight: '100vh',
+
+          textAlign:this.lang==='ar'?'right':'left',
+          direction: this.lang==='ar'?'rtl':'ltr'
         }} id="functionen" className="_mobile">
 
         <div className="xs_width">
           <h1 >{Sprachen.vorteile}</h1>
-          <div class="_SitThW" style={{paddingRight:Sprachen.getLanguage()==='ar'?'0px':''}}>
+          <div class="_SitThW" style={{paddingRight:this.lang==='ar'?'0px':''}}>
             <ul >
             <li>
               <div style={{display:'flex',flexDirection:'row',alignItems:'center'}}>

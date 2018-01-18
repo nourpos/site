@@ -1,6 +1,6 @@
 import React from 'react'
 import Sprachen from '../../languages/Sprachen'
-
+import './Maintenance.css'
 
 class Maintenance extends React.Component {
 

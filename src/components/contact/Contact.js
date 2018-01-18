@@ -5,7 +5,6 @@ import {
   Form,
   StyledText,
 } from 'react-form';
-import axios from 'axios';
 import Modal from 'react-responsive-modal';
 import 'react-responsive-modal/lib/react-responsive-modal.css';
 import 'react-responsive-modal/lib/css';
@@ -23,14 +22,35 @@ const Desktop = props => <Responsive {...props} minWidth={992}/>;
 const Tablet = props => <Responsive {...props} minWidth={768} maxWidth={991}/>;
 const Mobile = props => <Responsive {...props} maxWidth={767}/>;
 
-
 const errorValidator = (values) => {
+
+    const SprachAbkuerzungForAlpha=()=>{
+      let land=null
+      switch (Sprachen.getLanguage()) {
+        case 'ar':
+          land='MA'
+          break;
+        case 'en':
+          land='US'
+          break;
+        default:
+          land=Sprachen.getLanguage().toUpperCase()
+
+      }
+      return `${Sprachen.getLanguage()}-${land}`
+    }
+    const SprachAbkuerzungForPostalCode=()=>{
+      if (Sprachen.getLanguage()==='ar') {
+        return 'any'
+      }
+      return Sprachen.getLanguage().toUpperCase()
+    }
 
     const validateBetriebsName = (betriebsName) => {
       if (!betriebsName) {
         return Sprachen.nameOfConcernError
       }
-      if (!validator.isAlpha(betriebsName)) {
+      if (!validator.isAlpha(betriebsName.split(" ").join(""),SprachAbkuerzungForAlpha())) {
         return Sprachen.nameOfConcernWarning
       }
       return null
@@ -39,7 +59,7 @@ const errorValidator = (values) => {
       if (!plz) {
         return Sprachen.plzError
       }
-      if (!validator.isPostalCode(plz,'DE')) {
+      if (!validator.isPostalCode(plz,SprachAbkuerzungForPostalCode())) {
         return Sprachen.plzWarning
       }
       return null
@@ -48,7 +68,7 @@ const errorValidator = (values) => {
       if (!stadt) {
         return Sprachen.cityError
       }
-      if (!validator.isAlpha(stadt)) {
+      if (!validator.isAlpha(stadt.split(" ").join(""),SprachAbkuerzungForAlpha())) {
         return Sprachen.cityWarning
       }
       return null
@@ -113,8 +133,11 @@ class Contact extends Component {
     waitForResult:false,
   });
 };
+shouldComponentUpdate(){
+  return true
+}
 componentDidMount(){
-
+  this.lang=Sprachen.getLanguage()
 }
   renderModal() {
     const { ismodalOpen } = this.state;
@@ -133,14 +156,12 @@ componentDidMount(){
     var data = JSON.stringify(submittedValues);
 
     self.setState({ismodalOpen:true,waitForResult:true})
-    axios({
-      method: 'post',
-      url: 'https://formspree.io/k.echchennouf@gmail.com',
-      data: {
-        data:data
-      }
-    })
-    .then(function (res) {
+
+    fetch('https://formspree.io/k.echchennouf@gmail.com', {
+       method: 'post',
+       headers: {'Content-Type':'application/json'},
+       body: data
+    }).then(function (res) {
       if (true) {
         self.setState({error:false,isEmailSended:true,waitForResult:false})
         formApi.resetAll()
@@ -294,13 +315,15 @@ componentDidMount(){
   }
 
   render() {
+    console.log('hm');
     return (<div>
+
       {this.renderModal()}
       <Desktop>
         <section style={{
             flexDirection: 'column',
-            minHeight: this.props.minHeight,
-            backgroundColor: '#1ab7ea',
+            minHeight: '100vh',
+            backgroundColor: '#21759b',
             textAlign:Sprachen.getLanguage()==='ar'?'right':'left',
             direction: Sprachen.getLanguage()==='ar'?'rtl':'ltr'
           }} id="kontakt" className="_desktop">
@@ -325,8 +348,8 @@ componentDidMount(){
       <Tablet>
         <section style={{
             flexDirection: 'column',
-            minHeight: this.props.minHeight,
-            backgroundColor: '#1ab7ea',
+            minHeight: '100vh',
+            backgroundColor: '#21759b',
             textAlign:Sprachen.getLanguage()==='ar'?'right':'left',
             direction: Sprachen.getLanguage()==='ar'?'rtl':'ltr'
           }} id="kontakt" className="_tablet">
@@ -351,8 +374,8 @@ componentDidMount(){
       <Mobile>
         <section style={{
             flexDirection: 'column',
-            minHeight: this.props.minHeight,
-            backgroundColor: '#1ab7ea',
+            minHeight: '100vh',
+            backgroundColor: '#21759b',
             textAlign:Sprachen.getLanguage()==='ar'?'right':'left',
             direction: Sprachen.getLanguage()==='ar'?'rtl':'ltr'
           }} id="kontakt" className="_mobile">

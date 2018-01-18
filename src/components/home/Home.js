@@ -5,30 +5,39 @@ import './Home.css';
 import mobileBasisRaspi from '../../img/mobileBasis.png';
 import Features from './features/Features';
 import Sprachen from '../../languages/Sprachen'
-import DocumentMeta from 'react-document-meta';
 
 var FontAwesome = require('react-fontawesome')
 const checkIcon = (<FontAwesome className="check" name="check" size="1x"/>)
-
 const Desktop = props => <Responsive {...props} minWidth={992}/>;
 const Tablet = props => <Responsive {...props} minWidth={768} maxWidth={991}/>;
 const Mobile = props => <Responsive {...props} maxWidth={767}/>;
 
 
 class Home extends React.Component {
+  constructor(props){
+    super(props)
+    this.lang=Sprachen.getLanguage()
+  }
+  shouldComponentUpdate(){
+    if (this.lang!==Sprachen.getLanguage()) {
+      this.lang=Sprachen.getLanguage()
+      return true
+    }
+    return false
+  }
   desktopHome() {
     return (<section style={{
         height:'auto',
         backgroundColor: 'transparent',
         display:'flex',
         flexDirection:'column',
-        textAlign:Sprachen.getLanguage()==='ar'?'right':'left',
-        direction: Sprachen.getLanguage()==='ar'?'rtl':'ltr'
+        textAlign:this.lang==='ar'?'right':'left',
+        direction: this.lang==='ar'?'rtl':'ltr'
       }} id="home">
       <div className="about" style={{
          display: 'flex',
          flex:1,
-         minHeight: this.props.minHeight,
+         minHeight: '100vh',
        }}>
         <div className="about-wrapper">
           <div className="about-wrapper-tablet-row">
@@ -62,13 +71,13 @@ class Home extends React.Component {
         backgroundColor: 'transparent',
         display:'flex',
         flexDirection:'column',
-        textAlign:Sprachen.getLanguage()==='ar'?'right':'left',
-        direction: Sprachen.getLanguage()==='ar'?'rtl':'ltr'
+        textAlign:this.lang==='ar'?'right':'left',
+        direction: this.lang==='ar'?'rtl':'ltr'
       }} id="home">
       <div className="about" style={{
          display: 'flex',
          flex:1,
-         minHeight: this.props.minHeight,
+         minHeight: '100vh',
        }}>
         <div className="about-wrapper">
           <div className="about-wrapper-tablet-row">
@@ -102,13 +111,13 @@ class Home extends React.Component {
         backgroundColor: 'transparent',
         display:'flex',
         flexDirection:'column',
-        textAlign:Sprachen.getLanguage()==='ar'?'right':'left',
-        direction: Sprachen.getLanguage()==='ar'?'rtl':'ltr'
+        textAlign:this.lang==='ar'?'right':'left',
+        direction: this.lang==='ar'?'rtl':'ltr'
       }} id="home">
       <div className="about" style={{
         display: 'flex',
         flex:1,
-        minHeight: this.props.minHeight,
+        minHeight: '100vh',
         }}>
         <div className="about-wrapper about-wrapper-mobile">
           <div className="about-wrapper-mobile-row">
@@ -138,30 +147,12 @@ class Home extends React.Component {
     </section>)
   }
   render() {
-    const meta = {
-      property: {
-        'og:title': 'NourPos Kassensystem keine monatliche Gebühr keine Verträge| NourPos',
-        'og:type': 'website',
-        'og:image': mobileBasisRaspi,
-        'og:site_name': 'NourPos',
-        'og:image:height': "503",
-        'og:image:width': "716"
-      },
-      title:'NourPos',
-      description: 'Kassensystem von NourPos ✓ Für alle Gastronomie-Betriebe ✓ Sehr leichte Bedienung ✓ Geringe Kosten ✓',
-      canonical: 'https://nourpos.com',
-      meta: {
-        charset: 'utf-8',
-        name: {
-          keywords: 'gastronomie,Kassensystem,pos,funkbonieren,nourpos'
-        }
-      }
-    };
-    return (<DocumentMeta {...meta}>>
-      <Desktop>{this.desktopHome()}</Desktop>
-      <Tablet>{this.tabletHome()}</Tablet>
-      <Mobile>{this.mobileHome()}</Mobile>
-    </DocumentMeta>)
+    return (
+      <div>
+        <Desktop>{this.desktopHome()}</Desktop>
+        <Tablet>{this.tabletHome()}</Tablet>
+        <Mobile>{this.mobileHome()}</Mobile>
+      </div>)
   }
 }
 

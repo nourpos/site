@@ -21,28 +21,32 @@ const loader = (
 const Desktop = props => <Responsive {...props} minWidth={992}/>;
 const Tablet = props => <Responsive {...props} minWidth={768} maxWidth={991}/>;
 const Mobile = props => <Responsive {...props} maxWidth={767}/>;
-const Default = props => <Responsive {...props} minWidth={768}/>;
 
 class Produkte extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      minHeight:this.props.minHeight,
-      lang:Sprachen.getLanguage()
+      minHeight:'100vh',
+
     };
+    this.lang=Sprachen.getLanguage()
   }
 
-
-shouldComponentUpdate(nextProps, nextState){
-    return nextProps.minHeight!== this.state.minHeight || Sprachen.getLanguage()!==this.state.lang
+  shouldComponentUpdate(){
+    if (this.lang!==Sprachen.getLanguage()) {
+      this.lang=Sprachen.getLanguage()
+      return true
+    }
+    return false
   }
+
   renderDesktop(){
     return(
       <section style={{
           minHeight: this.state.minHeight,
           flexDirection: 'column',
-          textAlign:Sprachen.getLanguage()==='ar'?'right':'left',
-          direction: Sprachen.getLanguage()==='ar'?'rtl':'ltr'
+          textAlign:this.lang==='ar'?'right':'left',
+          direction: this.lang==='ar'?'rtl':'ltr'
         }} id="produkte" className="_desktop">
         <div className="md_width">
           <h1>{Sprachen.nourPosHardwareBox}</h1>
@@ -51,9 +55,7 @@ shouldComponentUpdate(nextProps, nextState){
             }}>{Sprachen.OneBox}</h3>
           <div className="produkte_col">
             <div className="produkte_col_row">
-              <div className="produkte_col_row">
                 <img src={produkte} alt={Sprachen.OneBox}/>
-              </div>
             </div>
           </div>
           <div className="produkte_col">
@@ -126,11 +128,11 @@ shouldComponentUpdate(nextProps, nextState){
       </Desktop>
       <Tablet>
         <section style={{
-            minHeight: this.props.minHeight,
+            minHeight: '100vh',
             flexDirection: 'column',
             display: 'flex',
-            textAlign:Sprachen.getLanguage()==='ar'?'right':'left',
-            direction: Sprachen.getLanguage()==='ar'?'rtl':'ltr'
+            textAlign:this.lang==='ar'?'right':'left',
+            direction: this.lang==='ar'?'rtl':'ltr'
           }} id="produkte" className="_tablet">
           <div className="xs_width">
           <h1>{Sprachen.nourPosHardwareBox}</h1>
@@ -139,10 +141,7 @@ shouldComponentUpdate(nextProps, nextState){
             }}>{Sprachen.OneBox}</h3>
           <div className="produkte_col">
             <div className="produkte_col_row">
-              <div className="produkte_col_row">
                 <img src={produkte} alt={Sprachen.OneBox}/>
-
-              </div>
             </div>
           </div>
           <div className="produkte_col">
@@ -214,10 +213,10 @@ shouldComponentUpdate(nextProps, nextState){
       </Tablet>
       <Mobile>
         <section style={{
-            minHeight: this.props.minHeight,
+            minHeight: '100vh',
             flexDirection: 'column',
-            textAlign:Sprachen.getLanguage()==='ar'?'right':'left',
-            direction: Sprachen.getLanguage()==='ar'?'rtl':'ltr'
+            textAlign:this.lang==='ar'?'right':'left',
+            direction: this.lang==='ar'?'rtl':'ltr'
           }} id="produkte" className="_desktop">
           <div className="xs_width">
           <h1>{Sprachen.nourPosHardwareBox}</h1>
@@ -225,73 +224,70 @@ shouldComponentUpdate(nextProps, nextState){
               color: 'gray'
             }}>{Sprachen.OneBox}</h3>
           <div className="produkte_col produkte_col_mobile">
-            <div className="produkte_col_row">
-              <div className="produkte_col_row">
+            <div className="produkte_col_row produkte_col_row_mobile">
                 <img src={produkte} alt={Sprachen.OneBox}/>
-
-              </div>
             </div>
           </div>
           <div className="produkte_col produkte_col_mobile">
-            <div className="produkte_col_row">
+            <div className="produkte_col_row produkte_col_row_mobile">
 
             <h2>{Sprachen.nourPosServer}</h2>
               <img src={raspi_left} alt={Sprachen.nourPosServer}/>
 
             </div>
-            <div className="produkte_col_row">
+            <div className="produkte_col_row produkte_col_row_mobile">
               <p>
                 {Sprachen.nourPosServerText}
               </p>
             </div>
           </div>
           <div className="produkte_col produkte_col_mobile">
-          <div className="produkte_col_row">
+          <div className="produkte_col_row produkte_col_row_mobile">
 
           <h2>{Sprachen.rfidReader}</h2>
           <img className="rfid_reader_right" src={rfid_reader_right} alt={Sprachen.rfidReader} />
 
           </div>
-            <div className="produkte_col_row">
+            <div className="produkte_col_row produkte_col_row_mobile">
               <p>
                 {Sprachen.rfidReaderText}
               </p>
             </div>
           </div>
           <div className="produkte_col produkte_col_mobile ">
-            <div className="produkte_col_row">
+            <div className="produkte_col_row produkte_col_row_mobile">
 
             <h2>{Sprachen.basisTablet} </h2>
               <img src={basis}/>
 
             </div>
-            <div className="produkte_col_row">
+            <div className="produkte_col_row produkte_col_row_mobile">
               <p>
                 {Sprachen.basisTabletText}
               </p>
             </div>
           </div>
           <div className="produkte_col produkte_col_mobile">
-          <div className="produkte_col_row">
+          <div className="produkte_col_row produkte_col_row_mobile">
           <h2>{Sprachen.mobileClient}</h2>
 
           <img className="mobile2" src={mobile2} alt={Sprachen.mobileClient}/>
 
           </div>
-            <div className="produkte_col_row">
+            <div className="produkte_col_row produkte_col_row_mobile">
               <p>
                 {Sprachen.mobileClientText}
               </p>
             </div>
           </div>
           <div className="produkte_col pro produkte_col_mobile">
-            <div className="produkte_col_row">
+            <div className="produkte_col_row produkte_col_row_mobile">
 
             <h2>{Sprachen.drucker}</h2>
               <img src={epson_right} alt={Sprachen.drucker}/>
 
             </div>
-            <div className="produkte_col_row">
+            <div className="produkte_col_row produkte_col_row_mobile">
               <p>
                 {Sprachen.druckerText}
               </p>

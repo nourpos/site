@@ -7,6 +7,7 @@
 #form1 label{
   margin: 10px 10px 10px 0;
   font-size: 11px;
+  color: #ffffff
 }
 #form1 input, #form1 button{
   border: none;

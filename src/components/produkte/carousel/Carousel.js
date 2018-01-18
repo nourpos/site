@@ -9,6 +9,18 @@ import Sprachen from '../../../languages/Sprachen'
 import car1 from '../../../img/car1.png';
 
 class Carousel extends Component {
+  constructor(props){
+    super(props)
+    this.lang=Sprachen.getLanguage()
+  }
+  shouldComponentUpdate(){
+    if (this.lang!==Sprachen.getLanguage()) {
+      this.lang=Sprachen.getLanguage()
+      return true
+    }
+    return false
+  }
+
   render() {
     var settings = {
       dots: true,

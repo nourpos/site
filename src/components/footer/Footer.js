@@ -11,11 +11,17 @@ const Mobile = props => <Responsive {...props} maxWidth={767}/>;
 
 
 class Footer extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
+  constructor(props){
+    super(props)
+    this.lang=Sprachen.getLanguage()
   }
-
+  shouldComponentUpdate(){
+    if (this.lang!==Sprachen.getLanguage()) {
+      this.lang=Sprachen.getLanguage()
+      return true
+    }
+    return false
+  }
   renderDesktop(){
     return(
       <section className="footer" style={{
@@ -23,8 +29,8 @@ class Footer extends Component {
           backgroundColor: '#1d1d1d',
           justifyContent: 'center',
           display: 'flex',
-          textAlign:Sprachen.getLanguage()==='ar'?'right':'left',
-          direction: Sprachen.getLanguage()==='ar'?'rtl':'ltr'
+          textAlign:this.lang==='ar'?'right':'left',
+          direction: this.lang==='ar'?'rtl':'ltr'
         }}>
         <div className="md_width" style={{width:'100%'}}>
           <div style={{
@@ -40,9 +46,6 @@ class Footer extends Component {
                 <li><a  onClick={()=>{
                   this.props.setPage('about')
                   }}>{Sprachen.aboutUs}</a></li>
-                <li><a  onClick={()=>{
-                  this.props.setPage('agb')
-                  }}>{Sprachen.conditions}</a></li>
                 <li><a  onClick={()=>{
                     this.props.setPage('datenschutz')
                   }}>{Sprachen.datenschutz}</a></li>
@@ -68,8 +71,8 @@ class Footer extends Component {
             backgroundColor: '#1d1d1d',
             justifyContent: 'center',
             display: 'flex',
-            textAlign:Sprachen.getLanguage()==='ar'?'right':'left',
-            direction: Sprachen.getLanguage()==='ar'?'rtl':'ltr'
+            textAlign:this.lang==='ar'?'right':'left',
+            direction: this.lang==='ar'?'rtl':'ltr'
           }}>
           <div className="xs_width">
             <div style={{
@@ -83,9 +86,6 @@ class Footer extends Component {
               <li><a  onClick={()=>{
                 this.props.setPage('about')
                 }}>{Sprachen.aboutUs}</a></li>
-              <li><a  onClick={()=>{
-                this.props.setPage('agb')
-                }}>{Sprachen.conditions}</a></li>
               <li><a  onClick={()=>{
                   this.props.setPage('datenschutz')
                 }}>{Sprachen.datenschutz}</a></li>
@@ -104,8 +104,8 @@ class Footer extends Component {
             backgroundColor: '#1d1d1d',
             justifyContent: 'center',
             display: 'flex',
-            textAlign:Sprachen.getLanguage()==='ar'?'right':'left',
-            direction: Sprachen.getLanguage()==='ar'?'rtl':'ltr'
+            textAlign:this.lang==='ar'?'right':'left',
+            direction: this.lang==='ar'?'rtl':'ltr'
           }}>
           <div style={{
               display: 'flex',
@@ -123,9 +123,6 @@ class Footer extends Component {
                 this.props.setPage('about')
                 }}>{Sprachen.aboutUs}</a></li>
               <li><a  onClick={()=>{
-                this.props.setPage('agb')
-                }}>{Sprachen.conditions}</a></li>
-              <li><a  onClick={()=>{
                   this.props.setPage('datenschutz')
                 }}>{Sprachen.datenschutz}</a></li>
               <li><a  onClick={()=>{
@@ -137,6 +134,7 @@ class Footer extends Component {
           </div>
         </section>
       </Mobile>
+      <link async href='https://fonts.googleapis.com/css?family=Titillium+Web' rel='stylesheet' type='text/css' />
     </div>)
   }
 }

@@ -18,18 +18,24 @@ const Mobile = props => <Responsive {...props} maxWidth={767}/>;
 class Preise extends React.Component {
   constructor(props){
     super(props);
-
+    this.lang=Sprachen.getLanguage()
   }
-
+  shouldComponentUpdate(){
+    if (this.lang!==Sprachen.getLanguage()) {
+      this.lang=Sprachen.getLanguage()
+      return true
+    }
+    return false
+  }
   render() {
     return (<div>
       <Desktop>
         <section style={{
             flexDirection: 'column',
-            minHeight: this.props.minHeight,
+            minHeight: '100vh',
             backgroundColor: '#e8e8ec',
-            textAlign:Sprachen.getLanguage()==='ar'?'right':'left',
-            direction: Sprachen.getLanguage()==='ar'?'rtl':'ltr'
+            textAlign:this.lang==='ar'?'right':'left',
+            direction: this.lang==='ar'?'rtl':'ltr'
           }} id="preise" className="_desktop">
 
           <div className="md_width">
@@ -116,10 +122,10 @@ class Preise extends React.Component {
       <Tablet>
         <section style={{
           flexDirection: 'column',
-          minHeight: this.props.minHeight,
+          minHeight: '100vh',
           backgroundColor: '#e8e8ec',
-          textAlign:Sprachen.getLanguage()==='ar'?'right':'left',
-          direction: Sprachen.getLanguage()==='ar'?'rtl':'ltr'
+          textAlign:this.lang==='ar'?'right':'left',
+          direction: this.lang==='ar'?'rtl':'ltr'
         }} id="preise" className="_tablet">
 
         <div className="xs_width">
@@ -207,10 +213,10 @@ class Preise extends React.Component {
       <Mobile>
       <section style={{
           flexDirection: 'column',
-          minHeight: this.props.minHeight,
+          minHeight: '100vh',
           backgroundColor: '#e8e8ec',
-          textAlign:Sprachen.getLanguage()==='ar'?'right':'left',
-          direction: Sprachen.getLanguage()==='ar'?'rtl':'ltr'
+          textAlign:this.lang==='ar'?'right':'left',
+          direction: this.lang==='ar'?'rtl':'ltr'
         }} id="preise" className="_desktop">
 
         <div className="xs_width">

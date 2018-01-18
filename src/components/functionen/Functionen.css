@@ -1,5 +1,5 @@
 ._SitThW {
-    color: #283664;
+    color: #ffffff;
     position: relative;
 }
 ._SitThW ul {
@@ -10,18 +10,20 @@
 ._desktop ._SitThW p {
     padding-right: 8.1em
 }
-#functionen._desktop ._SitThW p {
-    margin: 0;
-    padding: 1.1em 4.25em;
+#functionen {
+    background: #1ab7ea;
 }
-#functionen._tablet ._SitThW p {
+#functionen h1 {
+    color: white;
+}
+#functionen._desktop ._SitThW p, #functionen._tablet ._SitThW p {
     margin: 0;
-    padding: 1.1em 4.25em;
+    padding: 1.1em 3.05em;
+    font-size: 20px;
 }
 #functionen._mobile ._SitThW p {
-  margin: 0;
-  padding: 0.5em 2.5em;
-
+    margin: 0;
+    padding: 1em 2.9em;
 }
 .xs_width{
   width: 100%;
@@ -36,13 +38,14 @@
     width: 40px;
     height: 40px;
     border-radius: 20px;
-    background-color: #25D366;
+    background-color: #ffffff;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: #1ab7ea;
     position: absolute;
     right: 0;
 }
+
 #functionen._mobile .checkIcon {
     display: flex;
     margin-left: 25px;
@@ -51,5 +54,5 @@
     background-color: #FFFFFF;
     justify-content: center;
     align-items: center;
-    color: #25D366;
+    color: #1ab7ea;
 }

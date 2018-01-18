@@ -26,7 +26,7 @@
 }
 .features {
   background-color: #fff;
-  color: #131418;
+  color: #34465d;
 }
 .features .fa {
   color: #e4405f;
@@ -34,4 +34,9 @@
 
 .features h2 {
     margin: 35px 10px;
+}
+.first-p {
+    font-size: 20px;
+    margin: 5px 0px;
+    color: #e4405f;
 }

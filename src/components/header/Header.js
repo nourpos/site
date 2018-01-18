@@ -134,7 +134,7 @@ class Header extends Component {
     return (<header className={this.props.headerFixedAtTheTop
         ? "App-header-at-top desktop"
         : "App-header desktop"} style={{direction:Sprachen.getLanguage()==='ar'?'rtl':'ltr'}}>
-      <a className="navbar-brand" href="#" style={{
+      <a onClick={()=>{this.goToHome()}} className="navbar-brand" href="#" style={{
           flexDirection: 'row',
           justifyContent: 'center',
           alignItems: 'center',
@@ -184,7 +184,7 @@ class Header extends Component {
 
   mobileHeader() {
     return (<header className="mobile" >
-      <a className="navbar-brand" href="#" style={{
+      <a onClick={()=>{this.goToHome()}} className="navbar-brand" href="#" style={{
           flexDirection: 'row',
           justifyContent: 'center',
           alignItems: 'center',

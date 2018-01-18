@@ -4,18 +4,20 @@ import './App.css';
 import PageCover from './components/pageCover/PageCover';
 import Header from './components/header/Header';
 import Home from './components/home/Home';
+import Loader from './components/utils/Loader';
 
 import Footer from './components/footer/Footer';
 import Sprachen from './languages/Sprachen'
-import {reactLocalStorage} from 'reactjs-localstorage';
 import Loadable from 'react-loadable';
 import config from './config.json'
+import Cookies from 'universal-cookie';
+
 var maintenance = config.maintenance
 
-const Maintenance = Loadable({
-  loader: () => import('./components/maintenance/Maintenance'),
-  loading: () => (<div> Loading...</div>),
-});
+const cookies = new Cookies();
+
+
+
 
 const Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 const langHashes={
@@ -36,30 +38,29 @@ class App extends Component {
       submittedValues: {},
       page:'home',
       load:false,
+      vorhandHinweisGelesen:false,
+      acceptCockies:false,
     };
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
     this._setLanguage = this._setLanguage.bind(this);
     this._getLanguage = this._getLanguage.bind(this);
     this.setPage = this.setPage.bind(this);
+    this.confirmVorhandHinweisGelesen=this.confirmVorhandHinweisGelesen.bind(this);
     this.savePageUntilOthersPagesLoaded=""
 
   }
   loadOtherPages(){
     this.About = Loadable({
       loader: () => import('./components/about/About'),
-      loading: () => (<div> Loading...</div>),
-    });
-    this.AGB = Loadable({
-      loader: () => import('./components/agb/AGB'),
-      loading: () => (<div> Loading...</div>),
+      loading: Loader,
     });
     this.Datenschutz = Loadable({
       loader: () => import('./components/datenschutz/Datenschutz'),
-      loading: () => (<div> Loading...</div>),
+      loading: Loader,
     });
     this.Impressum = Loadable({
       loader: () => import('./components/impressum/Impressum'),
-      loading: () => (<div> Loading...</div>),
+      loading: Loader,
     });
   }
   loadOtherPagesForStart(){
@@ -72,15 +73,15 @@ class App extends Component {
     });
     this.Functionen = Loadable({
       loader: () => import('./components/functionen/Functionen'),
-      loading: () => (<div> Loading...</div>),
+      loading: Loader,
     });
     this.Preise = Loadable({
       loader: () => import('./components/preise/Preise'),
-      loading: () => (<div> Loading...</div>),
+      loading: Loader,
     });
     this.Contact = Loadable({
       loader: () => import('./components/contact/Contact'),
-      loading: () => (<div> Loading...</div>),
+      loading: Loader,
     });
     othersPagesLoaded=true
   }
@@ -113,7 +114,7 @@ class App extends Component {
       window.removeEventListener('scroll', this.handleScroll);
   }
   _check_language(){
-    let langFromSession = reactLocalStorage.get('lang');
+    let langFromSession = cookies.get('lang');
     if(langFromSession){
       Sprachen.setLanguage(langFromSession)
     }else{
@@ -122,7 +123,7 @@ class App extends Component {
   }
   _setLanguage(lang){
     Sprachen.setLanguage(lang)
-    reactLocalStorage.set('lang',lang);
+    cookies.set('lang', lang, { path: '/' ,maxAge:3600*24*30*12});
     this.setState({})//refresh page
   }
   _getLanguage(lang){
@@ -151,10 +152,10 @@ class App extends Component {
 
     return(
       <div>
-        <this.Produkte incrmentLoadedPages={this.incrmentLoadedPages} minHeight={this.state.windowHeight}/>
-        <this.Functionen incrmentLoadedPages={this.incrmentLoadedPages} minHeight={this.state.windowHeight} />
-        <this.Preise incrmentLoadedPages={this.incrmentLoadedPages} minHeight={this.state.windowHeight} />
-        <this.Contact incrmentLoadedPages={this.incrmentLoadedPages} minHeight={this.state.windowHeight}/>
+        <this.Produkte  />
+        <this.Functionen   />
+        <this.Preise   />
+        <this.Contact  />
       </div>
     )
   }
@@ -162,7 +163,7 @@ class App extends Component {
   getHome(){
     return (
       <div>
-        <Home minHeight={this.state.windowHeight}/>
+        <Home />
         {this.renderOtherPages()}
       </div>
     )
@@ -181,22 +182,53 @@ class App extends Component {
       case 'home':
         return this.getHome()
       case 'about':
-        return <this.About setPage={this.setPage.bind(this)} minHeight={this.state.windowHeight} />
-      case 'agb':
-        return <this.AGB setPage={this.setPage.bind(this)} minHeight={this.state.windowHeight} />
+        return <this.About setPage={this.setPage.bind(this)}  />
       case 'datenschutz':
-        return <this.Datenschutz setPage={this.setPage.bind(this)} minHeight={this.state.windowHeight} />
+        return <this.Datenschutz styles={{padding:'15px',backgroundColor: '#e8e8ec'}}  />
       case 'impressum':
-        return <this.Impressum setPage={this.setPage.bind(this)} minHeight={this.state.windowHeight} />
+        return <this.Impressum setPage={this.setPage.bind(this)}  />
+    }
+  }
+
+  confirmVorhandHinweisGelesen(){
+    this.setState({
+      vorhandHinweisGelesen:true
+    })
+  }
+  dontAskAgain(){
+    cookies.set('dontAskAgain',true, { path: '/' ,maxAge:3600*24*30*12});
+  }
+
+  renderCockiesHinweis(){
+    if (!this.state.acceptCockies) {
+      return(
+        null
+      )
     }
   }
 
   render() {
     if (maintenance) {
+      const Maintenance = Loadable({
+        loader: () => import('./components/maintenance/Maintenance'),
+        loading: Loader,
+      });
       return(
         <Maintenance />
       )
     }
+    if (!cookies.get('dontAskAgain') && (Sprachen.getLanguage()!=='ar' && !this.state.vorhandHinweisGelesen)) {
+      const Hinweis = Loadable({
+        loader: () => import('./components/hinweis/Hinweis'),
+        loading: Loader,
+      });
+      return(
+        <Hinweis confirmVorhandHinweisGelesen={this.confirmVorhandHinweisGelesen} dontAskAgain={this.dontAskAgain} />
+      )
+    }
+
+
+
     return (<div className="App">
       <PageCover/>
       <Header  getLanguage={this._getLanguage} setLanguage={this._setLanguage} setPage={this.setPage.bind(this)}  headerFixedAtTheTop={this.state.headerFixedAtTheTop}/>

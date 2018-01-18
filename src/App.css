@@ -28,7 +28,6 @@ section._mobile:before {
 }
 #preise{
   padding: 10px 0;
-  margin: 3px 0;
 }
 .App-intro {
   font-size: large;
@@ -79,4 +78,7 @@ section._mobile:before {
 
 .img-mobile{
   width: 90%;
+}
+button{
+  cursor: pointer;
 }

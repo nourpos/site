@@ -6,11 +6,11 @@ import Sprachen from '../../../languages/Sprachen'
 var FontAwesome = require('react-fontawesome')
 
 var einfachIcon = (<FontAwesome className="fa-thumbs-o-up" size="4x"/>)
-var zuverlaessigIcon = (<FontAwesome className="fa-check" size="4x"/>)
+var zuverlaessigIcon = (<FontAwesome className="fa-server" size="4x"/>)
 var geringeKostenIcon = (<FontAwesome className="fa-pie-chart" size="4x"/>)
 
 var einfachIconMobile = (<FontAwesome className="fa-thumbs-o-up" size="2x"/>)
-var zuverlaessigIconMobile = (<FontAwesome className="fa-check" size="2x"/>)
+var zuverlaessigIconMobile = (<FontAwesome className="fa-server" size="2x"/>)
 var geringeKostenIconMobile = (<FontAwesome className="fa-pie-chart" size="2x"/>)
 
 
@@ -22,13 +22,21 @@ const Mobile = props => <Responsive {...props} maxWidth={767}/>;
 class Features extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.lang=Sprachen.getLanguage()
   }
+  shouldComponentUpdate(){
+    if (this.lang!==Sprachen.getLanguage()) {
+      this.lang=Sprachen.getLanguage()
+      return true
+    }
+    return false
+  }
+
   renderDesktop(){
     return(
       <div className="features" style={{
           minHeight: 350,
-          justifyContent: 'center',
+
           display: 'flex'
         }}>
         <div style={{
@@ -36,7 +44,7 @@ class Features extends Component {
             width: '1170px',
             marginLeft: 'auto',
             marginRight: 'auto',
-            justifyContent: 'center',
+
             alignItems: 'center',
             flexDirection: 'column',
           }}>
@@ -46,7 +54,7 @@ class Features extends Component {
             }}>
             <div className="md4" style={{
                 display: 'flex',
-                justifyContent: 'center',
+
                 alignItems: 'center',
                 flexDirection: 'column',
                 borderWidth:1
@@ -55,19 +63,19 @@ class Features extends Component {
                   width: '80px',
                   height: '80px',
                   backgroundColor: 'white',
-                  justifyContent: 'center',
+
                   alignItems: 'center',
                   borderRadius: '40px',
                   display: 'flex'
                 }}>
                 {geringeKostenIcon}
               </div>
-              <p>{Sprachen.lowCost}</p>
+              <p className="first-p">{Sprachen.lowCost}</p>
               <p>{Sprachen.lowCostText} </p>
             </div>
             <div className="md4" style={{
                 display: 'flex',
-                justifyContent: 'center',
+
                 alignItems: 'center',
                 flexDirection: 'column'
               }}>
@@ -75,19 +83,19 @@ class Features extends Component {
                   width: '80px',
                   height: '80px',
                   backgroundColor: 'white',
-                  justifyContent: 'center',
+
                   alignItems: 'center',
                   borderRadius: '40px',
                   display: 'flex'
                 }}>
                 {einfachIcon}
               </div>
-              <p>{Sprachen.easyHandling}</p>
+              <p className="first-p">{Sprachen.easyHandling}</p>
               <p>{Sprachen.easyHandlingText}</p>
             </div>
             <div className="md4" style={{
                 display: 'flex',
-                justifyContent: 'center',
+
                 alignItems: 'center',
                 flexDirection: 'column'
               }}>
@@ -95,14 +103,14 @@ class Features extends Component {
                   width: '80px',
                   height: '80px',
                   backgroundColor: 'white',
-                  justifyContent: 'center',
+
                   alignItems: 'center',
                   borderRadius: '40px',
                   display: 'flex'
                 }}>
                 {zuverlaessigIcon}
               </div>
-              <p>{Sprachen.reliable}</p>
+              <p className="first-p">{Sprachen.reliable}</p>
               <p>{Sprachen.reliableText}</p>
             </div>
           </div>
@@ -121,7 +129,7 @@ class Features extends Component {
       <Mobile>
         <div className="features" style={{
             minHeight: 350,
-            justifyContent: 'center',
+
             display: 'flex'
           }}>
           <div style={{
@@ -129,7 +137,7 @@ class Features extends Component {
               flex: 1,
               marginLeft: 'auto',
               marginRight: 'auto',
-              justifyContent: 'center',
+
               alignItems: 'center',
               flexDirection: 'column'
             }}>
@@ -139,7 +147,7 @@ class Features extends Component {
               }}>
               <div className="md0" style={{
                   display: 'flex',
-                  justifyContent: 'center',
+
                   alignItems: 'center',
                   flexDirection: 'column'
                 }}>
@@ -147,19 +155,19 @@ class Features extends Component {
                     width: '45px',
                     height: '45px',
                     backgroundColor: 'white',
-                    justifyContent: 'center',
+
                     alignItems: 'center',
                     borderRadius: '45px',
                     display: 'flex'
                   }}>
                   {geringeKostenIconMobile}
                 </div>
-                <p>{Sprachen.lowCost}</p>
+                <p className="first-p">{Sprachen.lowCost}</p>
                 <p>{Sprachen.lowCostText} </p>
               </div>
               <div className="md0" style={{
                   display: 'flex',
-                  justifyContent: 'center',
+
                   alignItems: 'center',
                   flexDirection: 'column'
                 }}>
@@ -167,19 +175,19 @@ class Features extends Component {
                     width: '45px',
                     height: '45px',
                     backgroundColor: 'white',
-                    justifyContent: 'center',
+
                     alignItems: 'center',
                     borderRadius: '45px',
                     display: 'flex'
                   }}>
                   {einfachIconMobile}
                 </div>
-                <p>{Sprachen.easyHandling}</p>
+                <p className="first-p">{Sprachen.easyHandling}</p>
                 <p>{Sprachen.easyHandlingText}</p>
               </div>
               <div className="md0" style={{
                   display: 'flex',
-                  justifyContent: 'center',
+
                   alignItems: 'center',
                   flexDirection: 'column'
                 }}>
@@ -187,14 +195,14 @@ class Features extends Component {
                     width: '45px',
                     height: '45px',
                     backgroundColor: 'white',
-                    justifyContent: 'center',
+
                     alignItems: 'center',
                     borderRadius: '45px',
                     display: 'flex'
                   }}>
                   {zuverlaessigIconMobile}
                 </div>
-                <p>{Sprachen.reliable}</p>
+                <p className="first-p">{Sprachen.reliable}</p>
                 <p>{Sprachen.reliableText}</p>
               </div>
             </div>
