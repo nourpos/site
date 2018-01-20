@@ -24,9 +24,9 @@ const Mobile = props => <Responsive {...props} maxWidth={767}/>;
 
 const errorValidator = (values) => {
 
-    const SprachAbkuerzungForAlpha=()=>{
+    const SprachAbkuerzungForAlpha=(lang)=>{
       let land=null
-      switch (Sprachen.getLanguage()) {
+      switch (lang) {
         case 'ar':
           land='MA'
           break;
@@ -34,32 +34,31 @@ const errorValidator = (values) => {
           land='US'
           break;
         default:
-          land=Sprachen.getLanguage().toUpperCase()
+          land=lang.toUpperCase()
 
       }
-      return `${Sprachen.getLanguage()}-${land}`
-    }
-    const SprachAbkuerzungForPostalCode=()=>{
-      if (Sprachen.getLanguage()==='ar') {
-        return 'any'
-      }
-      return Sprachen.getLanguage().toUpperCase()
+      return `${lang}-${land}`
     }
 
     const validateBetriebsName = (betriebsName) => {
       if (!betriebsName) {
         return Sprachen.nameOfConcernError
       }
-      if (!validator.isAlpha(betriebsName.split(" ").join(""),SprachAbkuerzungForAlpha())) {
-        return Sprachen.nameOfConcernWarning
+      if (
+        validator.isAlpha(betriebsName.split(" ").join(""),SprachAbkuerzungForAlpha('ar'))
+        || validator.isAlpha(betriebsName.split(" ").join(""),SprachAbkuerzungForAlpha('de'))
+        || validator.isAlpha(betriebsName.split(" ").join(""),SprachAbkuerzungForAlpha('en'))
+        || validator.isAlpha(betriebsName.split(" ").join(""),SprachAbkuerzungForAlpha('fr'))
+      ) {
+        return null
       }
-      return null
+      return Sprachen.nameOfConcernWarning
     };
     const validatePlz = (plz) => {
       if (!plz) {
         return Sprachen.plzError
       }
-      if (!validator.isPostalCode(plz,SprachAbkuerzungForPostalCode())) {
+      if (!validator.isPostalCode(plz,'any')) {
         return Sprachen.plzWarning
       }
       return null
@@ -68,10 +67,15 @@ const errorValidator = (values) => {
       if (!stadt) {
         return Sprachen.cityError
       }
-      if (!validator.isAlpha(stadt.split(" ").join(""),SprachAbkuerzungForAlpha())) {
-        return Sprachen.cityWarning
+      if (
+        validator.isAlpha(stadt.split(" ").join(""),SprachAbkuerzungForAlpha('ar'))
+        || validator.isAlpha(stadt.split(" ").join(""),SprachAbkuerzungForAlpha('de'))
+        || validator.isAlpha(stadt.split(" ").join(""),SprachAbkuerzungForAlpha('en'))
+        || validator.isAlpha(stadt.split(" ").join(""),SprachAbkuerzungForAlpha('fr'))
+      ) {
+        return null
       }
-      return null
+      return Sprachen.cityWarning
     };
     const validatetel=(tel)  =>
       {

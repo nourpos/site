@@ -106,7 +106,7 @@ class App extends Component {
      setTimeout(()=>{
        let langHash = langHashes[Sprachen.getLanguage()]
        this.loadChatSupportTool(langHash)
-     },10000)
+     },20000)
   }
 
   componentWillUnmount() {

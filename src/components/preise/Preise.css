@@ -43,21 +43,41 @@
   margin: 0 5px;
 }
 .angebot-row-mobile,.angebot-mobile{
-  font-size: 16px;
+  font-size: 10px;
 }
 .angebot-mbile.angebot-basis,.angebot-mbile.angebot-pro,.angebot-mbile.angebot-pro-x {
   margin: 6px;
   position: relative;
 }
 
-.angebot-mbile-row-mbile.angebot-row-basis,.angebot-mbile-row-mbile.angebot-row-pro,.angebot-mbile-row-mbile.angebot-row-pro-x{
-  padding: 5px 5px;
-  margin: 0 5px;
+.angebot-mbile-row-mbile.angebot-row-basis, .angebot-mbile-row-mbile.angebot-row-pro, .angebot-mbile-row-mbile.angebot-row-pro-x {
+    padding: 5px 5px;
 }
 
+.xs_width.preise-mobile{
+  font-size: 0.8em;
+}
 #preise{
 
 }
 ._SitThW_padding{
-  padding: 0 10px;
+  padding: 0 0px;
+}
+.onOffIcon{
+  cursor: pointer;
+}
+
+.mobile-client-lizenz {
+    font-size: 24px;
+    color: cadetblue;
+    cursor: pointer;
+}
+.unlimitiert{
+  font-size: 2em;
+}
+._desktop .assemblyYourPOS {
+    width: 75%;
+}
+._desktop .assemblyYourPOS p{
+  padding: 0px 10px;
 }

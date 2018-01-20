@@ -24,8 +24,10 @@ export default new LocalizedStrings({
     rfidReader:"RFID reader",
     rfidReaderText:"Save time when logging in and out, just use the key conveniently. Alternatively, you can log in and out by entering the password.",
     basisTablet:"Base tablet",
+    basisHalter:"Tablet holder",
     basisTabletText:"With the basic application, you can make all necessary settings in addition to the bonus, for example, edit user and rights, edit menu, set printer, etc.",
     mobileClient:"Mobile Client",
+    mobileClientLizenz:"License for other mobile clients",
     mobileClientText:"Save time and runs and benefit from the mobile application. All order and payment processes can be carried out with this. For advanced settings, use the Basic Application",
     drucker:"Printer",
     druckerText:"Epson receipt printer TM-T20II with 200mm / sec print speed.",
@@ -81,7 +83,9 @@ export default new LocalizedStrings({
     theTeam:"The Team",
     contactUs:"contact us",
     maintenanceText:"Sorry for the inconvenience but we’re performing some maintenance at the moment. If you need to you can always {0}, otherwise we'll be back online shortly!",
-    weComeBack:"we\'ll be back soon"
+    weComeBack:"we\'ll be back soon",
+    assembleYourCashRegisterFromOurComponentsAccordingToYourNeeds:"You have the choice. Either a complete set or put together your cash register from our components according to your needs."
+
 
   },
   "de":{
@@ -107,8 +111,10 @@ export default new LocalizedStrings({
     rfidReader:"RFID reader",
     rfidReaderText:"Sparen Sie Zeit beim An- und Abmelden, einfach bequem das Schlüssel benutzen. Alternative können Sie sich auch durch Passworteingabe An- und Abmelden.",
     basisTablet:"Basis Tablet",
+    basisHalter:"Tablet-Halter",
     basisTabletText:"Mit der Basis Appliktion können neben dem Bonieren alle nötigen Einstellungen tätigen, zum Beispiel Benutzer und Rechten bearbeiten, Menu/Speisekarte bearbeiten, Drucker einstellen usw.",
     mobileClient:"Mobile Client",
+    mobileClientLizenz:"Lizenz für weitere Mobile Clients",
     mobileClientText:"Sparen sie sich Zeit und Läufe und profitieren Sie von der Mobilen Appliktion. Damit können alle Bestellung- und Bonierenabläufe tätigen. Für erweiterte Einstellungen benutzen Sie die Basis Appliktion",
     drucker:"Drucker",
     druckerText:"Epson Bondrucker TM-T20II mit 200mm/Sek Druckgeschwindigkeit.",
@@ -163,7 +169,8 @@ export default new LocalizedStrings({
     theTeam:"Das Team",
     contactUs:"kontaktieren",
     maintenanceText:"Entschuldigung für die Unannehmlichkeiten, aber wir führen gerade Wartungsarbeiten durch. Wenn Sie möchten, können Sie uns jederzeit {0}, sonst sind wir in Kürze wieder online!",
-    weComeBack:"Wir kommen bald wieder"
+    weComeBack:"Wir kommen bald wieder",
+    assembleYourCashRegisterFromOurComponentsAccordingToYourNeeds:"Sie haben die Wahl. Entweder ein komplettes Set oder stellen Sie Ihre Kasse aus unseren Komponenten nach Ihren Bedürfnissen zusammen."
   },
   "fr":{
     posSystems:"NourPos Systèmes",
@@ -188,8 +195,10 @@ export default new LocalizedStrings({
     rfidReader:"Lecteur rfid",
     rfidReaderText:"Gagnez du temps lors de la connexion et de la sortie, utilisez simplement la touche de manière pratique. Vous pouvez également vous connecter et vous déconnecter en entrant le mot de passe.",
     basisTablet:"Tablette de base",
+    basisHalter:"Support de tablette",
     basisTabletText:"Avec l'application de base, vous pouvez effectuer tous les réglages nécessaires en plus du bonus, par exemple modifier l'utilisateur et les droits, modifier le menu, définir l'imprimante, etc.",
     mobileClient:"Mobile Client",
+    mobileClientLizenz:"Licence pour d'autres clients mobiles",
     mobileClientText:"Gagnez du temps et fonctionne et profitez de l'application mobile. Tous les processus de commande et de paiement peuvent être effectués avec ceci. Pour les paramètres avancés, utilisez l'application de base",
     drucker:"Imprimante",
     druckerText:"Imprimante de reçus Epson TM-T20II avec une vitesse d'impression de 200 mm / s.",
@@ -244,7 +253,9 @@ export default new LocalizedStrings({
     theTeam:"L'équipe",
     contactUs:"nous contacter",
     maintenanceText:"Désolé pour le dérangement, mais nous faisons actuellement la maintenance. Si vous le souhaitez, vous pouvez nous {0} à tout moment, sinon nous serons bientôt en ligne!",
-    weComeBack:"Nous reviendrons bientôt"
+    weComeBack:"Nous reviendrons bientôt",
+    assembleYourCashRegisterFromOurComponentsAccordingToYourNeeds:"Tu as le choix. Soit un ensemble complet ou mis en place votre caisse enregistreuse de nos composants en fonction de vos besoins."
+
   },
   "ar":{
     posSystems:"نقطة البيع نوربوس",
@@ -269,8 +280,10 @@ export default new LocalizedStrings({
     rfidReader:"قارئ رفيد",
     rfidReaderText:"توفير الوقت عند تسجيل الدخول والخروج، باستخدام  مفتاح . بدلا من ذلك، يمكنك تسجيل الدخول والخروج عن طريق إدخال كلمة المرور الخاصة بك.",
     basisTablet:"اللوحة القاعدة",
+    basisHalter:"حامل اللوحة",
     basisTabletText:"مع التطبيق الأساسي، يمكنك اجراء جميع الإعدادات اللازمة، على سبيل المثال، مراجعة المستخدمين والحقوق، مراجعة القائمة، تعيين الطابعة، الخ.",
     mobileClient:"عميل جوال",
+    mobileClientLizenz:"ترخيص لعملاء الجوال الآخرين",
     mobileClientText:"توفير الوقت والمشي والاستفادة من تطبيقات الهاتف المتحرك. ويمكن إجراء جميع عمليات الدفع والطلب٠ للإعدادات المتقدمة استخدم التطبيق الأساسي",
     drucker:"طابعة",
     druckerText:"  طابعة إيبسون TM-T20II٠  سرعة الطباعة 200mm/S",
@@ -324,7 +337,8 @@ export default new LocalizedStrings({
     theTeam:"الفريق",
     contactUs:"الإتصال بنا",
     maintenanceText:"آسف للإزعاج، ولكن نحن نجري حاليا الصيانة. إذا كنت تريد، يمكنك {0}  في أي وقت، وإلا فإننا سوف تكون على الانترنت قريبا!",
-    weComeBack:"سنعود قريبا"
+    weComeBack:"سنعود قريبا",
+    assembleYourCashRegisterFromOurComponentsAccordingToYourNeeds:"لديك الاختيار. إما مجموعة كاملة أو شكل عرضك الخاص من مكوناتنا وفقا لاحتياجاتك."
 
 
   }
