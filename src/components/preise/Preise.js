@@ -76,7 +76,6 @@ class Preise extends React.Component {
     let enabledHardwareObjKeys=hardwareObjKeys.filter(e=>this.state.hardwareObj[e]===true)
     let enabledHardwarePreise=enabledHardwareObjKeys.map(e=>hardwarePreise[e])
     let preis=enabledHardwarePreise.reduce((pv, cv) => pv+cv, 0) + (this.state.mobileClientLizenz*lizenz)
-    preis=this.umrechneCurrency(preis)
     return (<div>
       <Desktop>
         <section style={{
@@ -94,7 +93,7 @@ class Preise extends React.Component {
               <div style={{display:'flex',justifyContent:'flex-end',alignItems:'center',height:'255px',width:'100%',marginTop:'20px'}}>
                   <div className="angebot angebot-basis" style={{display:'flex',flexDirection:'column',height:'185px',width:'160px',justifyContent:'center',alignItems:'center',backgroundColor:this.getCustomPreisModellFarbe(preis)}}>
                     <div style={{color:'gray',flex:1.3}}><p>Starter</p></div>
-                    <div style={{color:'black',flex:1}}><p>{preis}</p></div>
+                    <div style={{color:'black',flex:1}}><p>{this.umrechneCurrency(preis)}</p></div>
                     <div style={{flex:1}}><p></p></div>
                   </div>
 
@@ -221,12 +220,12 @@ class Preise extends React.Component {
 
                 <div className="angebot angebot-pro"  style={{display:'flex',flexDirection:'column',height:'185px',width:'100px',backgroundColor:'#1159bc',justifyContent:'center',alignItems:'center'}}>
                   <div style={{color:'white',flex:1.3}}><p>PRO</p></div>
-                  <div style={{color:'white',flex:1}}><p>620 €</p></div>
+                  <div style={{color:'white',flex:1}}><p>{this.umrechneCurrency(proPreis)}</p></div>
                   <div style={{flex:1}}><p></p></div>
                 </div>
                 <div className="angebot angebot-pro-x"  style={{display:'flex',flexDirection:'column',height:'185px',width:'100px',backgroundColor:'rgb(29, 29, 29)',justifyContent:'center',alignItems:'center'}}>
                   <div style={{color:'white',flex:1.3}}><p>PRO+</p></div>
-                  <div style={{color:'white',flex:1}}><p>660 €</p></div>
+                  <div style={{color:'white',flex:1}}><p>{this.umrechneCurrency(UltimatePreis)}</p></div>
                   <div style={{flex:1}}><p></p></div>
                 </div>
             </div>
