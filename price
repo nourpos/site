@@ -1,0 +1,34 @@
+ Lenovo TAB2 A10-30                                                   150
+ --------------------------------------------------------------------------------
+ Lenovo K6 Smartphone                                                 130
+--------------------------------------------------------------------------------
+ Brateck® - Universelle Schreibtisch-/Wand-Halterung                  40
+ mit Diebstahlschutz für Tablets
+ --------------------------------------------------------------------------------
+ raspberrypi 3                                                60
+ Chafon CF-RS103 125kHz RFID-Identifikation-Kartenleser       20  =>  130
+ nourPosServer                                                50
+ --------------------------------------------------------------------------------
+ Epson TM-T20II                                                       130
+ --------------------------------------------------------------------------------
+
+
+ Starter                                                              580
+ Pro                                                                  620
+ Ultimate                                                             660
+
+this.state={
+  basisTablet:false,
+  mobileClient:false,
+  basisHalter:false,
+  server:false,
+  drucker:false
+}
+
+let hardware={
+  basisTablet:150,
+  mobileClient:130,
+  basisHalter:40,
+  server:130,
+  drucker:130
+}

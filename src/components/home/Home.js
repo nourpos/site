@@ -12,6 +12,8 @@ const Desktop = props => <Responsive {...props} minWidth={992}/>;
 const Tablet = props => <Responsive {...props} minWidth={768} maxWidth={991}/>;
 const Mobile = props => <Responsive {...props} maxWidth={767}/>;
 
+var FontAwesome = require('react-fontawesome')
+const downloadIcon = (<FontAwesome className="download_icon" name="download" size="1x"/>)
 
 class Home extends React.Component {
   constructor(props){
@@ -52,8 +54,8 @@ class Home extends React.Component {
                 <h3 style={{
                     color: 'white'
                   }}>{Sprachen.noContracts}</h3>
-                  <p className="download"><a download="NourPos_Mobile" href="https://firebasestorage.googleapis.com/v0/b/nourpos-e2bee.appspot.com/o/NourPos_Mobile.apk?alt=media&token=0129b2d9-634b-40ce-b2d9-16c29c5d0a4a">{Sprachen.download} Mobile</a></p>
-                  <p className="download"><a download="NourPos_Basis" href="https://firebasestorage.googleapis.com/v0/b/nourpos-e2bee.appspot.com/o/NourPos_Basis.apk?alt=media&token=2e7e3ce3-027e-41f3-b27e-1d53984644aa">{Sprachen.download} Basis</a></p>
+                  <p className="download"><a download="NourPos_Mobile" href="https://firebasestorage.googleapis.com/v0/b/nourpos-e2bee.appspot.com/o/NourPos_Mobile.apk?alt=media&token=0129b2d9-634b-40ce-b2d9-16c29c5d0a4a">{Sprachen.download} Mobile {downloadIcon}</a></p>
+                  <p className="download"><a download="NourPos_Basis" href="https://firebasestorage.googleapis.com/v0/b/nourpos-e2bee.appspot.com/o/NourPos_Basis.apk?alt=media&token=2e7e3ce3-027e-41f3-b27e-1d53984644aa">{Sprachen.download} Basis {downloadIcon}</a></p>
               </div>
             </div>
             <div className="col right" style={{}}>
@@ -92,8 +94,8 @@ class Home extends React.Component {
                 <h3 style={{
                     color: 'white'
                   }}>{Sprachen.noContracts}</h3>
-                  <p className="download-tablet"><a download="NourPos_Mobile" href="https://firebasestorage.googleapis.com/v0/b/nourpos-e2bee.appspot.com/o/NourPos_Mobile.apk?alt=media&token=0129b2d9-634b-40ce-b2d9-16c29c5d0a4a">{Sprachen.download} Mobile</a></p>
-                  <p className="download-tablet"><a download="NourPos_Basis" href="https://firebasestorage.googleapis.com/v0/b/nourpos-e2bee.appspot.com/o/NourPos_Basis.apk?alt=media&token=2e7e3ce3-027e-41f3-b27e-1d53984644aa">{Sprachen.download} Basis</a></p>
+                  <p className="download-tablet"><a download="NourPos_Mobile" href="https://firebasestorage.googleapis.com/v0/b/nourpos-e2bee.appspot.com/o/NourPos_Mobile.apk?alt=media&token=0129b2d9-634b-40ce-b2d9-16c29c5d0a4a">{Sprachen.download} Mobile {downloadIcon}</a></p>
+                  <p className="download-tablet"><a download="NourPos_Basis" href="https://firebasestorage.googleapis.com/v0/b/nourpos-e2bee.appspot.com/o/NourPos_Basis.apk?alt=media&token=2e7e3ce3-027e-41f3-b27e-1d53984644aa">{Sprachen.download} Basis {downloadIcon}</a></p>
               </div>
             </div>
             <div className="col right" style={{}}>
@@ -137,8 +139,8 @@ class Home extends React.Component {
             </div>
             <div className="col right" style={{display:'flex',flexDirection:'column'}}>
               <img className="img-mobile" src={mobileBasisRaspi} alt="NourPos"></img>
-              <p className="download-mobile"><a download="NourPos_Mobile" href="https://firebasestorage.googleapis.com/v0/b/nourpos-e2bee.appspot.com/o/NourPos_Mobile.apk?alt=media&token=0129b2d9-634b-40ce-b2d9-16c29c5d0a4a">{Sprachen.download} Mobile</a></p>
-              <p className="download-mobile"><a download="NourPos_Basis" href="https://firebasestorage.googleapis.com/v0/b/nourpos-e2bee.appspot.com/o/NourPos_Basis.apk?alt=media&token=2e7e3ce3-027e-41f3-b27e-1d53984644aa">{Sprachen.download} Basis</a></p>
+              <p className="download-mobile"><a download="NourPos_Mobile" href="https://firebasestorage.googleapis.com/v0/b/nourpos-e2bee.appspot.com/o/NourPos_Mobile.apk?alt=media&token=0129b2d9-634b-40ce-b2d9-16c29c5d0a4a">{Sprachen.download} Mobile {downloadIcon}</a></p>
+              <p className="download-mobile"><a download="NourPos_Basis" href="https://firebasestorage.googleapis.com/v0/b/nourpos-e2bee.appspot.com/o/NourPos_Basis.apk?alt=media&token=2e7e3ce3-027e-41f3-b27e-1d53984644aa">{Sprachen.download} Basis {downloadIcon}</a></p>
             </div>
           </div>
         </div>

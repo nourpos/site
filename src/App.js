@@ -50,10 +50,6 @@ class App extends Component {
 
   }
   loadOtherPages(){
-    this.About = Loadable({
-      loader: () => import('./components/about/About'),
-      loading: Loader,
-    });
     this.Datenschutz = Loadable({
       loader: () => import('./components/datenschutz/Datenschutz'),
       loading: Loader,
@@ -101,7 +97,7 @@ class App extends Component {
   componentDidMount() {
     this.loadOtherPagesForStart()
     this.updateWindowDimensions();
-     window.addEventListener('resize', this.updateWindowDimensions);
+     //window.addEventListener('resize', this.updateWindowDimensions);
      window.addEventListener('scroll', this.handleScroll.bind(this));
      setTimeout(()=>{
        let langHash = langHashes[Sprachen.getLanguage()]
@@ -181,8 +177,6 @@ class App extends Component {
     switch (this.state.page) {
       case 'home':
         return this.getHome()
-      case 'about':
-        return <this.About setPage={this.setPage.bind(this)}  />
       case 'datenschutz':
         return <this.Datenschutz styles={{padding:'15px',backgroundColor: '#e8e8ec'}}  />
       case 'impressum':

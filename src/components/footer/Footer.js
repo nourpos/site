@@ -44,9 +44,6 @@ class Footer extends Component {
                 <h3>NourPos</h3>
                 <ul>
                 <li><a  onClick={()=>{
-                  this.props.setPage('about')
-                  }}>{Sprachen.aboutUs}</a></li>
-                <li><a  onClick={()=>{
                     this.props.setPage('datenschutz')
                   }}>{Sprachen.datenschutz}</a></li>
                 <li><a  onClick={()=>{
@@ -84,9 +81,6 @@ class Footer extends Component {
               <h3>NourPos</h3>
               <ul>
               <li><a  onClick={()=>{
-                this.props.setPage('about')
-                }}>{Sprachen.aboutUs}</a></li>
-              <li><a  onClick={()=>{
                   this.props.setPage('datenschutz')
                 }}>{Sprachen.datenschutz}</a></li>
               <li><a  onClick={()=>{
@@ -119,9 +113,6 @@ class Footer extends Component {
               }}>
               <h3>NourPos</h3>
               <ul>
-              <li><a  onClick={()=>{
-                this.props.setPage('about')
-                }}>{Sprachen.aboutUs}</a></li>
               <li><a  onClick={()=>{
                   this.props.setPage('datenschutz')
                 }}>{Sprachen.datenschutz}</a></li>
