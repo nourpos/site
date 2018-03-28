@@ -38,7 +38,7 @@ class App extends Component {
       submittedValues: {},
       page:'home',
       load:false,
-      vorhandHinweisGelesen:false,
+      vorhandHinweisGelesen:true,
       acceptCockies:false,
     };
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
