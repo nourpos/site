@@ -11,7 +11,7 @@ class Impressum extends React.Component {
         minHeight: '100vh',
       }} id="Impressum" className="_tablet" style={{padding:'15px',backgroundColor: '#e8e8ec'}}>
         <div className="md_width">
-          <h1>Impressum</h1> <h2>Angaben gem&auml;&szlig; &sect; 5 TMG:</h2> <p>Nourpos</p> <h2>Kontakt:</h2> <p>Telefon: +49 (0) 157 39071717<br /> E-Mail: hello@nourpos.com</p>
+          <h1>Impressum</h1> <h2>Angaben gem&auml;&szlig; &sect; 5 TMG:</h2> <p>Nourpos</p> <h2>Kontakt:</h2> <p>Telefon: +212661 514 515 / +212663 173 666 / +212660 206 871<br /> E-Mail: hello@nourpos.com</p>
           <h2>Streitschlichtung</h2> <p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor
           einer Verbraucherschlichtungsstelle teilzunehmen.</p> <h2>Haftung f&uuml;r Inhalte</h2> <p>Als
           Diensteanbieter sind wir gem&auml;&szlig; &sect; 7 Abs.1 TMG f&uuml;r eigene Inhalte auf diesen Seiten

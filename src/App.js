@@ -33,7 +33,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      windowHeight: '0',
+      windowHeight: '1',//just test, normal 0
       headerFixedAtTheTop: false,
       submittedValues: {},
       page:'home',

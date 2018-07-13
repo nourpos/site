@@ -54,8 +54,8 @@ class Home extends React.Component {
                 <h3 style={{
                     color: 'white'
                   }}>{Sprachen.noContracts}</h3>
-                  <p className="download"><a download="NourPos_Mobile" href="https://firebasestorage.googleapis.com/v0/b/nourpos-e2bee.appspot.com/o/NourPos_Mobile.apk?alt=media&token=0129b2d9-634b-40ce-b2d9-16c29c5d0a4a">{Sprachen.download} Mobile {downloadIcon}</a></p>
-                  <p className="download"><a download="NourPos_Basis" href="https://firebasestorage.googleapis.com/v0/b/nourpos-e2bee.appspot.com/o/NourPos_Basis.apk?alt=media&token=2e7e3ce3-027e-41f3-b27e-1d53984644aa">{Sprachen.download} Basis {downloadIcon}</a></p>
+                  <p className="download"><a download="NourPos_Mobile" href="https://firebasestorage.googleapis.com/v0/b/nourpos-e2bee.appspot.com/o/Mobile_2018-07-13.03-52-11.apk?alt=media&token=45a1af0f-715a-4649-8449-3ff480436ef3">{Sprachen.download} Mobile {downloadIcon}</a></p>
+                  <p className="download"><a download="NourPos_Basis" href="https://firebasestorage.googleapis.com/v0/b/nourpos-e2bee.appspot.com/o/Basis_2018-07-10.01-21-44.apk?alt=media&token=8c2226cf-344e-4ce8-b2c5-a3acadf3553b">{Sprachen.download} Basis {downloadIcon}</a></p>
               </div>
             </div>
             <div className="col right" style={{}}>
@@ -94,8 +94,8 @@ class Home extends React.Component {
                 <h3 style={{
                     color: 'white'
                   }}>{Sprachen.noContracts}</h3>
-                  <p className="download-tablet"><a download="NourPos_Mobile" href="https://firebasestorage.googleapis.com/v0/b/nourpos-e2bee.appspot.com/o/NourPos_Mobile.apk?alt=media&token=0129b2d9-634b-40ce-b2d9-16c29c5d0a4a">{Sprachen.download} Mobile {downloadIcon}</a></p>
-                  <p className="download-tablet"><a download="NourPos_Basis" href="https://firebasestorage.googleapis.com/v0/b/nourpos-e2bee.appspot.com/o/NourPos_Basis.apk?alt=media&token=2e7e3ce3-027e-41f3-b27e-1d53984644aa">{Sprachen.download} Basis {downloadIcon}</a></p>
+                  <p className="download-tablet"><a download="NourPos_Mobile" href="https://firebasestorage.googleapis.com/v0/b/nourpos-e2bee.appspot.com/o/Mobile_2018-07-13.03-52-11.apk?alt=media&token=45a1af0f-715a-4649-8449-3ff480436ef3">{Sprachen.download} Mobile {downloadIcon}</a></p>
+                  <p className="download-tablet"><a download="NourPos_Basis" href="https://firebasestorage.googleapis.com/v0/b/nourpos-e2bee.appspot.com/o/Basis_2018-07-10.01-21-44.apk?alt=media&token=8c2226cf-344e-4ce8-b2c5-a3acadf3553b">{Sprachen.download} Basis {downloadIcon}</a></p>
               </div>
             </div>
             <div className="col right" style={{}}>
@@ -139,8 +139,8 @@ class Home extends React.Component {
             </div>
             <div className="col right" style={{display:'flex',flexDirection:'column'}}>
               <img className="img-mobile" src={mobileBasisRaspi} alt="NourPos"></img>
-              <p className="download-mobile"><a download="NourPos_Mobile" href="https://firebasestorage.googleapis.com/v0/b/nourpos-e2bee.appspot.com/o/NourPos_Mobile.apk?alt=media&token=0129b2d9-634b-40ce-b2d9-16c29c5d0a4a">{Sprachen.download} Mobile {downloadIcon}</a></p>
-              <p className="download-mobile"><a download="NourPos_Basis" href="https://firebasestorage.googleapis.com/v0/b/nourpos-e2bee.appspot.com/o/NourPos_Basis.apk?alt=media&token=2e7e3ce3-027e-41f3-b27e-1d53984644aa">{Sprachen.download} Basis {downloadIcon}</a></p>
+              <p className="download-mobile"><a download="NourPos_Mobile" href="https://firebasestorage.googleapis.com/v0/b/nourpos-e2bee.appspot.com/o/Mobile_2018-07-13.03-52-11.apk?alt=media&token=45a1af0f-715a-4649-8449-3ff480436ef3">{Sprachen.download} Mobile {downloadIcon}</a></p>
+              <p className="download-mobile"><a download="NourPos_Basis" href="https://firebasestorage.googleapis.com/v0/b/nourpos-e2bee.appspot.com/o/Basis_2018-07-10.01-21-44.apk?alt=media&token=8c2226cf-344e-4ce8-b2c5-a3acadf3553b">{Sprachen.download} Basis {downloadIcon}</a></p>
             </div>
           </div>
         </div>

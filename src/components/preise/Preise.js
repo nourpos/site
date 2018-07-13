@@ -17,16 +17,16 @@ const Tablet = props => <Responsive {...props} minWidth={768} maxWidth={991}/>;
 const Mobile = props => <Responsive {...props} maxWidth={767}/>;
 
 const hardwarePreise={
-  basisTablet:150,
-  mobileClient:130,
-  basisHalter:40,
-  server:130,
-  drucker:130
+  basisTablet:1500,
+  mobileClient:750,
+  basisHalter:250,
+  server:2550,
+  drucker:2000
 }
-const proPreis=620;
-const UltimatePreis=660;
-const server=130;
-const lizenz=20;
+const proPreis=7450;
+const UltimatePreis=8000;
+const server=2300;
+const lizenz=200;
 const illimitLizenz=4;
 
 class Preise extends React.Component {
@@ -49,9 +49,9 @@ class Preise extends React.Component {
 
   umrechneCurrency(preis){
     if (this.lang==='ar') {
-      return `${preis*10} DH`
+      return `${preis*10} Dhs`
     }
-    return `${preis} €`
+    return `${preis} Dhs`
   }
   shouldComponentUpdate(){
     if (this.lang!==Sprachen.getLanguage()) {
@@ -73,9 +73,9 @@ class Preise extends React.Component {
   }
   render() {
     let hardwareObjKeys=Object.keys(this.state.hardwareObj)
-    let enabledHardwareObjKeys=hardwareObjKeys.filter(e=>this.state.hardwareObj[e]===true)
-    let enabledHardwarePreise=enabledHardwareObjKeys.map(e=>hardwarePreise[e])
-    let preis=enabledHardwarePreise.reduce((pv, cv) => pv+cv, 0) + (this.state.mobileClientLizenz*lizenz)
+    let enableDhsardwareObjKeys=hardwareObjKeys.filter(e=>this.state.hardwareObj[e]===true)
+    let enableDhsardwarePreise=enableDhsardwareObjKeys.map(e=>hardwarePreise[e])
+    let preis=enableDhsardwarePreise.reduce((pv, cv) => pv+cv, 0) + (this.state.mobileClientLizenz*lizenz)
     return (<div>
       <Desktop>
         <section style={{
@@ -336,18 +336,18 @@ class Preise extends React.Component {
             <div style={{display:'flex',justifyContent:'flex-end',alignItems:'center',height:'150px',width:'100%',marginTop:'20px'}}>
                 <div className="angebot-mbile angebot-basis" style={{display:'flex',flexDirection:'column',height:'150px',width:'50px',justifyContent:'center',alignItems:'center',backgroundColor:'#f3f3f5'}}>
                   <div style={{color:'gray',flex:1.3}}><p>BASIS</p></div>
-                  <div style={{color:'black',flex:1}}><p>{preis}</p></div>
+                  <div style={{color:'black',flex:1}}><p>{preis} Dhs</p></div>
                   <div style={{flex:1}}><p></p></div>
                 </div>
 
                 <div className="angebot-mbile angebot-pro"  style={{display:'flex',flexDirection:'column',height:'150px',width:'50px',backgroundColor:'#1159bc',justifyContent:'center',alignItems:'center'}}>
                   <div style={{color:'white',flex:1.3}}><p>PRO</p></div>
-                  <div style={{color:'white',flex:1}}><p>620 €</p></div>
+                  <div style={{color:'white',flex:1}}><p>7500 Dhs</p></div>
                   <div style={{flex:1}}><p></p></div>
                 </div>
                 <div className="angebot-mbile angebot-pro-x"  style={{display:'flex',flexDirection:'column',height:'150px',width:'50px',backgroundColor:'rgb(29, 29, 29)',justifyContent:'center',alignItems:'center'}}>
                   <div style={{color:'white',flex:1.3}}><p>PRO+</p></div>
-                  <div style={{color:'white',flex:1}}><p>660 €</p></div>
+                  <div style={{color:'white',flex:1}}><p>8000 Dhs</p></div>
                   <div style={{flex:1}}><p></p></div>
                 </div>
             </div>
