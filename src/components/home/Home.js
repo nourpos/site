@@ -55,7 +55,7 @@ class Home extends React.Component {
                     color: 'white'
                   }}>{Sprachen.noContracts}</h3>
                   <p className="download"><a download="NourPos_Mobile" href="https://firebasestorage.googleapis.com/v0/b/nourpos-e2bee.appspot.com/o/Mobile_2018-07-13.03-52-11.apk?alt=media&token=45a1af0f-715a-4649-8449-3ff480436ef3">{Sprachen.download} Mobile {downloadIcon}</a></p>
-                  <p className="download"><a download="NourPos_Basis" href="https://firebasestorage.googleapis.com/v0/b/nourpos-e2bee.appspot.com/o/Basis_2018-07-10.01-21-44.apk?alt=media&token=8c2226cf-344e-4ce8-b2c5-a3acadf3553b">{Sprachen.download} Basis {downloadIcon}</a></p>
+                  <p className="download"><a download="NourPos_Basis" href="https://firebasestorage.googleapis.com/v0/b/nourpos-e2bee.appspot.com/o/Basis_2018-07-20.20-59-48.apk?alt=media&token=266e26ad-fb05-4b55-ad34-961642a34e12">{Sprachen.download} Basis {downloadIcon}</a></p>
               </div>
             </div>
             <div className="col right" style={{}}>
